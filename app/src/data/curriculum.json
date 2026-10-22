@@ -1,0 +1,2570 @@
+{
+  "sources": [
+    {
+      "id": "intro",
+      "title": "OS - Course Introduction & Grading.pdf",
+      "url": "https://drive.google.com/file/d/1LeLS4nPyz1WbHO0HAAFIQ_M6Z7kcSOTe/view",
+      "status": "read",
+      "numbering": "Included by the user’s explicit all-lecture-PDF scope clarification; organized by document title because lecture numbering is not established.",
+      "topics": [
+        "Virtualization, abstraction and arbitration",
+        "Computer and OS evolution; Linux",
+        "Computer architecture and instruction cycle"
+      ]
+    },
+    {
+      "id": "services",
+      "title": "OS - Lecture 01 - Definition, Services & Structures.pdf",
+      "url": "https://drive.google.com/file/d/1-TDZLuchHKn7JlLyLcMqTrjUzYasHj1V/view",
+      "status": "read",
+      "numbering": "Included by the user’s explicit all-lecture-PDF scope clarification; organized by document title because lecture numbering is not established.",
+      "topics": [
+        "Operating system purpose",
+        "Memory and storage hierarchy",
+        "Bootstrap and boot process",
+        "User mode and kernel mode",
+        "System-call interface and APIs",
+        "Interrupts, traps, exceptions and timers",
+        "Device drivers, controllers and I/O",
+        "Files, memory and program services",
+        "Base/limit memory protection",
+        "Virtual machines and VMMs",
+        "Monolithic, layered, microkernel, modular and hybrid designs"
+      ]
+    },
+    {
+      "id": "processes",
+      "title": "OS - Lecture - Processes, States & IPC.pdf",
+      "url": "https://drive.google.com/file/d/1aslICnmXMDSHcu0DRBLyyVSlhutAtES9/view",
+      "status": "read",
+      "numbering": "Included by the user’s explicit all-lecture-PDF scope clarification; organized by document title because lecture numbering is not established.",
+      "topics": [
+        "Program, process and memory layout",
+        "Five-state process model",
+        "Process Control Block and identity",
+        "Context switching",
+        "Ready/wait queues and dispatch",
+        "Process creation and parent/child execution",
+        "Exit, wait, zombies and orphans",
+        "Cooperating processes and shared-memory IPC",
+        "Message passing and buffering"
+      ]
+    },
+    {
+      "id": "threads",
+      "title": "OS - Lecture - Threads & Multithreading.pdf",
+      "url": "https://drive.google.com/file/d/1VCFzZfoLROll_otUc0pTRjgDT5d9BQkn/view",
+      "status": "read",
+      "numbering": "Included by the user’s explicit all-lecture-PDF scope clarification; organized by document title because lecture numbering is not established.",
+      "topics": [
+        "Thread state and shared process resources",
+        "Benefits and challenges of multithreading",
+        "Concurrency, parallelism and Amdahl’s law",
+        "User/kernel thread mappings",
+        "Thread libraries and implicit threading",
+        "Windows and Linux thread structures"
+      ]
+    },
+    {
+      "id": "scheduling",
+      "title": "OS - Lecture - CPU Scheduling.pdf",
+      "url": "https://drive.google.com/file/d/1tnYoABI9G8qX6VnoctNssYOqLSF14qVk/view",
+      "status": "read",
+      "numbering": "Included by the user’s explicit all-lecture-PDF scope clarification; organized by document title because lecture numbering is not established.",
+      "topics": [
+        "Scheduler types, preemption and dispatch",
+        "Turnaround, waiting, response and utilization",
+        "FCFS, SJF and burst prediction",
+        "Shortest remaining time scheduling",
+        "Priority scheduling and aging",
+        "Round Robin and time quantum",
+        "Multilevel and feedback queues",
+        "Multiprocessor scheduling and real-time latency"
+      ]
+    },
+    {
+      "id": "concurrency",
+      "title": "OS - Lecture - Concurrency, Synchronization & Semaphores.pdf",
+      "url": "https://drive.google.com/file/d/1kBncHRzz87r1s3qjX8A1YPVlFphAkXhB/view",
+      "status": "read",
+      "numbering": "Included by the user’s explicit all-lecture-PDF scope clarification; organized by document title because lecture numbering is not established.",
+      "topics": [
+        "Race conditions and bounded producer-consumer",
+        "Critical sections and correctness requirements",
+        "Peterson’s two-process solution",
+        "Mutexes, spinlocks and atomic acquisition",
+        "Counting/binary semaphores and producer-consumer coordination",
+        "Deadlock and starvation"
+      ]
+    },
+    {
+      "id": "pa1a",
+      "title": "OS - Practice Assignment 1 Solutions - OS Basics.pdf",
+      "url": "https://drive.google.com/file/d/1DYjErSZngV_oTTBsbRQgkfb_zgJOoidJ/view",
+      "status": "read",
+      "numbering": "Practice Assignment 1, Exercises 1-1 through 1-6.",
+      "topics": [
+        "Computer and OS evolution; Linux",
+        "Computer architecture and instruction cycle"
+      ]
+    },
+    {
+      "id": "theo2",
+      "title": "OS — Lab 2 — OS Services & Protection — Theoretical Slides",
+      "url": "https://drive.google.com/file/d/1_zjQ-FHzlQDrqae5rCFW-3OXrVg2RHAG/view"
+    },
+    {
+      "id": "theo3",
+      "title": "OS — Lab 3 — Processes — Theoretical Slides",
+      "url": "https://drive.google.com/file/d/1wiDGeGKbLDTi_PjgEjO0fUc58oY_vQUD/view"
+    },
+    {
+      "id": "theo4",
+      "title": "OS — Lab 4 — Threads — Theoretical Slides",
+      "url": "https://drive.google.com/file/d/1RReLhudyBIIMSEMNU_iLZschoYsbawRU/view"
+    },
+    {
+      "id": "theo5",
+      "title": "OS — Lab 5 — CPU Scheduling — Theoretical Slides",
+      "url": "https://drive.google.com/file/d/1_l7FjSvXcRS1DbI2UYIfD7yJJ-AvP-Sg/view"
+    }
+  ],
+  "scopeNote": "All six unique lecture PDFs plus four OS theoretical slide decks (Labs 2–5) are mapped here. Practical lab activities remain Labs 1–3. Theo worked examples supplement the original 28 PA questions.",
+  "lessons": [
+    {
+      "id": "os-purpose",
+      "group": "Foundations",
+      "topic": "Operating system purpose",
+      "title": "The OS: a manager between programs and hardware",
+      "minutes": 10,
+      "intro": "Opening a document feels like one action. Behind it, a program needs CPU time, memory, a file, and a display. The operating system coordinates those requests and enforces who may use each resource.",
+      "why": "An exam answer should connect the definition to concrete responsibilities. Listing Windows and Linux gives examples, but does not explain what an OS does.",
+      "definition": "An operating system is system software that manages computer resources and provides controlled services and abstractions to applications and users.",
+      "steps": [
+        "Separate the layers: a user operates an application; the application requests OS services; the OS controls hardware through supported interfaces.",
+        "From the user view, the goals are convenience, responsiveness and useful performance. From the system view, the OS allocates resources and controls execution.",
+        "CPU time, physical memory, files and I/O devices are finite. Allocation policies aim for efficiency and suitable fairness; these goals can conflict.",
+        "Protection prevents one program from freely damaging another program or the kernel. Security also concerns authorized access to resources.",
+        "Distinguish the kernel, the privileged core retained in memory, from utilities such as shells and file-management tools. The kernel is available throughout operation; it does not execute continuously instead of applications."
+      ],
+      "example": {
+        "question": "A music player and a browser both need CPU time and memory. Give three OS responsibilities.",
+        "answer": "Schedule their execution, allocate and protect their memory, and provide file/device services. Fair scheduling can preserve playback responsiveness while the browser works."
+      },
+      "misconceptions": [
+        "The OS is more than its graphical desktop.",
+        "The kernel being resident does not mean every instruction executed by the CPU belongs to the kernel."
+      ],
+      "recall": "What changes between the user view and the system view of an OS?",
+      "recallAnswer": "The user view emphasizes convenience and performance; the system view emphasizes resource allocation, control, efficiency and fairness.",
+      "relatedPa": [
+        "PA1-01",
+        "PA1-02"
+      ],
+      "refs": [
+        {
+          "source": "services",
+          "locator": "Slides 4–8: OS definition, kernel/utilities and user/system views"
+        }
+      ],
+      "scopeStatus": "core",
+      "diagram": "layers"
+    },
+    {
+      "id": "abstraction-arbitration",
+      "group": "Foundations",
+      "topic": "Virtualization, abstraction and arbitration",
+      "title": "Hide the hardware; share it safely",
+      "minutes": 10,
+      "intro": "A video-call app can use many camera models without implementing each camera’s hardware protocol. At the same time, several programs may compete to use the same camera. Those are different OS problems.",
+      "why": "The distinction helps you explain modern OS challenges with examples rather than treating every service as simply multitasking.",
+      "definition": "Abstraction exposes a manageable interface while hiding implementation details. Arbitration decides how competing requests share resources. Virtualization presents logical resources over underlying physical resources.",
+      "steps": [
+        "Abstraction hides device-specific details: an application uses a file interface instead of controlling disk sectors directly.",
+        "Arbitration resolves competition: CPU scheduling chooses which ready task runs; memory allocation and access checks regulate competing users of memory.",
+        "Virtualization can give each process the impression of its own CPU and address space even when physical resources are shared.",
+        "Concurrency means multiple activities make progress over overlapping periods. They need not execute at exactly the same instant.",
+        "Persistence keeps information beyond the lifetime of a process or loss of power, using storage plus mechanisms for naming, integrity and protection.",
+        "The PA1 challenge examples concern concurrency, resource allocation and protection. Relate each challenge to a concrete conflict and an OS response."
+      ],
+      "example": {
+        "question": "Classify supporting Intel/AMD processors, switching between apps, and network messaging.",
+        "answer": "A common application interface over different processors illustrates abstraction. Choosing CPU time for applications illustrates arbitration. Network communication uses abstractions such as sockets and arbitration of buffers, links and CPU time."
+      },
+      "misconceptions": [
+        "Virtualization is broader than running a guest OS in a VM.",
+        "Concurrency does not require several cores.",
+        "A single feature may involve both abstraction and arbitration."
+      ],
+      "recall": "Why is a file a useful abstraction, and where might arbitration be needed?",
+      "recallAnswer": "A file hides physical storage details. Arbitration and protection are needed when programs compete for storage bandwidth, space, or access to the same file.",
+      "relatedPa": [
+        "PA1-02",
+        "PA1-03"
+      ],
+      "refs": [
+        {
+          "source": "intro",
+          "locator": "Slides 15–24: virtualization/concurrency/persistence and abstraction/arbitration"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "evolution-linux",
+      "group": "Foundations",
+      "topic": "Computer and OS evolution; Linux",
+      "title": "From dedicated machines to shared systems",
+      "minutes": 10,
+      "intro": "As computers became faster and cheaper, the cost of leaving the CPU idle became harder to justify. Operating systems evolved to manage more users, applications and devices.",
+      "why": "History explains why resource sharing, isolation and portability are central design concerns. The Linux question also requires separating a kernel from a complete distribution.",
+      "definition": "Linux strictly names an open-source kernel; in everyday usage, a Linux operating system or distribution combines that kernel with utilities, libraries and applications.",
+      "steps": [
+        "The introduction identifies four broad hardware generations: vacuum tubes, transistors, integrated circuits and microprocessors. Treat the slide dates as approximate historical boundaries, not universal cutoffs.",
+        "Early computing used close operator control. Batch processing grouped jobs; multiprogramming kept another job available when one waited for I/O; time-sharing supported interactive users. This is an explanatory outline for the slide’s OS-evolution task.",
+        "Classify by purpose: personal computers serve individual use; mainframes emphasize large institutional workloads; supercomputers emphasize demanding numerical computation.",
+        "Classify by function: servers provide services, workstations support professional use, embedded systems operate within larger products, and clusters/clouds combine networked computing resources.",
+        "A Linux distribution packages a Linux kernel with a usable environment. Ubuntu, Debian and Fedora are examples named in PA1. Open source permits inspection and modification under applicable licences; it does not mean there are no licence conditions."
+      ],
+      "example": {
+        "question": "Is Ubuntu identical to the Linux kernel?",
+        "answer": "No. Ubuntu is a distribution that includes a Linux kernel plus tools, libraries, package management and applications. The kernel manages low-level resources; the rest makes a usable system."
+      },
+      "misconceptions": [
+        "A server is a role, not a guarantee of a particular physical size.",
+        "Open source does not mean modifications are automatically safe or licence-free.",
+        "Do not present all modern computers as belonging to one exclusive historical category."
+      ],
+      "recall": "Why did multiprogramming improve useful CPU use?",
+      "recallAnswer": "When one job waited for I/O, the CPU could execute another ready job instead of remaining idle.",
+      "relatedPa": [
+        "PA1-06"
+      ],
+      "refs": [
+        {
+          "source": "intro",
+          "locator": "Slides 25–35 and slide 41 evolution task; PA1 solutions Exercise 1-6"
+        },
+        {
+          "source": "pa1a",
+          "locator": "Page 3, Exercise 1-6"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "architecture-cycle",
+      "group": "Foundations",
+      "topic": "Computer architecture and instruction cycle",
+      "title": "Follow one instruction through the machine",
+      "minutes": 14,
+      "intro": "A CPU cannot perform an instruction merely because a program exists on disk. The instruction must be available to the processor, decoded, and executed using registers and other hardware.",
+      "why": "This connects architecture questions to process execution, memory and interrupts. It also prevents the common mistake of describing a bus as a storage device.",
+      "definition": "Computer architecture describes the organization and interfaces of a computer, including its instruction set, processor, memory and I/O. The instruction cycle is the repeated processing of machine instructions.",
+      "steps": [
+        "The program counter identifies the instruction to fetch. Fetch obtains it from memory; the processor updates the next-instruction position as required by the instruction architecture.",
+        "Decode identifies the operation and operands. Execute performs the operation using the ALU, control unit, registers, memory or I/O. Results may be written back; branches change the next instruction.",
+        "An address bus identifies a memory or device location; a data bus carries values; control signals coordinate operations. A bus is a communication path.",
+        "In the classical von Neumann model, instructions and data share memory and a transfer path. Competition for that path is the von Neumann bottleneck.",
+        "Classical Harvard architecture separates instruction and data memories and paths. It can support an instruction fetch and data access concurrently, at the cost of separate organization and interfaces.",
+        "PA1 compares organization, complexity, performance and use cases. Modern CPUs often mix ideas, such as separate instruction/data caches over a unified memory system; the classical comparison is not an absolute speed ranking."
+      ],
+      "example": {
+        "question": "Compare a classical von Neumann machine with a Harvard machine for instruction and data access.",
+        "answer": "Von Neumann uses a shared memory/path, so instruction and data transfers may contend. Harvard uses separate memories/paths, allowing simultaneous accesses when the implementation supports them. Neither name alone determines total application speed."
+      },
+      "misconceptions": [
+        "The program counter is not the instruction itself.",
+        "The fetch–decode–execute description is a conceptual cycle; real CPUs may pipeline or overlap work.",
+        "Harvard is not universally faster for every workload."
+      ],
+      "recall": "What causes the classical von Neumann bottleneck?",
+      "recallAnswer": "Instructions and data compete for a shared transfer path between processor and memory, limiting the rate at which the processor can receive work and operands.",
+      "relatedPa": [
+        "PA1-04",
+        "PA1-05"
+      ],
+      "refs": [
+        {
+          "source": "intro",
+          "locator": "Slides 36–39: instruction cycle, von Neumann architecture and bus questions"
+        },
+        {
+          "source": "pa1a",
+          "locator": "Pages 2–3, Exercises 1-4 and 1-5"
+        }
+      ],
+      "scopeStatus": "core",
+      "diagram": "cycle"
+    },
+    {
+      "id": "storage-hierarchy",
+      "group": "Foundations",
+      "topic": "Memory and storage hierarchy",
+      "title": "Why the computer has several kinds of memory",
+      "minutes": 9,
+      "intro": "A register, a cache, RAM and an SSD all hold information, but they serve different roles. Keeping every byte in the fastest storage would be impractical.",
+      "why": "You need this distinction to interpret the architecture lab and explain why a program on disk is not yet a running process.",
+      "definition": "A memory–storage hierarchy organizes storage levels with different latency, capacity, cost and persistence. Frequently needed information is kept closer to the processor when possible.",
+      "steps": [
+        "Registers hold a small amount of immediately used processor state. CPU caches retain copies of memory data or instructions to reduce access delays.",
+        "Main memory holds active code and data. It is larger than caches but usually slower; ordinary RAM is volatile.",
+        "Secondary storage, such as an SSD, retains files across power loss. Programs and data must be brought into appropriate memory before the CPU can use them.",
+        "Loading moves required information toward faster/active storage. Eviction removes a retained item to make room; a dirty modified copy may first require write-back.",
+        "A cache copy is not the same thing as durable storage. Buffering absorbs transfer-rate differences; caching aims to reuse data; spooling queues work for a device."
+      ],
+      "example": {
+        "question": "Why can a document survive reboot while an unsaved edit disappears?",
+        "answer": "The saved file is on persistent storage. The unsaved edit may exist only in volatile process memory. Persistence requires the application and OS to commit data to storage, with durability depending on the operation and system."
+      },
+      "misconceptions": [
+        "RAM capacity and storage capacity are different measurements.",
+        "A cache line is not an operating-system page.",
+        "Having data in a cache does not guarantee it is durably saved."
+      ],
+      "recall": "Where are an executable file and a running program’s current registers normally represented?",
+      "recallAnswer": "The executable is a persistent file on storage; current execution registers are CPU state and are saved into process/thread context when needed.",
+      "relatedPa": [
+        "PA1-04",
+        "PA3-01"
+      ],
+      "refs": [
+        {
+          "source": "services",
+          "locator": "Memory-storage hierarchy and How a Modern Computer Works sections, around slides 29–31"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "boot-sequence",
+      "group": "Services",
+      "topic": "Bootstrap and boot process",
+      "title": "From power-on to a running kernel",
+      "minutes": 10,
+      "intro": "Before applications can request OS services, the machine needs a way to start the OS itself. That initial path begins with firmware rather than an already running desktop.",
+      "why": "PA2 asks for an ordered boot explanation. Distinguish firmware, bootloader and kernel instead of using all three names interchangeably.",
+      "definition": "Bootstrapping is the process of initializing enough hardware and software to load and begin executing the operating-system kernel.",
+      "steps": [
+        "At power-on or reset, the processor begins at a platform-defined firmware entry point. Firmware is stored persistently; it is not a normal user application.",
+        "Firmware initializes and checks essential hardware. The traditional PC description uses BIOS and POST; modern machines commonly use UEFI, so the exact stages vary.",
+        "The firmware selects a boot target. A bootloader or corresponding firmware boot facility locates the OS and arranges for its kernel, and any required initial environment, to be loaded.",
+        "Control transfers to the kernel. It initializes memory management, interrupt handling, device support and other core facilities.",
+        "The kernel starts the first user-space process or initialization system, which starts services and eventually a login or user interface. A daemon is a background service, not necessarily kernel code.",
+        "The real-time clock (RTC) tracks wall-clock time while power is off using a backup battery. A dead battery can reset the clock; older CMOS-based BIOS settings can also be lost. Modern firmware often stores configuration in nonvolatile flash.",
+        "An OS timer is different from the RTC: the kernel programs a hardware timer to regain control. At 1,000 ticks per second, a 3-second interval corresponds to 3,000 ticks. Loading protected timer registers is privileged."
+      ],
+      "example": {
+        "question": "Put these in a plausible traditional PC boot order: kernel, POST, service startup, bootloader, firmware entry.",
+        "answer": "Firmware entry → hardware initialization/POST → bootloader → kernel initialization → service startup. This is a teaching sequence; firmware and OS designs differ."
+      },
+      "misconceptions": [
+        "The BIOS is not the operating-system kernel.",
+        "The bootloader does not remain responsible for ordinary process scheduling.",
+        "Not every machine uses legacy BIOS or an identical POST sequence."
+      ],
+      "recall": "Why must the first boot code be accessible before the OS is loaded?",
+      "recallAnswer": "It has to initialize the system and locate/load the OS. Depending on the platform, firmware or another persistent boot stage supplies that code.",
+      "relatedPa": [
+        "PA2-01"
+      ],
+      "refs": [
+        {
+          "source": "services",
+          "locator": "Computer Startup and OS Operations sections"
+        },
+        {
+          "source": "theo2",
+          "locator": "CMOS Memory; Timer"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "dual-mode",
+      "group": "Services",
+      "topic": "User mode and kernel mode",
+      "title": "Privilege is a hardware boundary",
+      "minutes": 12,
+      "intro": "If an ordinary program could disable all interrupts or overwrite kernel memory, a small bug could stop the entire machine. The processor therefore distinguishes less-privileged execution from privileged execution.",
+      "why": "Dual-mode questions ask which operation needs privilege and how a program safely requests it. The answer is not simply that administrators always run in kernel mode.",
+      "definition": "User mode restricts instructions and resource access. Kernel mode permits privileged OS operations. Hardware-controlled transitions ensure user code cannot grant itself arbitrary privilege.",
+      "steps": [
+        "In the course’s simplified model, the mode bit is 1 for user mode and 0 for kernel mode. This convention illustrates the model; actual architectures may implement several privilege levels.",
+        "Ordinary arithmetic and permitted memory access can execute in user mode. Direct device control, protection-register updates and interrupt control are examples of privileged operations in this model.",
+        "A system call, interrupt or exception transfers control through a designated entry mechanism to trusted kernel handling code.",
+        "The kernel validates the request, arguments and access permissions. Entering kernel mode does not make an invalid user request acceptable.",
+        "A controlled return restores less-privileged execution. The application cannot simply write a normal variable to change the processor’s privilege state.",
+        "A root or administrator process still normally executes user instructions in user mode; its identity influences permission checks made by the kernel."
+      ],
+      "example": {
+        "question": "A text editor adds two numbers, reads its own buffer, then writes a file. Which parts need a service request?",
+        "answer": "Arithmetic and access to its permitted buffer can run in user mode. Writing the file uses an OS service; kernel code performs protected work and checks access. The whole editor does not permanently become kernel code."
+      },
+      "misconceptions": [
+        "User identity and CPU execution mode are different concepts.",
+        "A system call is not permission to execute arbitrary privileged instructions.",
+        "Not every library function changes mode."
+      ],
+      "recall": "Why must changing the mode/protection state itself be protected?",
+      "recallAnswer": "Otherwise user code could bypass the restrictions that dual-mode operation is intended to enforce.",
+      "relatedPa": [
+        "PA2-02",
+        "PA2-03"
+      ],
+      "refs": [
+        {
+          "source": "services",
+          "locator": "Slides 19–23: hardware support, protection and dual-mode operation"
+        },
+        {
+          "source": "theo2",
+          "locator": "Exercises 2-2 and 2-3"
+        }
+      ],
+      "scopeStatus": "core",
+      "diagram": "mode"
+    },
+    {
+      "id": "system-calls",
+      "group": "Services",
+      "topic": "System-call interface and APIs",
+      "title": "How an application asks the kernel for help",
+      "minutes": 12,
+      "intro": "When a program opens a file, it supplies a request and parameters instead of implementing the filesystem or talking directly to a disk controller.",
+      "why": "This distinction links programming APIs to the controlled kernel entry used for protection. It is also necessary to interpret strace in Lab 2.",
+      "definition": "A system call is a controlled request for a kernel service. An application API is a programming interface; an API operation may invoke one, many, or no system calls.",
+      "steps": [
+        "An application calls a library/API routine with arguments. The library may do work in user space, prepare a syscall, or combine several operations.",
+        "For a syscall, the request identifies a service and passes arguments using an architecture-defined convention, often registers or memory.",
+        "A special instruction/trap mechanism transfers control to a trusted kernel entry point and changes privilege as required.",
+        "The system-call interface dispatches by service number, conceptually through a system-call table. The selected handler validates the request and performs the service.",
+        "The handler returns a result or error, and control returns to user execution. A blocking request may make the process wait before it can return.",
+        "The source mentions POSIX, Win32 and Java APIs. These are not interchangeable lists of hardware syscall instructions; runtime layers can sit between an API and the OS."
+      ],
+      "example": {
+        "question": "Why can a Java file-write request eventually involve a Linux syscall?",
+        "answer": "The Java API delegates through runtime and native layers to the OS facilities of the host. The programmer uses the Java contract; the underlying runtime requests a kernel service when required."
+      },
+      "misconceptions": [
+        "An API is not necessarily a one-to-one wrapper around a syscall.",
+        "The application does not call an arbitrary address inside the kernel.",
+        "A system call need not switch to a different process."
+      ],
+      "recall": "What does a system-call number select?",
+      "recallAnswer": "It identifies the requested service so the syscall interface can dispatch to the appropriate handler, subject to the implementation and validation rules.",
+      "relatedPa": [
+        "PA2-03",
+        "PA2-04",
+        "PA2-05"
+      ],
+      "refs": [
+        {
+          "source": "services",
+          "locator": "System Calls; System Call Implementation; API–System Call–OS Relationship sections"
+        },
+        {
+          "source": "theo2",
+          "locator": "Exercise 2-4"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "interrupts",
+      "group": "Services",
+      "topic": "Interrupts, traps, exceptions and timers",
+      "title": "Three ways the kernel regains control",
+      "minutes": 14,
+      "intro": "A disk may finish after the requesting program has stopped running. A division fault occurs because of the instruction currently executing. A deliberate service request is different again.",
+      "why": "PA2 and PA3 test these distinctions. Calling every interruption an I/O wait leads to incorrect process-state transitions.",
+      "definition": "A hardware interrupt is an event signalled by hardware, generally asynchronous to the current instruction stream. An exception is synchronous to an instruction; a trap may describe a deliberate control-transfer event, depending on architecture terminology.",
+      "steps": [
+        "Identify the cause before naming the event: a device completion or timer is hardware-triggered; an invalid instruction or division fault is tied to executing code; a syscall intentionally requests a service.",
+        "The processor saves enough return/control state and transfers to a designated handler. The interrupt vector or analogous mechanism locates the appropriate handler.",
+        "The interrupt service routine acknowledges/services the device or condition. The OS may update waiting queues or request scheduling before returning.",
+        "If several interrupts are pending, the interrupt controller and OS use priority, masking and pending state. Higher-priority handling may preempt lower-priority handling if nesting is allowed; not all interrupts are processed simultaneously.",
+        "A timer lets the OS regain control from a computation that would otherwise keep running. A timer interrupt may cause Running → Ready if the scheduler preempts it.",
+        "An I/O completion normally makes the blocked requester Ready. The process that happened to be running when the interrupt arrived need not become Waiting."
+      ],
+      "example": {
+        "question": "P1 is running when P2’s disk read completes. Must P1 enter Waiting?",
+        "answer": "No. The kernel handles the device event and may make P2 Ready. P1 may resume, or be preempted to Ready. Waiting requires P1 itself to need an event that has not occurred."
+      },
+      "misconceptions": [
+        "A hardware interrupt does not automatically mean the interrupted process is blocked.",
+        "The course uses “software interrupt” broadly; real architectures distinguish exceptions, traps and syscall instructions more precisely.",
+        "Simultaneous pending interrupts do not imply simultaneous execution on one CPU."
+      ],
+      "recall": "How does a timer support protection against an endless user loop?",
+      "recallAnswer": "It causes a hardware interrupt so the kernel can regain control, account for time and schedule other work or apply policy.",
+      "relatedPa": [
+        "PA2-05",
+        "PA2-06",
+        "PA3-03"
+      ],
+      "refs": [
+        {
+          "source": "services",
+          "locator": "Common Functions of Interrupts; Interrupt Handling; Timer section"
+        },
+        {
+          "source": "theo2",
+          "locator": "Exercises 2-5 and 2-6"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "io-path",
+      "group": "Services",
+      "topic": "Device drivers, controllers and I/O",
+      "title": "Trace a print request from app to device",
+      "minutes": 12,
+      "intro": "The application, device driver, physical controller and interrupt handler are separate participants. Keeping them separate makes a printing explanation much clearer.",
+      "why": "PA2-04 explicitly combines system calls, drivers and interrupts. You need a causal sequence rather than a list of component names.",
+      "definition": "A device driver is OS software that controls a device type through a controller interface. A device controller is hardware that manages a device and exposes registers, buffers or other interfaces.",
+      "steps": [
+        "The application requests printing through a user-facing API or service. A spooler may queue the document so the application need not wait for every physical page.",
+        "Kernel services check access and perform protected I/O. The relevant driver translates generic requests into the device/controller’s protocol.",
+        "The controller handles device-side work and may use a local buffer. CPU and device activity can overlap; data movement may use CPU operations or supported DMA mechanisms.",
+        "The application may continue, or block if it needs an unfinished result. Blocking changes its state to Waiting; mere submission does not always do so.",
+        "When work completes or needs attention, the controller can raise a hardware interrupt. The interrupt handler records the result and wakes appropriate waiting work.",
+        "Buffering accommodates transfer rates, caching reuses retained data, and spooling queues complete jobs for a shared device. They solve related but distinct problems.",
+        "For a print job larger than the controller buffer, spooling keeps queued jobs in storage while the driver sends manageable chunks. Buffering absorbs transfer-rate differences; caching retains reusable data. These purposes can coexist in one I/O path.",
+        "The Theo flow separates system-call dispatch (system-call number and table) from interrupt dispatch (interrupt vector and IDT on x86). A real printer stack may include a user-space spooler and USB/network layers; not every chunk necessarily raises a distinct CPU interrupt."
+      ],
+      "example": {
+        "question": "In a print workflow, which part is software: the driver or controller?",
+        "answer": "The driver is software. The controller is the hardware interface managing the device. A system call initiates protected work; a later hardware interrupt can report asynchronous device completion."
+      },
+      "misconceptions": [
+        "A driver is not the physical printer controller.",
+        "The initial syscall and the completion interrupt are separate events.",
+        "Printing need not freeze the entire application or the entire system."
+      ],
+      "recall": "Why can a CPU run another process while a device performs I/O?",
+      "recallAnswer": "The device/controller can operate independently after setup; the OS can schedule other ready work until completion is reported.",
+      "relatedPa": [
+        "PA2-04"
+      ],
+      "refs": [
+        {
+          "source": "services",
+          "locator": "Computer System Organization; Computer System Operation; Interrupt-driven I/O Cycle; I/O Subsystem sections"
+        },
+        {
+          "source": "theo2",
+          "locator": "Buffering, Caching & Spooling; Device Controllers & Drivers"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "os-services",
+      "group": "Services",
+      "topic": "Files, memory and program services",
+      "title": "What the OS provides beyond scheduling",
+      "minutes": 12,
+      "intro": "A process needs names for data, a way to get memory, a path to start programs and predictable responses to failures. These are services, not just hardware details.",
+      "why": "You should be able to connect each service to a concrete request and explain which resource the OS tracks or protects.",
+      "definition": "OS services provide controlled operations for execution, communication, storage, memory, devices, error handling and user interaction.",
+      "steps": [
+        "File management creates/deletes files and directories, maps logical files to storage, controls access, and supports reading, writing and backup operations.",
+        "Memory management tracks which regions are in use and by whom, allocates and releases memory, and decides which code/data should be resident when needed.",
+        "Program-execution services create a process, load a program image, initialize its execution state and later reclaim resources.",
+        "A linker resolves references and combines code/data modules into an executable or library. A loader arranges an executable image in a process’s address space; dynamic linking/loading can involve runtime work.",
+        "A command-line shell or graphical environment exposes services to the user. These utilities are commonly user-space programs, not synonymous with the kernel.",
+        "Error handling detects and responds to faults such as invalid access or failed I/O. Accounting records resource use; protection checks regulate access. Error detection cannot guarantee that every failure can be recovered from."
+      ],
+      "example": {
+        "question": "A program requests a new memory region and creates a file. What must the OS manage?",
+        "answer": "For memory, allocation, ownership and protection. For the file, naming, metadata, permissions and mapping to storage. Releasing memory later differs from deleting a saved file."
+      },
+      "misconceptions": [
+        "A directory is a filesystem organization mechanism, not a CPU register.",
+        "A linker and loader perform different roles.",
+        "A service running in the background is not necessarily inside the kernel."
+      ],
+      "recall": "How do a linker and a loader differ?",
+      "recallAnswer": "A linker resolves/composes code and data modules; a loader places or maps a program image into an execution environment and prepares it to run.",
+      "relatedPa": [
+        "PA1-02",
+        "PA2-01",
+        "PA2-03"
+      ],
+      "refs": [
+        {
+          "source": "services",
+          "locator": "Memory Management & Protection; File System Management; slide 49 services task; slide 50 linkers/loaders task"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "memory-protection",
+      "group": "Services",
+      "topic": "Base/limit memory protection",
+      "title": "Check the boundary before accessing memory",
+      "minutes": 13,
+      "intro": "A process should be able to use its allocated memory without freely reading another process’s data. A simple base/limit model illustrates how hardware can check every access.",
+      "why": "Off-by-one mistakes are common in protection questions. Always state whether “limit” means a length or an upper-bound address before calculating.",
+      "definition": "In a relocation-style base/limit model, base gives the starting physical address and limit gives the length of the permitted region. A logical offset x is valid when 0 ≤ x < limit; its physical address is base + x.",
+      "steps": [
+        "The OS sets protected memory registers for the running process. User code cannot freely modify them.",
+        "For a logical offset, hardware checks the range before forming or using the physical address. An out-of-range access traps to the OS.",
+        "With base = 1000 and limit = 400 bytes, valid logical offsets are 0–399 and valid physical addresses are 1000–1399.",
+        "Some questions describe base and limit as lower and upper physical bounds. Use the definition in that question; do not silently substitute one convention for another.",
+        "When switching processes, the OS restores the appropriate protection context. This is part of maintaining process isolation.",
+        "A basic contiguous base/limit model is educational. Modern systems commonly use paging and more elaborate permissions, but the principle of hardware-enforced access checks remains."
+      ],
+      "example": {
+        "question": "Base = 4000 and limit = 800 bytes. Is logical offset 800 valid? What about 799?",
+        "answer": "800 is invalid because the upper bound is exclusive. Offset 799 is valid and maps to physical address 4799. The region contains exactly 800 bytes."
+      },
+      "misconceptions": [
+        "If limit is a size, base + limit is the first invalid physical address.",
+        "A process cannot bypass the check merely by guessing another process’s address.",
+        "Base/limit notation is not universal; state the convention."
+      ],
+      "recall": "For base 2000 and length 100, give the first and last valid physical addresses.",
+      "recallAnswer": "2000 and 2099, respectively. The logical offsets are 0 through 99.",
+      "relatedPa": [
+        "PA2-07"
+      ],
+      "refs": [
+        {
+          "source": "services",
+          "locator": "Memory Management & Protection section: base/limit registers"
+        },
+        {
+          "source": "theo2",
+          "locator": "Exercise 2-7"
+        }
+      ],
+      "scopeStatus": "core",
+      "diagram": "memory"
+    },
+    {
+      "id": "virtual-machines",
+      "group": "Services",
+      "topic": "Virtual machines and VMMs",
+      "title": "One machine, several operating systems",
+      "minutes": 10,
+      "intro": "A lab VM lets a guest OS behave as though it has its own computer while the physical host continues running other work.",
+      "why": "The VM question concerns who provides and controls the virtual hardware, not simply whether an app is inside a window.",
+      "definition": "A virtual machine provides a virtualized execution environment for a guest system. A virtual machine monitor (VMM), or hypervisor, manages guest execution and access to underlying resources.",
+      "steps": [
+        "Distinguish host hardware, the VMM/hypervisor, the guest OS and guest applications. The guest OS still manages the resources presented to it.",
+        "A hosted arrangement runs virtualization software within a host OS environment. A bare-metal hypervisor runs directly on hardware; real products may combine layers.",
+        "The VMM allocates virtual CPUs, memory and devices while controlling access to physical resources. Guests cannot simply take unrestricted ownership of the host.",
+        "Hardware-assisted virtualization can execute much guest code directly while intercepting privileged operations as needed. Virtualization is different from general emulation of a different instruction set.",
+        "Useful cases in the source include testing applications on several OSes, development without multiple physical computers and managed datacenter environments.",
+        "Isolation is a design goal, not a promise that VMs have no shared bottlenecks, overhead or possible security weaknesses."
+      ],
+      "example": {
+        "question": "A Windows guest runs on a Linux host. Which OS manages a process inside the guest?",
+        "answer": "The guest Windows OS manages that process using its virtual resources. The VMM and host environment control the actual physical resources available to the guest."
+      },
+      "misconceptions": [
+        "A guest OS is not the VMM.",
+        "Virtual CPU count is not a guarantee of dedicated physical cores.",
+        "A VM snapshot is not automatically a complete backup strategy."
+      ],
+      "recall": "What is the VMM’s role when two guests compete for CPU time?",
+      "recallAnswer": "It schedules or mediates their use of underlying processor resources while presenting each guest with its virtual CPU environment.",
+      "relatedPa": [
+        "PA2-08"
+      ],
+      "refs": [
+        {
+          "source": "services",
+          "locator": "Virtualization; Virtualization Examples; Computing Environments—Virtualization sections"
+        },
+        {
+          "source": "theo2",
+          "locator": "Exercise 2-8"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "os-structures",
+      "group": "Services",
+      "topic": "Monolithic, layered, microkernel, modular and hybrid designs",
+      "title": "Choose an architecture by its trade-offs",
+      "minutes": 15,
+      "intro": "Where should filesystem and device services execute? Keeping them together can reduce communication overhead; separating them can improve fault boundaries. OS structure is a set of trade-offs.",
+      "why": "PA2 asks you to choose a structure for a scenario. The strongest answer names the design, explains why its properties fit, and acknowledges its cost.",
+      "definition": "OS architecture describes how operating-system responsibilities are divided into components, privilege domains and interfaces.",
+      "steps": [
+        "A monolithic kernel places many core services in kernel space. Direct internal calls can be efficient, but a fault in privileged code can affect the whole system.",
+        "A layered design organizes services by levels. Higher layers use lower-level abstractions, which aids reasoning and testing but can impose restrictions and extra crossings.",
+        "A microkernel keeps a smaller privileged core and moves more services into user-space components. Message passing supports separation, portability and replaceability, with potential communication overhead.",
+        "A modular kernel supports separately organized or loadable components through defined interfaces. Loading a module into kernel space does not make it a protected user-space service.",
+        "Hybrid designs combine ideas to meet practical needs. The course describes Linux as monolithic plus modular; a single label rarely captures every detail of a modern OS.",
+        "When choosing, weigh performance, fault isolation, extensibility, hardware support and implementation complexity. Do not claim one design is universally best."
+      ],
+      "example": {
+        "question": "An embedded system values service isolation and replacing faulty components. Which structure is plausible?",
+        "answer": "A microkernel is plausible because services can be isolated in user space and communicate through controlled messages. Discuss the IPC/performance cost and actual system requirements rather than promising perfect security."
+      },
+      "misconceptions": [
+        "Modular and microkernel are not synonyms.",
+        "Fewer kernel lines can improve the fault boundary without guaranteeing absence of bugs.",
+        "A layered system is not just any application drawn above hardware."
+      ],
+      "recall": "Why can a loadable kernel module still threaten the whole kernel?",
+      "recallAnswer": "If it executes with kernel privilege in the kernel address space, its bugs can corrupt privileged state despite being separately packaged.",
+      "relatedPa": [
+        "PA2-10"
+      ],
+      "refs": [
+        {
+          "source": "services",
+          "locator": "OS Structure; Traditional UNIX; Linux; Layered Approach; Microkernels; Modules; Hybrid Systems sections"
+        },
+        {
+          "source": "theo2",
+          "locator": "Exercise 2-10"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "program-process",
+      "group": "Processes",
+      "topic": "Program, process and memory layout",
+      "title": "A file becomes an execution",
+      "minutes": 12,
+      "intro": "Two terminals can launch the same executable. The code file may be the same, but the running instances have different identities and evolving state.",
+      "why": "This distinction is the foundation for process-state, context-switch and parent/child questions.",
+      "definition": "A program is a passive set of instructions stored as an executable or other code representation. A process is a running instance with an address space, execution state and OS-managed resources.",
+      "steps": [
+        "An executable on storage does not have a current running state by itself. Starting it creates or prepares a process with an identity and execution context.",
+        "The text section holds program code; the data section holds global/static data; the heap supports dynamic allocation; stacks hold call-related data such as return addresses and local variables.",
+        "The program counter and CPU registers describe current execution. They are not equivalent to the complete program file.",
+        "One program can produce several processes, each with its own state. Processes may intentionally share some resources, but they do not become the same process.",
+        "The lecture initially uses a single-threaded model. Its “sequential process” statement should not be generalized to exclude multithreaded processes, which can have several execution streams."
+      ],
+      "example": {
+        "question": "Two instances of a text editor open different documents. Are they necessarily one process because the executable is the same?",
+        "answer": "No. A single executable can be instantiated as distinct processes, with distinct PIDs, address spaces and current state. Some applications choose a shared multi-window process design, so actual behavior depends on implementation."
+      },
+      "misconceptions": [
+        "A program file is not a process waiting on disk.",
+        "A process can have multiple threads; the initial single-threaded picture is a model.",
+        "Heap and stack describe different allocation/use patterns."
+      ],
+      "recall": "Where would you expect a global variable, a dynamically allocated object and a function return address?",
+      "recallAnswer": "In the data region, heap and stack, respectively, in the conventional conceptual layout.",
+      "relatedPa": [
+        "PA3-01"
+      ],
+      "refs": [
+        {
+          "source": "processes",
+          "locator": "Slides 4–9: process concept and memory layout"
+        },
+        {
+          "source": "theo3",
+          "locator": "Exercise 3.1"
+        }
+      ],
+      "scopeStatus": "core",
+      "diagram": "memory"
+    },
+    {
+      "id": "process-states",
+      "group": "Processes",
+      "topic": "Five-state process model",
+      "title": "Ready is not Waiting",
+      "minutes": 14,
+      "intro": "A process can be unable to run for two very different reasons: it lacks the CPU, or it lacks an event/result. The Ready and Waiting states distinguish those cases.",
+      "why": "The state diagram appears directly in PA3. Correct labels and transition causes matter more than memorizing arrows without explanation.",
+      "definition": "New means being created; Ready means eligible for CPU execution; Running means currently executing; Waiting means blocked for an event; Terminated means execution has ended.",
+      "steps": [
+        "New → Ready occurs when a process is admitted to the runnable set.",
+        "Ready → Running occurs when the scheduler selects it and the dispatcher transfers CPU control.",
+        "Running → Ready occurs on preemption, such as an expired time slice. The process remains able to execute.",
+        "Running → Waiting occurs when it must await I/O, a child’s completion or another event. Giving it the CPU would not yet satisfy that dependency.",
+        "Waiting → Ready occurs when the awaited event is satisfied. It still needs CPU selection before running; the basic model has no direct Waiting → Running arrow.",
+        "Running → Terminated occurs when execution finishes or the modeled termination path is taken. Real kernels allow additional transitions and implementation states beyond this teaching diagram."
+      ],
+      "example": {
+        "question": "A process issues a blocking disk read, the read completes, and later the CPU is assigned. Give the states.",
+        "answer": "Running → Waiting when it blocks; Waiting → Ready when the read completes; Ready → Running when dispatched. I/O completion does not itself guarantee immediate execution."
+      },
+      "misconceptions": [
+        "Ready means waiting for the CPU; Waiting means waiting for an event.",
+        "A timer interrupt need not make the process Waiting.",
+        "Terminated does not mean temporarily paused."
+      ],
+      "recall": "Can the scheduler fix a blocked process merely by choosing it for the CPU?",
+      "recallAnswer": "No. The awaited condition must first be satisfied, making it Ready. CPU allocation alone does not complete its I/O or other dependency.",
+      "relatedPa": [
+        "PA3-02",
+        "PA3-03"
+      ],
+      "refs": [
+        {
+          "source": "processes",
+          "locator": "Slides 10–12: state definitions and transition diagram"
+        },
+        {
+          "source": "theo3",
+          "locator": "Exercises 3.2 and 3.3"
+        }
+      ],
+      "scopeStatus": "core",
+      "diagram": "states"
+    },
+    {
+      "id": "pcb",
+      "group": "Processes",
+      "topic": "Process Control Block and identity",
+      "title": "The OS’s record of a process",
+      "minutes": 11,
+      "intro": "When a process is not running, its state must still exist somewhere. The OS needs a record that lets it manage the process and eventually resume it.",
+      "why": "PCB questions often confuse saved CPU state with the entire contents of process memory. Know the categories and what each is used for.",
+      "definition": "A Process Control Block (PCB), or task control block, is an OS data structure holding management information and saved execution context for a process.",
+      "steps": [
+        "Record the process state and identity. A PID distinguishes a process for OS operations; PPID identifies its parent relationship in systems exposing that field.",
+        "Save the program counter and relevant registers so execution can resume correctly. A saved register value is part of context, not an instruction to restart the whole program.",
+        "Scheduling information includes priority and queue links. The scheduler needs it to choose and manage runnable work.",
+        "Memory-management information describes the process’s address space or protection structures; the PCB need not contain every byte of program memory.",
+        "Accounting information tracks resource/time usage. I/O information includes open-file references and allocated devices.",
+        "PIDs identify live process instances in a namespace and can be reused after an instance has ended. A PID is not a permanent application identity."
+      ],
+      "example": {
+        "question": "Why is a PID better than a program name for targeting a process?",
+        "answer": "Several processes may execute the same named program. A PID identifies the particular process instance in the relevant namespace, so the OS can target its state and resources."
+      },
+      "misconceptions": [
+        "The PCB is not just the PID.",
+        "The PCB does not ordinarily store the complete heap and stack inline.",
+        "Two instances of the same executable need not share a PID."
+      ],
+      "recall": "Name four kinds of information in a PCB and state why one is needed.",
+      "recallAnswer": "State, program counter/registers, scheduling information and memory-management information; saved PC/registers allow correct continuation after a switch. I/O and accounting are additional categories.",
+      "relatedPa": [
+        "PA3-04",
+        "PA3-06"
+      ],
+      "refs": [
+        {
+          "source": "processes",
+          "locator": "Slides 13–14: Process Control Block; slides 20–22: PID and creation"
+        },
+        {
+          "source": "theo3",
+          "locator": "Exercises 3.4 and 3.6"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "context-switch",
+      "group": "Processes",
+      "topic": "Context switching",
+      "title": "Save one execution; restore another",
+      "minutes": 13,
+      "intro": "If the CPU merely jumped from P1 to P2 without saving registers, P1 could later resume with P2’s values. Correct multitasking requires a controlled save-and-restore sequence.",
+      "why": "PA3 asks both what must be preserved and why switching costs time. A mode transition alone is not proof of a process switch.",
+      "definition": "A context switch changes which process or thread executes by saving the outgoing execution context and restoring the incoming context.",
+      "steps": [
+        "An event enters kernel handling, such as preemption, blocking or explicit scheduling. The kernel preserves the outgoing process’s execution state.",
+        "Store the outgoing PC, register values and other required context in its saved context/PCB structures; update its state appropriately.",
+        "The scheduler chooses an eligible ready process. A blocked process is not eligible simply because it has a saved context.",
+        "Restore the chosen process’s context and required address-space/protection state. Transfer execution to its saved continuation.",
+        "The save/restore and scheduling interval is overhead relative to application progress: useful management work happens, but neither application advances its own task during the switch.",
+        "Costs depend on hardware, OS implementation and side effects such as cache/TLB state. Do not infer a numeric switch time from the diagram."
+      ],
+      "example": {
+        "question": "P1 stops with PC=120 and register R1=7. P2 has saved PC=300 and R1=42. What must happen?",
+        "answer": "Preserve P1’s continuation (120,7) and management state, then restore P2’s (300,42) and run P2. When P1 returns, it must recover its own values, not P2’s."
+      },
+      "misconceptions": [
+        "A system call may return to the same process without a process context switch.",
+        "A context switch does not restart a program from its first instruction.",
+        "“Overhead” does not mean unnecessary; it means time not advancing the application work."
+      ],
+      "recall": "Why can very frequent switching reduce useful CPU progress?",
+      "recallAnswer": "Each switch consumes time saving/restoring state and scheduling, and may disrupt locality. If switches are too frequent, a larger share of time is management overhead.",
+      "relatedPa": [
+        "PA3-04",
+        "PA3-05"
+      ],
+      "refs": [
+        {
+          "source": "processes",
+          "locator": "Slides 16–18: context-switching explanation"
+        },
+        {
+          "source": "theo3",
+          "locator": "Exercises 3.4 and 3.5"
+        }
+      ],
+      "scopeStatus": "core",
+      "diagram": "context"
+    },
+    {
+      "id": "scheduling-queues",
+      "group": "Processes",
+      "topic": "Ready/wait queues and dispatch",
+      "title": "Follow the reason a process is waiting",
+      "minutes": 9,
+      "intro": "A set of ready processes is different from processes blocked for a disk, terminal or child. Queue membership summarizes what must happen next.",
+      "why": "These process-level concepts connect the five-state model to the Scheduling lessons. Eligibility must be established before an algorithm can select a process.",
+      "definition": "A ready queue contains runnable processes awaiting CPU selection. Event/device wait queues contain blocked processes awaiting specific conditions. Dispatch transfers CPU execution to the selected process.",
+      "steps": [
+        "Admitted work becomes ready and competes for a processor. The queue need not be a simple physical FIFO list; it represents scheduler-managed runnable work.",
+        "When a running process blocks, it leaves runnable competition and is associated with the event it needs.",
+        "Event completion makes a blocked process eligible and returns it to the ready set. Selection then determines when it actually runs.",
+        "Preemption returns a still-runnable process to the ready set, with its context preserved.",
+        "This lesson establishes the scheduling concepts in the five-state model. The Scheduling group then develops FCFS, SJF, SRT, priority, Round Robin and their numerical metrics from the separate source document."
+      ],
+      "example": {
+        "question": "P1 is Ready and P2 is Waiting for keyboard input. The CPU becomes free. Which is eligible?",
+        "answer": "P1 is eligible. P2 must first receive the required event and become Ready. An idle CPU does not turn an unfinished input operation into a completed one."
+      },
+      "misconceptions": [
+        "Waiting for CPU and waiting for I/O are different conditions.",
+        "A queue name describes a role, not necessarily a specific data-structure implementation.",
+        "The dispatcher performs the transfer; the scheduling decision chooses whom to run."
+      ],
+      "recall": "After I/O completion, which state/queue does a process normally enter in the basic model?",
+      "recallAnswer": "Ready / the ready set, awaiting dispatch.",
+      "relatedPa": [
+        "PA3-02",
+        "PA3-03"
+      ],
+      "refs": [
+        {
+          "source": "processes",
+          "locator": "Slide 12: admitted, scheduler dispatch, interrupt and event-completion transitions"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "fork-exec-wait",
+      "group": "Processes",
+      "topic": "Process creation and parent/child execution",
+      "title": "Create, replace, and wait are different operations",
+      "minutes": 15,
+      "intro": "A shell usually needs to start another program while remaining available itself. Creating a process and changing the program running inside that process are separate tasks.",
+      "why": "PA3 tests resource sharing, concurrent execution and child creation. Confusing fork with exec breaks the entire sequence.",
+      "definition": "In the Unix model, fork creates a child process; exec replaces the calling process’s program image; wait obtains a child’s termination status and may block until one is available.",
+      "steps": [
+        "A parent creates a child with a distinct identity. A process tree records parent/child relationships; children may create more descendants.",
+        "The general model allows all, some or no resources to be shared, depending on the system and operation. In Unix fork, parent and child have separate logical address spaces, often implemented efficiently with copy-on-write.",
+        "After successful fork, both processes continue after the call: the parent receives the child PID and the child receives zero. Their later scheduling order is not guaranteed.",
+        "The child may call exec to load a different program into its existing process. A successful exec does not create an additional child and normally does not return to the replaced program.",
+        "The parent can continue concurrently or call wait. Waiting for a child is a synchronization choice; parent creation does not imply the parent immediately stops.",
+        "Some inherited resources refer to shared underlying kernel objects. For example, inherited file descriptors may share an open-file description; “separate memory” does not mean every resource is unrelated."
+      ],
+      "example": {
+        "question": "After fork, the child calls exec and the parent calls wait. How many processes were created by exec?",
+        "answer": "None. fork created the child. exec replaced the child’s program image. wait lets the parent obtain the child’s completion status and can block the parent while the child runs."
+      },
+      "misconceptions": [
+        "exec replaces a program image; it does not duplicate the process.",
+        "There is no guaranteed parent-first or child-first execution order.",
+        "Concurrent progress does not require simultaneous execution on one core."
+      ],
+      "recall": "Which call creates the new PID, and which call can replace the code while retaining the process identity?",
+      "recallAnswer": "fork creates the child PID. A successful exec replaces the program image in the calling process, retaining its process identity.",
+      "relatedPa": [
+        "PA3-07",
+        "PA3-08",
+        "PA3-11"
+      ],
+      "refs": [
+        {
+          "source": "processes",
+          "locator": "Slides 20–27: creation, sharing, address-space/execution options, fork/exec/wait"
+        },
+        {
+          "source": "theo3",
+          "locator": "Exercises 3.7 and 3.8"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "process-termination",
+      "group": "Processes",
+      "topic": "Exit, wait, zombies and orphans",
+      "title": "Finishing execution is not the last bookkeeping step",
+      "minutes": 14,
+      "intro": "A child can finish before its parent asks for the result. The OS must retain enough information for the parent to learn how the child ended.",
+      "why": "The source lists termination policies that vary across operating systems. Separate the general model from actual Unix zombie/orphan behavior.",
+      "definition": "exit ends the calling process’s execution and supplies a status. wait or a related operation lets the parent collect child status. A zombie has exited but has not yet been reaped; an orphan is a still-existing child whose parent has ended.",
+      "steps": [
+        "Normal termination releases execution resources and records a termination result. A process can also end due to an unhandled fault, signal or policy action.",
+        "A parent can request a child’s termination when permitted, for example when a task is no longer required or resources are exceeded. The OS enforces whether the request is allowed.",
+        "The parent uses wait to collect the child’s PID/status. If no relevant child has finished, a blocking wait may suspend the parent.",
+        "An exited, unreaped child is a zombie: it does not continue executing, but a small record remains for status collection.",
+        "An orphan is defined by loss of its parent, not by having exited. Unix-like systems normally reparent such children to an appropriate process/subreaper rather than universally killing them.",
+        "The lecture mentions cascading termination where a system does not allow children to outlive a parent. Treat this as an OS-dependent policy, not a universal Linux rule."
+      ],
+      "example": {
+        "question": "A child exits; its parent is still alive but has not called wait. Is the child an orphan?",
+        "answer": "No. It is a zombie while its termination status remains unreaped. An orphan arises when its parent ends; the two terms describe different facts."
+      },
+      "misconceptions": [
+        "A zombie cannot be resumed to continue normal work.",
+        "wait does not itself create or terminate a child.",
+        "Parent exit does not universally kill every child on Linux."
+      ],
+      "recall": "What information does wait provide after a child terminates?",
+      "recallAnswer": "It identifies a terminated child and provides termination-status information; collecting that status allows the retained termination record to be reaped.",
+      "relatedPa": [
+        "PA3-09",
+        "PA3-10",
+        "PA3-11"
+      ],
+      "refs": [
+        {
+          "source": "processes",
+          "locator": "Slides 28–30: termination, wait, zombie/orphan question"
+        },
+        {
+          "source": "theo3",
+          "locator": "Exercises 3.9 to 3.11"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "shared-memory",
+      "group": "Processes",
+      "topic": "Cooperating processes and shared-memory IPC",
+      "title": "Share data without sharing an entire identity",
+      "minutes": 12,
+      "intro": "A producer can place data in a shared region for another process to read. This avoids packaging every transfer as an explicit message, but introduces coordination responsibilities.",
+      "why": "PA2 compares IPC models and PA3 asks why processes cooperate. Always discuss both communication and synchronization.",
+      "definition": "Interprocess communication (IPC) lets processes exchange information. Shared-memory IPC maps a common memory region into cooperating processes so they can access that region directly.",
+      "steps": [
+        "Independent processes do not affect each other’s relevant computation; cooperating processes exchange or influence information. Reasons include information sharing, computation speedup, modularity and convenience.",
+        "The OS normally establishes and protects a shared region. Participating processes still have distinct identities and may retain private memory outside that region.",
+        "After setup, ordinary memory accesses can transfer data without a syscall for each individual read/write. Initial setup and some coordination operations can still require OS services.",
+        "Participants need an agreed data layout and protocol: who writes, when data is complete and when it can be reused.",
+        "Concurrent unsynchronized access can produce inconsistent results. Appropriate synchronization is needed; access to the same memory is not itself a correctness guarantee.",
+        "Shared memory can be efficient for large local transfers. Isolation, ownership and synchronization complexity are trade-offs; separate machines generally need another communication mechanism."
+      ],
+      "example": {
+        "question": "Two processes share a buffer. One sets a “ready” flag before finishing the data. What can go wrong?",
+        "answer": "The reader may observe the flag and consume incomplete data. A correct protocol and suitable synchronization must ensure data publication and access ordering. A shared address alone does not establish that ordering."
+      },
+      "misconceptions": [
+        "Shared memory does not merge two PIDs into one process.",
+        "“No syscall per access” does not mean the OS has no role in setup/protection.",
+        "Communication and synchronization are related but different requirements."
+      ],
+      "recall": "Give two reasons for process cooperation and one responsibility added by shared memory.",
+      "recallAnswer": "Information sharing and modularity (or computation speedup/convenience); shared-memory participants must coordinate access and agree on a data protocol.",
+      "relatedPa": [
+        "PA2-09",
+        "PA3-12"
+      ],
+      "refs": [
+        {
+          "source": "processes",
+          "locator": "Slides 31–34: cooperation and shared memory"
+        },
+        {
+          "source": "theo2",
+          "locator": "Exercise 2-9"
+        },
+        {
+          "source": "theo3",
+          "locator": "Exercise 3.12"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "message-passing",
+      "group": "Processes",
+      "topic": "Message passing and buffering",
+      "title": "Communicate through an explicit channel",
+      "minutes": 13,
+      "intro": "Instead of reading the same variables, processes can exchange messages through a channel or mailbox. The interface defines how senders and receivers meet.",
+      "why": "The source explicitly asks you to summarize direct/indirect communication and buffering. These distinctions explain whether an operation blocks and where messages wait.",
+      "definition": "Message-passing IPC exchanges information through send/receive operations over a communication link, without requiring applications to share variables directly.",
+      "steps": [
+        "With direct communication, participants name one another. With indirect communication, they send to and receive from a mailbox/port, decoupling the identities through a shared endpoint.",
+        "A blocking send waits until its defined completion condition is satisfied; a nonblocking send returns without waiting for that condition. The exact condition depends on the API.",
+        "A blocking receive waits for a suitable message. A nonblocking receive returns immediately with a message or an indication that none is available.",
+        "With zero-capacity buffering, sender and receiver must rendezvous. A bounded queue can hold a limited number of messages; a send may wait when it is full.",
+        "An unbounded-buffer model assumes the queue never fills, so sending does not wait for queue capacity. Actual systems always have finite resources; this is a conceptual model.",
+        "Message passing offers explicit boundaries and can span machines through a network. It may add copying, serialization and kernel/channel overhead compared with direct shared-memory access."
+      ],
+      "example": {
+        "question": "A mailbox holds two messages and is full. A third blocking send occurs before any receive. What happens?",
+        "answer": "Under the standard bounded-buffer model, the sender waits for space until a receiver removes a message. The result depends on the channel’s specified blocking semantics; it is not automatically message loss."
+      },
+      "misconceptions": [
+        "Asynchronous does not mean messages arrive in every imaginable order; the API defines ordering.",
+        "Indirect communication is not the same as shared program variables.",
+        "An unbounded queue is a teaching abstraction, not infinite physical RAM."
+      ],
+      "recall": "How do zero-capacity and bounded-capacity channels differ?",
+      "recallAnswer": "Zero capacity requires sender/receiver rendezvous because no message can wait in a queue. Bounded capacity lets up to a fixed number of messages wait, with full/empty conditions affecting operations.",
+      "relatedPa": [
+        "PA2-09",
+        "PA3-12"
+      ],
+      "refs": [
+        {
+          "source": "processes",
+          "locator": "Slides 35–38: message passing, link properties, direct/indirect and buffering tasks"
+        },
+        {
+          "source": "theo2",
+          "locator": "Exercise 2-9"
+        },
+        {
+          "source": "theo3",
+          "locator": "Exercise 3.12"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "thread-resources",
+      "group": "Threads",
+      "topic": "Thread state and shared process resources",
+      "title": "Separate execution, shared address space",
+      "minutes": 11,
+      "intro": "A word processor can accept typing while another execution stream checks spelling. Threads provide several execution streams inside one process.",
+      "why": "The user explicitly included all six lecture PDFs. This document is taught by its verified title, without inventing a lecture number. Understanding private versus shared resources is essential for thread comparisons.",
+      "definition": "A thread is an execution stream within a process, with its own program counter, register state and stack while sharing process resources such as code, data and open files.",
+      "steps": [
+        "Start with one process address space. Multiple threads can execute the process’s code and access its shared global/heap data.",
+        "Each thread needs its own continuation: PC, registers and stack. A function call in one thread must not overwrite another thread’s call history.",
+        "Shared resources make communication convenient but expose bugs: one thread can corrupt data another depends on.",
+        "A thread does not run independently of a process’s resource context. Creating another thread is different from creating a separate protected address space.",
+        "The source says cooperation need not require system calls. Refine that claim: ordinary shared-memory communication can occur in user space, but thread creation, blocking and synchronization may involve the kernel."
+      ],
+      "example": {
+        "question": "Two threads in one process each call the same function. Do they use the same stack?",
+        "answer": "No. Their call frames and return addresses are on separate per-thread stacks. The executable function code may be shared, along with process globals and heap data."
+      },
+      "misconceptions": [
+        "Threads do not each require a full private copy of process code and heap.",
+        "Shared address space does not mean all thread state is shared.",
+        "A thread can execute user-mode code even if it is managed/scheduled by the kernel."
+      ],
+      "recall": "Name three private thread components and three shared process resources.",
+      "recallAnswer": "Private: PC, registers, stack. Shared: code, global/heap address space, open-file resources.",
+      "relatedPa": [],
+      "refs": [
+        {
+          "source": "threads",
+          "locator": "Slides 4–10: thread concept and resources"
+        },
+        {
+          "source": "theo4",
+          "locator": "Introduction to Threads"
+        }
+      ],
+      "scopeStatus": "core",
+      "diagram": "threads"
+    },
+    {
+      "id": "thread-benefits",
+      "group": "Threads",
+      "topic": "Benefits and challenges of multithreading",
+      "title": "Responsiveness has a coordination cost",
+      "minutes": 10,
+      "intro": "Moving a long operation off an interface thread can keep a window responsive. But dividing work introduces dependencies and errors that sequential code may not have.",
+      "why": "Benefits questions need conditions. More threads do not automatically mean a faster or simpler program.",
+      "definition": "Multithreading can improve responsiveness, resource sharing, economy and multicore scalability when work is divided and coordinated appropriately.",
+      "steps": [
+        "Responsiveness allows useful work to continue while one activity is blocked or slow, provided the thread mapping/runtime permits another thread to execute.",
+        "Resource sharing reuses a process address space and resources. Economy means creation/switching can be cheaper than creating/switching independent processes, depending on implementation.",
+        "Scalability uses additional processing cores when independent runnable work exists. A serial dependency still limits throughput.",
+        "Divide activities and data carefully; balance work so one long task does not leave other workers idle.",
+        "Identify dependencies and shared writes before parallelizing. Testing/debugging is harder because different schedules expose different failures.",
+        "A design that blocks all available workers or frequently contends on a shared resource may gain little from additional threads."
+      ],
+      "example": {
+        "question": "Why might a two-thread UI be more responsive even on one core?",
+        "answer": "The CPU can switch to the UI thread while the worker is blocked or between its bursts. This permits overlapping progress without claiming simultaneous execution on the one core."
+      },
+      "misconceptions": [
+        "Responsiveness and total completion speed are different goals.",
+        "Adding threads cannot remove every serial dependency.",
+        "Shared resources reduce duplication but increase the need for coordination."
+      ],
+      "recall": "Name two developer challenges beyond merely creating threads.",
+      "recallAnswer": "Dividing and balancing activities, splitting data, managing dependencies, and testing/debugging possible interleavings are all valid challenges.",
+      "relatedPa": [],
+      "refs": [
+        {
+          "source": "threads",
+          "locator": "Slides 11–13: benefits and multicore programming challenges"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "parallelism-amdahl",
+      "group": "Threads",
+      "topic": "Concurrency, parallelism and Amdahl’s law",
+      "title": "Count simultaneous work, then find the serial limit",
+      "minutes": 13,
+      "intro": "Two tasks can make progress by taking turns on one core. They execute in parallel only when computation actually occurs at the same time on different execution resources.",
+      "why": "The source includes an Amdahl example. State its ideal assumptions before treating the result as a practical speed prediction.",
+      "definition": "Concurrency is overlapping progress; parallelism is simultaneous execution. With serial fraction S and N equal processors, ideal Amdahl speedup is $$\\mathrm{Speedup}(N)=\\frac{1}{S+\\frac{1-S}{N}}.$$",
+      "steps": [
+        "On a single-core model, time slicing interleaves work and creates concurrency without CPU parallelism between those tasks.",
+        "Data parallelism applies the same operation to different data partitions. Task parallelism assigns distinct operations to different workers.",
+        "To use Amdahl’s law, measure fractions against the original single-processor workload. S is the serial fraction, not the fraction that becomes parallel.",
+        "With S=0.25 and N=2, time is 0.25 + 0.75/2 = 0.625 of the original, so speedup is 1/0.625 = 1.6.",
+        "As N grows without bound, speedup approaches 1/S when S>0. For S=0.25, the ideal ceiling is 4×.",
+        "The model ignores communication, synchronization, scheduling and other overhead, and assumes a fixed workload with ideal division of parallel work. Real speedup can be lower."
+      ],
+      "example": {
+        "question": "A task is 50% serial and uses four equal cores. What is ideal speedup?",
+        "answer": "$$\\mathrm{Speedup}(4)=\\frac{1}{0.5+\\frac{0.5}{4}}=\\frac{1}{0.625}=1.6.$$ Four cores do not produce a fourfold speedup because half of the original work is serial."
+      },
+      "misconceptions": [
+        "Concurrency is not synonymous with parallelism.",
+        "Amdahl’s law is not a promise of actual measured performance.",
+        "The serial fraction belongs in the undivided term."
+      ],
+      "recall": "If 20% of a fixed task is serial, what is the ideal speedup limit?",
+      "recallAnswer": "$$\\lim_{N\\to\\infty}\\mathrm{Speedup}(N)=\\frac{1}{0.2}=5.$$ This is the ideal ceiling for a fixed workload, ignoring overhead.",
+      "relatedPa": [],
+      "refs": [
+        {
+          "source": "threads",
+          "locator": "Slides 14–17: concurrency/parallelism, types of parallelism and Amdahl’s law"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "threading-models",
+      "group": "Threads",
+      "topic": "User/kernel thread mappings",
+      "title": "Map execution streams to what the kernel schedules",
+      "minutes": 13,
+      "intro": "A runtime may expose many threads to a program while the kernel sees fewer schedulable entities. This mapping changes blocking and parallel execution behavior.",
+      "why": "The names many-to-one and one-to-one describe a mapping, not CPU privilege mode or the number of process address spaces.",
+      "definition": "A threading model maps user-level threads onto kernel-scheduled threads. Its structure affects parallelism, blocking and management overhead.",
+      "steps": [
+        "Many-to-one maps several user threads to one kernel thread. The runtime can switch user threads cheaply, but they cannot execute simultaneously on several cores through that single kernel thread.",
+        "In the usual many-to-one model, a blocking kernel operation on the sole kernel thread can stop progress of all mapped user threads.",
+        "One-to-one maps each user thread to a kernel thread. One blocked thread need not block the others, and the OS can schedule them across cores, at the cost of more kernel-managed entities.",
+        "Many-to-many multiplexes many user threads over several kernel threads. It aims to combine flexible user scheduling with available kernel concurrency.",
+        "A two-level variation permits particular user threads to bind to particular kernel threads while retaining many-to-many behavior elsewhere.",
+        "Do not confuse user-level thread management with user-mode CPU execution. A kernel-managed thread normally executes application instructions in user mode and enters kernel mode for services."
+      ],
+      "example": {
+        "question": "Ten user threads map to one kernel thread on a four-core CPU. Can all four cores run those threads in parallel?",
+        "answer": "Not through that one kernel thread. The runtime can interleave their progress, but the single kernel-scheduled entity can execute on only one core at a time in this model."
+      },
+      "misconceptions": [
+        "One-to-one does not mean one process per thread.",
+        "A kernel thread is not permanently executing kernel-mode instructions.",
+        "A model label alone does not guarantee unlimited thread creation."
+      ],
+      "recall": "What additional flexibility does the two-level model add?",
+      "recallAnswer": "It allows some user threads to be bound to specific kernel threads while others participate in a many-to-many mapping.",
+      "relatedPa": [],
+      "refs": [
+        {
+          "source": "threads",
+          "locator": "Slides 18–25: user/kernel threads and multithreading models"
+        },
+        {
+          "source": "theo4",
+          "locator": "Exercise 4-6"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "thread-libraries",
+      "group": "Threads",
+      "topic": "Thread libraries and implicit threading",
+      "title": "An API is not the scheduling implementation",
+      "minutes": 10,
+      "intro": "Thread creation APIs give the programmer operations such as create and join. The library/runtime and OS determine how those operations are implemented.",
+      "why": "The source lists libraries and asks about implicit threading. Separate the programming interface from a specific mapping model.",
+      "definition": "A thread library provides an API to create and manage threads. Implicit threading delegates much of thread creation/scheduling to a runtime or library while the programmer specifies tasks or parallel regions.",
+      "steps": [
+        "A library may be implemented largely in user space or backed by kernel facilities. The API name alone does not prove its mapping model.",
+        "POSIX Pthreads defines a threading interface; Windows exposes thread APIs; Java provides language/runtime threading facilities. The course treats these as common examples.",
+        "Explicit threading makes the programmer manage thread creation and coordination directly. A join-like operation waits for a particular thread’s completion.",
+        "Implicit approaches include task pools and parallel-work constructs: the programmer supplies work while a runtime chooses workers and distributes tasks. This is an independent explanation of the slide’s summary task.",
+        "A thread pool reuses workers, limiting creation overhead and potentially controlling concurrency. It still requires a strategy for shared data and blocked work.",
+        "Automatic scheduling does not prove that tasks are independent or results are race-free; the programmer must respect the library’s contract."
+      ],
+      "example": {
+        "question": "A program submits 100 short independent tasks to four reusable workers. Why use a pool?",
+        "answer": "Workers can be reused instead of creating 100 separate threads. The runtime controls concurrent execution and queues remaining tasks, while the programmer remains responsible for safe shared-data access."
+      },
+      "misconceptions": [
+        "A library API is not identical to a kernel syscall list.",
+        "Implicit threading does not eliminate synchronization obligations.",
+        "The number of submitted tasks need not equal the number of running threads."
+      ],
+      "recall": "What does the programmer delegate in implicit threading?",
+      "recallAnswer": "Much of worker/thread creation, task scheduling and distribution, while still specifying the work and respecting data dependencies.",
+      "relatedPa": [],
+      "refs": [
+        {
+          "source": "threads",
+          "locator": "Slides 26–30: thread libraries and implicit-threading task"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "thread-os-examples",
+      "group": "Threads",
+      "topic": "Windows and Linux thread structures",
+      "title": "Relate the model to operating-system records",
+      "minutes": 11,
+      "intro": "The abstract PC/register/stack model appears in concrete OS data structures. The course uses Windows and Linux as examples of how the information is organized.",
+      "why": "These structures illustrate responsibility and location. Memorizing names without what they represent makes comparison questions harder.",
+      "definition": "An OS thread context holds the execution and management state needed to schedule and resume an execution stream; operating systems organize that state differently.",
+      "steps": [
+        "The Windows material describes one-to-one kernel-supported threads, with a thread ID, register set, user/kernel stacks and private runtime storage.",
+        "The source’s ETHREAD represents executive-thread information and references the owning process and KTHREAD. KTHREAD contains scheduling/synchronization and kernel execution data.",
+        "The TEB is user-space thread-environment information, including identity, user-stack and thread-local information in the teaching description.",
+        "The Linux material describes tasks using task_struct. clone-family process/thread creation mechanisms control which resources are shared with the new task.",
+        "Sharing an address space and other resources supports thread-like relationships; choosing different sharing options supports more separate process contexts.",
+        "These are source-specific structural summaries, not exhaustive or version-stable API contracts. Understand the shared/private resource idea before implementation names."
+      ],
+      "example": {
+        "question": "Why can Linux use related task mechanisms for both processes and threads?",
+        "answer": "A task represents an execution entity; sharing flags and referenced resources determine how much state it shares with others. Threads share a process resource context more extensively than independent processes."
+      },
+      "misconceptions": [
+        "A shared address space does not imply shared register values or one common stack.",
+        "Internal structure names are not public application APIs.",
+        "A user-space TEB does not grant the application kernel privilege."
+      ],
+      "recall": "Which information must remain specific to each execution stream even when memory is shared?",
+      "recallAnswer": "Its execution continuation: program counter, register state, stack and associated per-thread management/context information.",
+      "relatedPa": [],
+      "refs": [
+        {
+          "source": "threads",
+          "locator": "Slides 31–34: Windows and Linux thread examples"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "scheduler-dispatcher",
+      "group": "Scheduling",
+      "topic": "Scheduler types, preemption and dispatch",
+      "title": "Choose who runs, then transfer control",
+      "minutes": 12,
+      "intro": "A scheduling decision chooses a process. The actual transfer requires saving/restoring state and resuming the chosen process. Keeping those responsibilities separate explains dispatch overhead.",
+      "why": "Algorithm calculations depend on whether the current process may be interrupted. You must establish preemptive/non-preemptive rules before drawing a Gantt chart.",
+      "definition": "A scheduler selects work according to policy. The dispatcher implements the CPU handoff, including context restoration, the needed privilege transition and transfer to the selected continuation.",
+      "steps": [
+        "The short-term CPU scheduler chooses a ready process. The long-term job scheduler controls admission of work. The medium-term scheduler may suspend/swap work out and later resume it; actual OS implementations vary.",
+        "A CPU burst is a period of processor execution between blocking events in the teaching model. An I/O-bound process usually has many short bursts; a CPU-bound process spends longer computing.",
+        "Non-preemptive scheduling allows the process to keep the CPU until it blocks, exits or voluntarily yields. A new arrival alone does not force a switch under that rule.",
+        "Preemptive scheduling can take the CPU from a runnable process, for example at a time-slice expiration or when a higher-priority ready process should run.",
+        "Waiting → Ready can trigger a new scheduling decision, but it is not itself preemption of that formerly blocked process. Preemption removes a currently running process from the CPU.",
+        "Dispatch latency is the time required for the handoff. Unless a calculation includes explicit switching cost, state the simplifying assumption of zero dispatch/context-switch time."
+      ],
+      "example": {
+        "question": "A short process arrives while a longer one runs. Does it immediately start?",
+        "answer": "Only if the chosen preemptive policy and its priority/order rules require a switch. Under non-preemptive FCFS or SJF, arrival does not interrupt the current burst."
+      },
+      "misconceptions": [
+        "The scheduler chooses; the dispatcher performs the handoff.",
+        "Blocked-to-ready is not the same as running-to-ready preemption.",
+        "I/O-bound does not mean a process never uses the CPU."
+      ],
+      "recall": "Which scheduler selects the next ready process, and what does the dispatcher do afterward?",
+      "recallAnswer": "The short-term CPU scheduler selects it; the dispatcher restores/transfers execution to the selected process.",
+      "relatedPa": [
+        "PA3-02",
+        "PA3-05"
+      ],
+      "refs": [
+        {
+          "source": "scheduling",
+          "locator": "Slides 4–12: scheduler types, preemption, dispatcher, CPU/I/O-bound bursts"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "scheduling-metrics",
+      "group": "Scheduling",
+      "topic": "Turnaround, waiting, response and utilization",
+      "title": "Measure the timeline before averaging",
+      "minutes": 14,
+      "intro": "A process may finish late either because it required much CPU time or because it spent a long time waiting. Scheduling metrics separate these effects.",
+      "why": "The most common calculation error is using completion time as turnaround or treating first response as total completion. Write individual process values before averaging.",
+      "definition": "For arrival A, first CPU start S and completion C, turnaround is C−A and response is S−A in the course’s CPU-scheduling model. Waiting time is the total time spent in the Ready state.",
+      "steps": [
+        "For a single-burst problem with no I/O and total burst B, waiting time = C−A−B. With I/O/blocking periods, subtracting only B would incorrectly count I/O wait as ready-queue wait.",
+        "Turnaround includes all time from arrival/admission to completion. Response measures the first service opportunity in these timeline exercises, not every later resumption.",
+        "Throughput is completed jobs divided by elapsed time. CPU utilization is busy CPU time divided by the observation interval; state whether busy includes OS overhead in the chosen model.",
+        "If no process is ready, draw an Idle interval. Omitting idle time corrupts completion times and utilization.",
+        "Compute each process’s metrics, then sum and divide by the number of processes. Retain units consistently.",
+        "For ordinary textbook examples assume one CPU, known bursts, stated arrivals and zero context-switch overhead unless the question explicitly changes those assumptions."
+      ],
+      "example": {
+        "question": "P arrives at t=2, first runs at t=5, consumes one 4-unit CPU burst, and finishes at t=11 after preemption. Find response, turnaround and waiting.",
+        "answer": "Response: $$RT=5-2=3.$$ Turnaround: $$TT=11-2=9.$$ Waiting: $$WT=9-4=5.$$ All values use the same time unit. The five waiting units can occur in several Ready intervals. No I/O is assumed."
+      },
+      "misconceptions": [
+        "Waiting time is not always first-start minus arrival in a preemptive schedule.",
+        "Turnaround is completion minus arrival, not completion alone.",
+        "Response time is not total completion time."
+      ],
+      "recall": "A CPU is busy for 8 units during a 10-unit interval. What is utilization, and why must idle time stay in the denominator?",
+      "recallAnswer": "80%. Utilization describes the whole observation interval; removing idle time would hide underuse.",
+      "relatedPa": [],
+      "refs": [
+        {
+          "source": "scheduling",
+          "locator": "Slides 13–16: performance measures and process-state timing"
+        },
+        {
+          "source": "theo5",
+          "locator": "Where the Three Times Come From"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "fcfs-sjf",
+      "group": "Scheduling",
+      "topic": "FCFS, SJF and burst prediction",
+      "title": "Arrival order versus shortest available burst",
+      "minutes": 16,
+      "intro": "A long job at the front of a queue can make many short jobs wait. Choosing shorter available work can improve average waiting, but requires knowledge or prediction of burst length.",
+      "why": "Both FCFS and non-preemptive SJF keep the current burst once selected. SJF chooses among processes that have already arrived, not future jobs.",
+      "definition": "FCFS executes ready jobs in arrival order. Non-preemptive SJF selects the available job with the shortest next CPU burst whenever the CPU becomes free.",
+      "steps": [
+        "For FCFS, order arrivals and specify a tie-break such as listed order. Execute each selected burst to completion in a simple single-burst problem.",
+        "The convoy effect occurs when short jobs wait behind a long CPU burst, delaying their progress and potentially the devices they would use.",
+        "For SJF, choose the shortest burst from the ready set at each dispatch. Do not interrupt the current job merely because a shorter one later arrives.",
+        "For jobs all available at time zero with known bursts and zero overhead, shortest-first order minimizes average waiting. That claim needs these assumptions; it is not a universal guarantee for arbitrary online arrivals.",
+        "The source asks how a future burst can be estimated. Exponential averaging uses next estimate τ(n+1)=α·t(n)+(1−α)·τ(n), where 0≤α≤1 and t(n) is the most recent measured burst.",
+        "A larger α gives more weight to recent behavior; a smaller α preserves more history. Predictions can be wrong, and long jobs can suffer under a continuing supply of short work."
+      ],
+      "example": {
+        "question": "All arrive at 0: P1=24, P2=3, P3=3. Compare FCFS listed order with SJF using P2 before P3.",
+        "answer": "FCFS: P1 0–24, P2 24–27, P3 27–30; waiting 0,24,27; average 17. SJF: P2 0–3, P3 3–6, P1 6–30; waiting by process 6,0,3; average 3. Turnaround averages are 27 and 13 respectively."
+      },
+      "misconceptions": [
+        "SJF cannot choose a process that has not arrived.",
+        "Non-preemptive SJF is not shortest-remaining-time scheduling.",
+        "The textbook optimum assumes known bursts and an appropriate availability model."
+      ],
+      "recall": "With previous estimate 10, actual burst 6 and α=0.5, what is the next estimate?",
+      "recallAnswer": "0.5×6 + 0.5×10 = 8 time units.",
+      "relatedPa": [],
+      "refs": [
+        {
+          "source": "scheduling",
+          "locator": "Slides 17–22: FCFS, SJF examples and exponential-average estimation task"
+        },
+        {
+          "source": "theo5",
+          "locator": "Exercises 5-1 and 5-2; additional examples"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "srt",
+      "group": "Scheduling",
+      "topic": "Shortest remaining time scheduling",
+      "title": "Reconsider the remaining work at each arrival",
+      "minutes": 16,
+      "intro": "SRT can interrupt a long burst to run a newly arrived shorter one. After interruption, compare remaining time, not the original burst length.",
+      "why": "This is a high-error topic because each new arrival changes the ready set and a previously running process retains partially completed work.",
+      "definition": "Shortest remaining time (SRT/SRTF) is the preemptive form of SJF: the ready process with the least remaining CPU burst is selected.",
+      "steps": [
+        "Start at the first arrival. Among ready processes, select the shortest remaining burst; specify a tie-break such as keeping the current process on equality.",
+        "Advance to the next relevant event: the running process completes or a new process arrives. Subtract elapsed execution from its remaining time.",
+        "At an arrival, compare the newcomer’s burst with the remaining times already in the ready set. Preempt only if the rule selects another process.",
+        "On completion, record C and select again. Continue until every job completes, showing idle gaps if the ready set is empty.",
+        "Compute turnaround C−A, waiting C−A−B, and first-response S−A separately. A process that starts immediately can still accumulate substantial waiting after preemption.",
+        "SRT favors short remaining work and can delay long jobs under continual short arrivals. Its calculations assume known/estimated future CPU burst lengths."
+      ],
+      "example": {
+        "question": "Use the source example: P1(A=0,B=8), P2(1,4), P3(2,9), P4(3,5). Give the timeline and average waiting.",
+        "answer": "P1 0–1; P2 1–5; P4 5–10; P1 10–17; P3 17–26. Completions: 17,5,26,10. Waiting: 9,0,15,2; average 6.5. Turnaround: 17,4,24,7; average 13. First responses: 0,0,15,2."
+      },
+      "misconceptions": [
+        "When P1 resumes, use its remaining burst, not its original burst.",
+        "A new arrival does not force preemption unless it wins the policy comparison.",
+        "First response can be zero while total waiting is large."
+      ],
+      "recall": "If a process has 7 units remaining and a 4-unit job arrives under SRT, what happens?",
+      "recallAnswer": "The 4-unit job is selected and the 7-unit process returns to Ready, assuming no other job has even less remaining time.",
+      "relatedPa": [],
+      "refs": [
+        {
+          "source": "scheduling",
+          "locator": "Slide 23: SRT example and preemptive SJF"
+        },
+        {
+          "source": "theo5",
+          "locator": "Exercise 5-5; additional examples"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "priority-scheduling",
+      "group": "Scheduling",
+      "topic": "Priority scheduling and aging",
+      "title": "A ranking needs a direction and a tie-break",
+      "minutes": 13,
+      "intro": "Priority scheduling orders work by importance rather than only arrival or burst length. A numeric value is meaningless until you know whether smaller or larger means higher priority.",
+      "why": "The source uses lower number = higher priority. Equal-priority behavior must be stated; do not infer an unannounced tie-break from a partly specified example.",
+      "definition": "Priority scheduling selects the highest-priority ready process. It may be non-preemptive or preemptive. Aging gradually improves the priority of waiting work to reduce starvation.",
+      "steps": [
+        "State the priority convention. In the lecture examples, priority 1 outranks priority 3.",
+        "Non-preemptive priority selects the best ready priority only when the current burst ends or blocks. Later higher-priority arrival waits until then.",
+        "Preemptive priority can interrupt the current process when a strictly higher-priority process becomes ready.",
+        "Specify the equal-priority rule, for example FCFS with no preemption on equality. Different tie rules can produce different valid timelines for the same numeric table.",
+        "Low-priority work may wait indefinitely if higher-priority work keeps arriving. Aging increases waiting work’s effective priority to limit this risk.",
+        "The lecture’s preemptive-priority example does not make every equal-priority tie rule explicit. For reproducible answers, show your assumption and do not silently assume shorter-job ordering."
+      ],
+      "example": {
+        "question": "P1 arrives 0, burst 5, priority 2; P2 arrives 2, burst 1, priority 1. Use preemptive priority, lower number higher, zero overhead.",
+        "answer": "P1 runs 0–2; P2 runs 2–3; P1 resumes 3–6. Waiting: P1=6−0−5=1, P2=3−2−1=0. Under non-preemptive priority, P1 would run 0–5 before P2."
+      },
+      "misconceptions": [
+        "A larger numeric value is not automatically higher priority.",
+        "Equal priority does not define a tie-break by itself.",
+        "Aging addresses starvation risk; it is not the same as changing every process’s base workload."
+      ],
+      "recall": "Why can priority scheduling starve a process?",
+      "recallAnswer": "A continuous supply of higher-priority ready work can keep the low-priority process from ever being selected.",
+      "relatedPa": [],
+      "refs": [
+        {
+          "source": "scheduling",
+          "locator": "Slides 24–25: non-preemptive/preemptive priority; slide 31: aging"
+        },
+        {
+          "source": "theo5",
+          "locator": "Exercises 5-3 and 5-6; additional examples"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "round-robin",
+      "group": "Scheduling",
+      "topic": "Round Robin and time quantum",
+      "title": "Give each ready process a turn",
+      "minutes": 14,
+      "intro": "A long burst need not monopolize an interactive system. Round Robin limits a turn and returns unfinished work to the queue so other ready processes can run.",
+      "why": "Queue order and remaining burst determine the Gantt chart. A time quantum is a maximum turn, not an instruction to waste time after a process finishes.",
+      "definition": "Round Robin schedules a ready queue in cyclic order, giving each selected process up to a time quantum q before preemption if it still has work.",
+      "steps": [
+        "Take the head of the ready queue. Run it for min(q, remaining burst), unless the model includes a blocking event that ends the burst sooner.",
+        "If it finishes, record completion and do not requeue it. If it remains runnable after q, append it to the queue tail.",
+        "Add newly arriving processes according to the stated arrival policy. At exactly simultaneous arrival/quantum boundaries, specify event order if it affects the result.",
+        "A very large q approaches FCFS behavior. A very small q improves turn-taking but increases switching frequency and overhead.",
+        "With n continuously ready processes and no overhead/new arrivals, a process waits at most (n−1)q between turns. This simplified bound is not universal for dynamic queues and nonzero overhead.",
+        "Use separate response and waiting calculations. Round Robin often improves initial responsiveness while average turnaround may be worse than SJF."
+      ],
+      "example": {
+        "question": "All arrive 0: P1=24, P2=3, P3=3; q=4, order P1,P2,P3, zero overhead.",
+        "answer": "P1 0–4; P2 4–7; P3 7–10; P1 10–14,14–18,18–22,22–26,26–30. Completions are 30,7,10. Waiting is 6,4,7 (average 5.67); response is 0,4,7 (average 3.67); turnaround averages 15.67."
+      },
+      "misconceptions": [
+        "A process with 2 units remaining uses only 2 units even if q=4.",
+        "After the other jobs finish, consecutive quanta of the same process need not imply useful switches to another process.",
+        "The lecture’s timing ranges are illustrative, not a universal OS specification."
+      ],
+      "recall": "What is the main cost of choosing q extremely small relative to switch time?",
+      "recallAnswer": "A large fraction of elapsed time is spent switching rather than advancing application work.",
+      "relatedPa": [],
+      "refs": [
+        {
+          "source": "scheduling",
+          "locator": "Slides 26–27: Round Robin and q=4 example"
+        },
+        {
+          "source": "theo5",
+          "locator": "Exercise 5-4; additional examples"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "multilevel-queues",
+      "group": "Scheduling",
+      "topic": "Multilevel and feedback queues",
+      "title": "Different classes can use different policies",
+      "minutes": 11,
+      "intro": "Interactive work and long background jobs have different needs. A scheduler can organize ready work into several classes instead of forcing one policy on every task.",
+      "why": "You must distinguish scheduling inside a queue from scheduling between queues, and fixed queue membership from feedback-based movement.",
+      "definition": "Multilevel queue scheduling partitions work into queues with separate policies. Multilevel feedback queues additionally permit migration between queues based on defined rules.",
+      "steps": [
+        "A fixed multilevel design assigns each process to a queue, such as foreground interactive or background batch work.",
+        "Each queue has an internal algorithm: for example foreground Round Robin and background FCFS.",
+        "A between-queue policy decides which queue receives CPU time. Strict queue priority can starve lower queues; allocating a time share to each queue provides a different trade-off.",
+        "Feedback queues move processes based on behavior or waiting. A process that consumes its full time slice may be demoted; aging or periodic boosts can promote waiting work.",
+        "The source example has Q0 with q=8, Q1 with q=16 and Q2 using FCFS. To calculate an exact timeline, admission, promotion, demotion and between-queue rules must also be specified.",
+        "Changing queues is the defining distinction of feedback, not simply having several queues with different names.",
+        "Theo MLFQ example: Q0 has an 8 ms quantum, Q1 has 16 ms, and Q2 uses FCFS. An isolated 30 ms job consumes 8 ms, then 16 ms, then the remaining 6 ms in Q2. Assume no competing work or overhead.",
+        "A strict-priority interactive queue can starve a background queue. Reserving a positive CPU share for each queue prevents complete queue-level exclusion under the stated policy; it does not guarantee every individual deadline."
+      ],
+      "example": {
+        "question": "A scheduler gives foreground RR 80% of CPU time and background FCFS 20%. Is this the same as strict foreground priority?",
+        "answer": "No. The time-share policy reserves a portion for background work; strict foreground priority can leave background work with no service while foreground remains ready."
+      },
+      "misconceptions": [
+        "Several queues do not automatically make a feedback scheduler.",
+        "Knowing only the quantum of each queue is insufficient for a unique MLFQ timeline.",
+        "Aging must be defined as a rule, not merely named."
+      ],
+      "recall": "What extra rules must an MLFQ design specify beyond per-queue algorithms?",
+      "recallAnswer": "Initial placement, when to promote or demote, and how the CPU is allocated between queues; also tie and arrival handling for exact calculations.",
+      "relatedPa": [],
+      "refs": [
+        {
+          "source": "scheduling",
+          "locator": "Slides 28–31: multilevel queue and multilevel feedback queue"
+        },
+        {
+          "source": "theo5",
+          "locator": "Exercises 5-7 and 5-8"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "multicore-realtime",
+      "group": "Scheduling",
+      "topic": "Multiprocessor scheduling and real-time latency",
+      "title": "Balance the machine without losing locality or deadlines",
+      "minutes": 14,
+      "intro": "With several cores, “which process next?” becomes “which process on which core?” For real-time work, finishing after a deadline may be unacceptable even if average throughput is high.",
+      "why": "The scheduling PDF includes both multiprocessor and real-time sections, so its coverage extends beyond the six classic single-CPU algorithms.",
+      "definition": "Multiprocessor scheduling distributes work across processors. Real-time scheduling considers timing constraints; hard real-time tasks require deadlines to be met, while soft real-time favors timely service without that guarantee.",
+      "steps": [
+        "Asymmetric multiprocessing assigns central system decisions to a designated processor in the source model. Symmetric multiprocessing lets processors participate in scheduling and execution.",
+        "Load balancing seeks to avoid an idle core while another is overloaded. Push migration moves work from a busy processor; pull migration lets an idle processor take waiting work.",
+        "Processor affinity preserves locality by keeping work near cached data. Soft affinity is a preference; hard affinity restricts execution to an allowed processor set.",
+        "Balancing and affinity can conflict: migration may use an idle core but lose useful cache locality. NUMA and heterogeneous processors add memory-access and capability considerations.",
+        "A memory stall means execution waits for data. Hardware multithreading or scheduling other ready work may improve resource use, but ordinary OS switches are not the only mechanism.",
+        "Interrupt latency runs from an interrupt event to the start of its handler. Dispatch latency covers moving CPU control to the selected task. Both affect event response.",
+        "For hard real-time behavior, average speed is insufficient: worst-case timing, scheduling policy and workload feasibility matter. The source’s soft real-time definition prioritizes critical work without guaranteeing its deadline.",
+        "SMP may use a common ready queue, requiring synchronization so two cores do not dispatch the same task, or per-core ready queues, which favor locality but need balancing.",
+        "Theo latency example: interrupt at 10 ms, ISR starts at 12, task ready at 15, task starts at 18. Interrupt delay is 2 ms, ISR execution is 3 ms, and ready-to-start delay is 3 ms. Total is 8 ms, not 5. In general, ready-to-start may also include scheduler waiting; the exercise treats that entire final interval as dispatch latency."
+      ],
+      "example": {
+        "question": "A task is pinned to core 0 while core 1 is idle. Why might it still wait?",
+        "answer": "Hard affinity can prohibit execution on core 1. Relaxing affinity may improve balance, but migration can lose cache locality. If the task has a deadline, the timing effect must be assessed rather than assuming an idle core fixes it."
+      },
+      "misconceptions": [
+        "More cores do not eliminate scheduling policy.",
+        "Processor affinity is not the same as a permanent private CPU.",
+        "High priority alone does not prove a hard deadline will be met."
+      ],
+      "recall": "What is the difference between interrupt latency and dispatch latency?",
+      "recallAnswer": "Interrupt latency is delay until interrupt handling starts; dispatch latency is the handoff delay to the task selected for execution.",
+      "relatedPa": [],
+      "refs": [
+        {
+          "source": "scheduling",
+          "locator": "Slides 32–40: multicore, AMP/SMP, affinity, balancing and real-time latency"
+        },
+        {
+          "source": "theo5",
+          "locator": "Exercises 5-9 to 5-12"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "race-producer-consumer",
+      "group": "Concurrency",
+      "topic": "Race conditions and bounded producer-consumer",
+      "title": "A single increment can contain several steps",
+      "minutes": 14,
+      "intro": "Two pieces of code can each be correct in isolation and still produce a wrong result when their operations interleave over shared data.",
+      "why": "The lecture’s counter example shows why a source-code statement such as counter++ is not necessarily atomic. You must reason about loads, computation and stores.",
+      "definition": "A race condition occurs when a result depends on uncontrolled timing/interleaving of concurrent access. A bounded producer-consumer buffer has finite capacity, so producers wait when full and consumers wait when empty.",
+      "steps": [
+        "Represent a circular buffer with in and out positions. Advance each modulo N so the indices wrap. A count can record the number of occupied slots.",
+        "A producer creates data, waits for space, writes a slot and updates bookkeeping. A consumer waits for data, reads a slot and updates bookkeeping.",
+        "A typical increment is load counter into a register, add one, store it back. A decrement similarly loads, subtracts and stores. The operations can be interleaved.",
+        "Starting at count=5, producer and consumer can both read 5. The producer computes 6; the consumer computes 4. If stores occur 6 then 4, the final count is 4 instead of the correct net 5.",
+        "Reversing those final stores can leave 6. Both results lose one update. Executing each entire update with suitable synchronization preserves the intended net result.",
+        "Single-core preemption is enough to create this problem; multiple cores are not required. Atomicity, ordering and shared access must be designed explicitly."
+      ],
+      "example": {
+        "question": "Starting counter=5, P reads 5 and computes 6; C reads 5 and computes 4; C stores 4; P stores 6. What is final value and correct net value?",
+        "answer": "The final stored value is 6, but one increment and one decrement should net to 5. The final producer store overwrites the consumer’s update."
+      },
+      "misconceptions": [
+        "One source-code line is not necessarily one atomic machine operation.",
+        "Concurrency on one CPU can still cause races.",
+        "Checking “not full” or “not empty” alone does not protect shared bookkeeping."
+      ],
+      "recall": "Why is counter++ unsafe when unsynchronized concurrent code also modifies counter?",
+      "recallAnswer": "Its read/modify/write steps can interleave with another update, so one final store may overwrite an update based on an earlier value.",
+      "relatedPa": [],
+      "refs": [
+        {
+          "source": "concurrency",
+          "locator": "Slides 11–24: concurrent inconsistency, bounded buffer and counter interleavings"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "critical-section",
+      "group": "Concurrency",
+      "topic": "Critical sections and correctness requirements",
+      "title": "Exclusion alone is not enough",
+      "minutes": 12,
+      "intro": "A door that never opens prevents two people entering together, but it is not a useful access policy. Correct synchronization must allow progress as well as prevent conflicts.",
+      "why": "The three critical-section requirements test different failure modes. Explain each separately rather than treating “no race” as a complete answer.",
+      "definition": "A critical section accesses shared state that must be protected against conflicting concurrent access. A correct solution aims for mutual exclusion, progress and bounded waiting under its stated assumptions.",
+      "steps": [
+        "The entry section obtains permission; the critical section performs protected work; the exit section releases permission; the remainder section performs unrelated work.",
+        "Mutual exclusion means at most one participant executes the protected critical section for the shared resource at a time.",
+        "Progress means that if the critical section is free and participants want to enter, the decision about the next entrant cannot be postponed indefinitely by unrelated/nonparticipating work.",
+        "Bounded waiting limits how many other entries can occur after a participant requests entry before it is admitted. It addresses indefinite postponement.",
+        "Strict alternation using only turn can ensure exclusion but violate progress: a process may have to wait for the other’s turn even when the other does not want to enter.",
+        "These properties require assumptions about atomic operations, memory ordering and execution opportunities. A synchronization algorithm cannot make a permanently unscheduled process execute by itself."
+      ],
+      "example": {
+        "question": "Only P0 wants the critical section, but turn=P1 and P1 stays in its remainder section. Which requirement does strict alternation violate?",
+        "answer": "Progress. The section is free and P0 wants to enter, yet P1’s nonparticipation prevents P0’s admission. Mutual exclusion may still hold."
+      },
+      "misconceptions": [
+        "Mutual exclusion does not automatically imply bounded waiting.",
+        "A busy wait is not proof that progress is impossible; correctness depends on the protocol.",
+        "Unrelated critical sections for independent resources need not all share one global lock."
+      ],
+      "recall": "How does bounded waiting differ from mutual exclusion?",
+      "recallAnswer": "Mutual exclusion prevents simultaneous protected entry; bounded waiting limits how many others can go first after a request, preventing indefinite bypass under the model.",
+      "relatedPa": [],
+      "refs": [
+        {
+          "source": "concurrency",
+          "locator": "Slides 25–30: critical sections, requirements and strict alternation"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "peterson",
+      "group": "Concurrency",
+      "topic": "Peterson’s two-process solution",
+      "title": "Express intent, then yield priority",
+      "minutes": 14,
+      "intro": "If two processes both want a protected region, they need to express interest and break a tie. Peterson’s algorithm uses a flag per process plus a shared turn variable.",
+      "why": "The algorithm is a reasoning exercise under an ideal memory model. Its textbook proof is not permission to paste ordinary unsynchronized variables into modern concurrent code.",
+      "definition": "Peterson’s solution is a two-participant mutual-exclusion algorithm using flag[2] for intent and turn for tie-breaking, assuming atomic accesses and sequentially consistent ordering.",
+      "steps": [
+        "For process i with other process j: set flag[i]=true to announce intent, then set turn=j to give the other priority if it also wants entry.",
+        "Wait while flag[j] && turn==j. If the other does not want entry, or priority now favors i, enter the critical section.",
+        "On exit set flag[i]=false, then execute the remainder section.",
+        "If both want entry, turn has a single final value, so only one of the two waiting conditions permits entry. Under the model this establishes mutual exclusion.",
+        "If one does not want entry, its flag is false and the interested process can proceed. Intent flags therefore avoid strict alternation’s progress failure.",
+        "Under its assumptions the protocol also provides bounded waiting between the two participants. Plain-language or compiler/CPU reordering can invalidate those assumptions; production implementations need correct atomics and memory-order guarantees."
+      ],
+      "example": {
+        "question": "P0 sets flag[0]=true, turn=1; P1 sets flag[1]=true, turn=0. Both flags remain true. Who can enter first?",
+        "answer": "P0 can enter because its wait condition requires turn==1, which is false. P1 waits because flag[0] is true and turn==0. The final turn write favors P0 in this interleaving."
+      },
+      "misconceptions": [
+        "turn alone is not Peterson’s full solution.",
+        "The algorithm is for two participants in the presented form.",
+        "Atomic loads/stores without the required ordering are not sufficient for the textbook proof on every modern machine."
+      ],
+      "recall": "What does flag[i] mean, and why is turn assigned to the other participant?",
+      "recallAnswer": "flag[i] announces that i wants entry. Assigning turn to the other resolves simultaneous interest by yielding priority, so the last assignment determines which contender waits.",
+      "relatedPa": [],
+      "refs": [
+        {
+          "source": "concurrency",
+          "locator": "Slides 31–33: Peterson algorithm and requirement questions"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "mutex-locks",
+      "group": "Concurrency",
+      "topic": "Mutexes, spinlocks and atomic acquisition",
+      "title": "The lock itself must not race",
+      "minutes": 12,
+      "intro": "Putting “if available” before a shared update looks protective, but two processes can both observe available before either changes it. The acquisition needs an indivisible decision.",
+      "why": "The lecture gives simplified lock pseudocode. Its atomicity requirement is essential: a separate check followed by a normal store is not a correct lock implementation.",
+      "definition": "A mutex protects a critical section through acquisition and release. A spinlock waits by repeatedly testing a condition rather than blocking the executing thread.",
+      "steps": [
+        "A participant acquires the lock before entering protected work and releases it afterward. All conflicting accesses must follow the same locking discipline.",
+        "Acquisition must atomically test and claim availability, typically using supported atomic primitives such as compare-and-swap or test-and-set.",
+        "With separate ordinary operations, both P0 and P1 can read available=true, then both write false and enter. This defeats mutual exclusion.",
+        "A spinlock consumes execution resources while waiting. It can be appropriate for very short waits in some contexts, but long waits waste CPU and may be harmful on a single core.",
+        "Not every mutex spins for its entire wait. Blocking/adaptive mutex implementations can suspend a waiter and use scheduling, so “mutex” and “spinlock” are not universal synonyms.",
+        "Release must occur on every intended exit path and use the required ordering so protected updates become visible. Forgetting release can block future work indefinitely."
+      ],
+      "example": {
+        "question": "Two threads perform “while not available: wait; available=false” using ordinary separate operations. Is the lock necessarily safe?",
+        "answer": "No. Both can pass the availability test before either sets false. The test-and-claim must be atomic, with suitable memory-order semantics."
+      },
+      "misconceptions": [
+        "A Boolean variable alone does not make a correct mutex.",
+        "Every mutex need not busy-wait.",
+        "Locking only writers is insufficient if readers can observe inconsistent intermediate state."
+      ],
+      "recall": "Why does a spinlock wait differently from a blocking mutex?",
+      "recallAnswer": "A spinlock repeatedly checks while consuming CPU execution; a blocking mutex can put the waiter to sleep until it can be awakened and scheduled.",
+      "relatedPa": [],
+      "refs": [
+        {
+          "source": "concurrency",
+          "locator": "Slides 34–36: mutex acquire/release, atomicity and spinlock model"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "semaphores",
+      "group": "Concurrency",
+      "topic": "Counting/binary semaphores and producer-consumer coordination",
+      "title": "Count resources, then protect the shared update",
+      "minutes": 16,
+      "intro": "A lock controls one entrant. A semaphore can also represent several available resources, or enforce ordering between activities.",
+      "why": "You must state initial values and the order of wait/signal operations. Waiting for data while holding the buffer mutex can prevent the producer from ever providing it.",
+      "definition": "A semaphore is a synchronization object manipulated through atomic wait and signal operations. A counting semaphore models available permits; a binary semaphore uses two availability states in the simplified model.",
+      "steps": [
+        "In the course’s nonnegative busy-wait model, wait(S) waits until S>0 then decrements atomically; signal(S) increments atomically. Blocking implementations can use different internal representations and queues.",
+        "A counting semaphore initialized to k allows up to k permits to be acquired. Each completed use should return the appropriate permit; incorrect extra signals can corrupt the resource count.",
+        "A binary semaphore can implement exclusion, but it is not identical to every mutex: mutexes normally include ownership rules, while semaphores are also used for cross-thread signaling.",
+        "For a bounded buffer of N slots, initialize empty=N, full=0 and mutex=1. The producer waits on empty, then mutex, inserts an item, signals mutex, then full.",
+        "The consumer waits on full, then mutex, removes an item, signals mutex, then empty. empty/full track availability; mutex protects buffer bookkeeping.",
+        "Do not acquire mutex and then block waiting for full/empty in a way that prevents the other side from changing the condition. Ordering of waits is part of correctness.",
+        "Atomic semaphore operations alone do not guarantee fairness, absence of deadlock or correct application logic; those depend on the complete protocol and implementation."
+      ],
+      "example": {
+        "question": "A buffer has N=3, currently two items, with no operation in flight. What are full and empty? What happens to them after one successful consume?",
+        "answer": "Initially full=2 and empty=1. A consume obtains one full permit and later signals empty, leaving full=1 and empty=2. The mutex protects the actual removal and index updates."
+      },
+      "misconceptions": [
+        "Semaphore wait is a synchronization operation, not the process-termination wait() call.",
+        "A binary semaphore and an owner-tracking mutex are not interchangeable in every API.",
+        "Atomic primitives cannot repair an incorrect ordering of resource acquisition."
+      ],
+      "recall": "Why should the consumer obtain a full permit before taking the buffer mutex?",
+      "recallAnswer": "If it held the mutex while waiting for an item, a producer needing that mutex could be unable to insert one, producing deadlock in that design.",
+      "relatedPa": [],
+      "refs": [
+        {
+          "source": "concurrency",
+          "locator": "Slides 37–39: semaphore operations and types; bounded-buffer application is an independently prepared worked extension"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "deadlock-starvation",
+      "group": "Concurrency",
+      "topic": "Deadlock and starvation",
+      "title": "No progress for a cycle, or no turn for one waiter",
+      "minutes": 12,
+      "intro": "Two people each hold an object the other needs and refuse to release it. Elsewhere, one person keeps losing a place in line while everyone else proceeds. These are different failures.",
+      "why": "The source’s board/marker example illustrates deadlock; priority scheduling illustrates starvation. Define the mechanism rather than only saying “waiting forever.”",
+      "definition": "Deadlock is a state in which participants cannot progress because each awaits a resource/event dependent on another in the blocked set. Starvation is indefinite postponement of a participant while other work may continue.",
+      "steps": [
+        "In the source analogy, Sandy holds the board and needs the pen; Kevin holds the pen and needs the board. Neither releases what the other needs, so the pair cannot progress.",
+        "A lock-order example is P0 holding A while waiting for B and P1 holding B while waiting for A. Acquiring shared locks in a consistent global order can prevent this particular circular pattern.",
+        "Starvation can occur when higher-priority work continually bypasses a lower-priority process or a synchronization queue repeatedly favors others.",
+        "Aging or suitable fair queuing can reduce starvation; adding fairness does not automatically fix circular resource dependencies.",
+        "Busy waiting is an implementation behavior, not itself proof of deadlock. A spinner may eventually acquire a lock; a blocked process may be part of either normal waiting or a deadlock.",
+        "Diagnose who holds what, who waits for what, and whether any participant can perform the release needed to unblock the others. Then identify the specific policy or ordering change."
+      ],
+      "example": {
+        "question": "P0 holds lock A and waits for B; P1 holds B and waits for A. A third unrelated process keeps running. Is the pair deadlocked or merely starved?",
+        "answer": "The pair is deadlocked because each waits for a release the other cannot reach. The unrelated process making progress does not remove the deadlock among P0 and P1."
+      },
+      "misconceptions": [
+        "Deadlock need not freeze every process on the whole machine.",
+        "Starvation can happen without a circular wait.",
+        "High CPU utilization does not prove every process is making progress."
+      ],
+      "recall": "Can one process starve while the rest of the system keeps completing work?",
+      "recallAnswer": "Yes. Starvation concerns indefinite postponement of that participant; others can continue receiving resources.",
+      "relatedPa": [],
+      "refs": [
+        {
+          "source": "concurrency",
+          "locator": "Slides 41–44: deadlock, board/marker example, starvation and comparison task"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "thread-design-tradeoffs",
+      "group": "Threads",
+      "topic": "Thread and process design decisions",
+      "title": "Choose sharing, isolation, or a hybrid",
+      "minutes": 12,
+      "intro": "Threads share an address space and cooperate cheaply. Processes add separation and IPC overhead. A hybrid can retain responsiveness while isolating an unreliable component.",
+      "why": "Use the Theo scenarios to explain the trade-off, not just name a concept.",
+      "definition": "Threads share an address space and cooperate cheaply. Processes add separation and IPC overhead. A hybrid can retain responsiveness while isolating an unreliable component.",
+      "steps": [
+        "A word processor can use threads for input, spell-check and autosave because they work with the same document. Protect concurrent changes; a fatal error in one thread can bring down the process.",
+        "A video editor can keep its UI and audio workers in the main process and place an unreliable codec in a worker process. Send frames or results through IPC. Restarting the worker can preserve the main application.",
+        "A shopping app on one core interleaves search, cart and pricing tasks. Three cores can run ready tasks simultaneously, but network waits and short tasks may limit speed gains.",
+        "Low utilization per core is not necessarily poor performance: a light workload may simply need little CPU time, and other applications can use idle capacity."
+      ],
+      "example": {
+        "question": "A video-processing library crashes occasionally. Should every activity be a thread in one process?",
+        "answer": "Not necessarily. Put the unreliable processing in a separate process and use IPC. The UI and audio may remain threads in the main process. Isolation costs communication overhead but can prevent one worker crash from ending the whole application."
+      },
+      "misconceptions": [
+        "More threads or cores do not automatically make a program faster.",
+        "Shared data still requires coordination; separate processes do not share an address space by default."
+      ],
+      "recall": "What property makes the hybrid design worthwhile?",
+      "recallAnswer": "Fault isolation for the unreliable component, while keeping inexpensive sharing for cooperating components.",
+      "relatedPa": [],
+      "refs": [
+        {
+          "source": "theo4",
+          "locator": "Exercises 4-1 to 4-3"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "thread-switch-cost",
+      "group": "Threads",
+      "topic": "Address-space and thread-switch costs",
+      "title": "Compare three context-switch cases",
+      "minutes": 12,
+      "intro": "The important distinction is whether execution switches between address spaces, not whether both execution units are called threads.",
+      "why": "Use the Theo scenarios to explain the trade-off, not just name a concept.",
+      "definition": "The important distinction is whether execution switches between address spaces, not whether both execution units are called threads.",
+      "steps": [
+        "Between different processes: save and restore execution state and activate the destination address space.",
+        "Between threads in different processes: the address space still changes. Calling both units threads does not remove process-level switching work.",
+        "Between threads in the same process: registers, program counter and stack pointer change; the address space and shared resources stay the same.",
+        "Same-process switching often costs less, but actual latency depends on architecture, caches, TLB behavior and scheduler implementation. It is not a fixed universal ratio."
+      ],
+      "example": {
+        "question": "Which normally avoids changing the address space: A1 → B1 or A1 → A2?",
+        "answer": "A1 → A2, where A1 and A2 belong to process A. A1 → B1 moves to process B and normally changes the active address space."
+      },
+      "misconceptions": [
+        "More threads or cores do not automatically make a program faster.",
+        "Shared data still requires coordination; separate processes do not share an address space by default."
+      ],
+      "recall": "Does keeping the address space eliminate all switching overhead?",
+      "recallAnswer": "No. Execution state still has to be saved and restored; scheduling and cache effects can still cost time.",
+      "relatedPa": [],
+      "refs": [
+        {
+          "source": "theo4",
+          "locator": "Exercise 4-4; Context Switching: Three Cases Compared"
+        }
+      ],
+      "scopeStatus": "core"
+    },
+    {
+      "id": "multicore-pipelines",
+      "group": "Threads",
+      "topic": "Multicore challenges and pipelines",
+      "title": "Split work without breaking dependencies",
+      "minutes": 12,
+      "intro": "Data parallelism applies the same operations to separate data. Task parallelism divides operations; a pipeline allows dependent stages to overlap across different items.",
+      "why": "Use the Theo scenarios to explain the trade-off, not just name a concept.",
+      "definition": "Data parallelism applies the same operations to separate data. Task parallelism divides operations; a pipeline allows dependent stages to overlap across different items.",
+      "steps": [
+        "Five challenges: identify independent activities; balance work; split data; respect data dependencies; test and debug timing-dependent behavior.",
+        "For 1,000 independent images on four equal cores, a simple data split assigns 250 images to each worker. Each worker loads, resizes, filters and saves its own images.",
+        "For a task pipeline, stage 1 loads, stage 2 resizes, stage 3 filters, and stage 4 saves. Different stages work simultaneously on different images; one image must still follow the required order.",
+        "A stage with much more work becomes a bottleneck. Use synchronized bounded queues between stages and preserve data ownership. A pipeline does not erase dependencies.",
+        "For independent images with the same expensive operations, data parallelism is often simpler and better balanced. Unequal image costs may justify a shared work queue rather than fixed equal counts.",
+        "Task parallelism does not always require a pipeline. Independent tasks can run without a prescribed stage sequence."
+      ],
+      "example": {
+        "question": "With four workers and 1,000 equal-cost independent images, how many images does each data-parallel worker handle?",
+        "answer": "$$1000/4=250$$ Each worker performs the complete operation sequence on its 250 images. A task pipeline instead divides the operations, and its throughput is limited by the slowest stage."
+      },
+      "misconceptions": [
+        "More threads or cores do not automatically make a program faster.",
+        "Shared data still requires coordination; separate processes do not share an address space by default."
+      ],
+      "recall": "Can a pipeline resize image 2 while filtering image 1?",
+      "recallAnswer": "Yes. The dependency order applies within each image. Different images can occupy different stages at the same time.",
+      "relatedPa": [],
+      "refs": [
+        {
+          "source": "theo4",
+          "locator": "Exercise 4-5; Five Challenges; Pipeline; Independent vs. Dependent Tasks"
+        }
+      ],
+      "scopeStatus": "core"
+    }
+  ],
+  "coverage": [
+    {
+      "topic": "Operating system purpose",
+      "source": "services",
+      "locator": "Slides 4–8: OS definition, kernel/utilities and user/system views",
+      "lessonId": "os-purpose",
+      "status": "core"
+    },
+    {
+      "topic": "Virtualization, abstraction and arbitration",
+      "source": "intro",
+      "locator": "Slides 15–24: virtualization/concurrency/persistence and abstraction/arbitration",
+      "lessonId": "abstraction-arbitration",
+      "status": "core"
+    },
+    {
+      "topic": "Computer and OS evolution; Linux",
+      "source": "intro",
+      "locator": "Slides 25–35 and slide 41 evolution task; PA1 solutions Exercise 1-6",
+      "lessonId": "evolution-linux",
+      "status": "core"
+    },
+    {
+      "topic": "Computer and OS evolution; Linux",
+      "source": "pa1a",
+      "locator": "Page 3, Exercise 1-6",
+      "lessonId": "evolution-linux",
+      "status": "core"
+    },
+    {
+      "topic": "Computer architecture and instruction cycle",
+      "source": "intro",
+      "locator": "Slides 36–39: instruction cycle, von Neumann architecture and bus questions",
+      "lessonId": "architecture-cycle",
+      "status": "core"
+    },
+    {
+      "topic": "Computer architecture and instruction cycle",
+      "source": "pa1a",
+      "locator": "Pages 2–3, Exercises 1-4 and 1-5",
+      "lessonId": "architecture-cycle",
+      "status": "core"
+    },
+    {
+      "topic": "Memory and storage hierarchy",
+      "source": "services",
+      "locator": "Memory-storage hierarchy and How a Modern Computer Works sections, around slides 29–31",
+      "lessonId": "storage-hierarchy",
+      "status": "core"
+    },
+    {
+      "topic": "Bootstrap and boot process",
+      "source": "services",
+      "locator": "Computer Startup and OS Operations sections",
+      "lessonId": "boot-sequence",
+      "status": "core"
+    },
+    {
+      "topic": "User mode and kernel mode",
+      "source": "services",
+      "locator": "Slides 19–23: hardware support, protection and dual-mode operation",
+      "lessonId": "dual-mode",
+      "status": "core"
+    },
+    {
+      "topic": "System-call interface and APIs",
+      "source": "services",
+      "locator": "System Calls; System Call Implementation; API–System Call–OS Relationship sections",
+      "lessonId": "system-calls",
+      "status": "core"
+    },
+    {
+      "topic": "Interrupts, traps, exceptions and timers",
+      "source": "services",
+      "locator": "Common Functions of Interrupts; Interrupt Handling; Timer section",
+      "lessonId": "interrupts",
+      "status": "core"
+    },
+    {
+      "topic": "Device drivers, controllers and I/O",
+      "source": "services",
+      "locator": "Computer System Organization; Computer System Operation; Interrupt-driven I/O Cycle; I/O Subsystem sections",
+      "lessonId": "io-path",
+      "status": "core"
+    },
+    {
+      "topic": "Files, memory and program services",
+      "source": "services",
+      "locator": "Memory Management & Protection; File System Management; slide 49 services task; slide 50 linkers/loaders task",
+      "lessonId": "os-services",
+      "status": "core"
+    },
+    {
+      "topic": "Base/limit memory protection",
+      "source": "services",
+      "locator": "Memory Management & Protection section: base/limit registers",
+      "lessonId": "memory-protection",
+      "status": "core"
+    },
+    {
+      "topic": "Virtual machines and VMMs",
+      "source": "services",
+      "locator": "Virtualization; Virtualization Examples; Computing Environments—Virtualization sections",
+      "lessonId": "virtual-machines",
+      "status": "core"
+    },
+    {
+      "topic": "Monolithic, layered, microkernel, modular and hybrid designs",
+      "source": "services",
+      "locator": "OS Structure; Traditional UNIX; Linux; Layered Approach; Microkernels; Modules; Hybrid Systems sections",
+      "lessonId": "os-structures",
+      "status": "core"
+    },
+    {
+      "topic": "Program, process and memory layout",
+      "source": "processes",
+      "locator": "Slides 4–9: process concept and memory layout",
+      "lessonId": "program-process",
+      "status": "core"
+    },
+    {
+      "topic": "Five-state process model",
+      "source": "processes",
+      "locator": "Slides 10–12: state definitions and transition diagram",
+      "lessonId": "process-states",
+      "status": "core"
+    },
+    {
+      "topic": "Process Control Block and identity",
+      "source": "processes",
+      "locator": "Slides 13–14: Process Control Block; slides 20–22: PID and creation",
+      "lessonId": "pcb",
+      "status": "core"
+    },
+    {
+      "topic": "Context switching",
+      "source": "processes",
+      "locator": "Slides 16–18: context-switching explanation",
+      "lessonId": "context-switch",
+      "status": "core"
+    },
+    {
+      "topic": "Ready/wait queues and dispatch",
+      "source": "processes",
+      "locator": "Slide 12: admitted, scheduler dispatch, interrupt and event-completion transitions",
+      "lessonId": "scheduling-queues",
+      "status": "core"
+    },
+    {
+      "topic": "Process creation and parent/child execution",
+      "source": "processes",
+      "locator": "Slides 20–27: creation, sharing, address-space/execution options, fork/exec/wait",
+      "lessonId": "fork-exec-wait",
+      "status": "core"
+    },
+    {
+      "topic": "Exit, wait, zombies and orphans",
+      "source": "processes",
+      "locator": "Slides 28–30: termination, wait, zombie/orphan question",
+      "lessonId": "process-termination",
+      "status": "core"
+    },
+    {
+      "topic": "Cooperating processes and shared-memory IPC",
+      "source": "processes",
+      "locator": "Slides 31–34: cooperation and shared memory",
+      "lessonId": "shared-memory",
+      "status": "core"
+    },
+    {
+      "topic": "Message passing and buffering",
+      "source": "processes",
+      "locator": "Slides 35–38: message passing, link properties, direct/indirect and buffering tasks",
+      "lessonId": "message-passing",
+      "status": "core"
+    },
+    {
+      "topic": "Thread state and shared process resources",
+      "source": "threads",
+      "locator": "Slides 4–10: thread concept and resources",
+      "lessonId": "thread-resources",
+      "status": "core"
+    },
+    {
+      "topic": "Benefits and challenges of multithreading",
+      "source": "threads",
+      "locator": "Slides 11–13: benefits and multicore programming challenges",
+      "lessonId": "thread-benefits",
+      "status": "core"
+    },
+    {
+      "topic": "Concurrency, parallelism and Amdahl’s law",
+      "source": "threads",
+      "locator": "Slides 14–17: concurrency/parallelism, types of parallelism and Amdahl’s law",
+      "lessonId": "parallelism-amdahl",
+      "status": "core"
+    },
+    {
+      "topic": "User/kernel thread mappings",
+      "source": "threads",
+      "locator": "Slides 18–25: user/kernel threads and multithreading models",
+      "lessonId": "threading-models",
+      "status": "core"
+    },
+    {
+      "topic": "Thread libraries and implicit threading",
+      "source": "threads",
+      "locator": "Slides 26–30: thread libraries and implicit-threading task",
+      "lessonId": "thread-libraries",
+      "status": "core"
+    },
+    {
+      "topic": "Windows and Linux thread structures",
+      "source": "threads",
+      "locator": "Slides 31–34: Windows and Linux thread examples",
+      "lessonId": "thread-os-examples",
+      "status": "core"
+    },
+    {
+      "topic": "Scheduler types, preemption and dispatch",
+      "source": "scheduling",
+      "locator": "Slides 4–12: scheduler types, preemption, dispatcher, CPU/I/O-bound bursts",
+      "lessonId": "scheduler-dispatcher",
+      "status": "core"
+    },
+    {
+      "topic": "Turnaround, waiting, response and utilization",
+      "source": "scheduling",
+      "locator": "Slides 13–16: performance measures and process-state timing",
+      "lessonId": "scheduling-metrics",
+      "status": "core"
+    },
+    {
+      "topic": "FCFS, SJF and burst prediction",
+      "source": "scheduling",
+      "locator": "Slides 17–22: FCFS, SJF examples and exponential-average estimation task",
+      "lessonId": "fcfs-sjf",
+      "status": "core"
+    },
+    {
+      "topic": "Shortest remaining time scheduling",
+      "source": "scheduling",
+      "locator": "Slide 23: SRT example and preemptive SJF",
+      "lessonId": "srt",
+      "status": "core"
+    },
+    {
+      "topic": "Priority scheduling and aging",
+      "source": "scheduling",
+      "locator": "Slides 24–25: non-preemptive/preemptive priority; slide 31: aging",
+      "lessonId": "priority-scheduling",
+      "status": "core"
+    },
+    {
+      "topic": "Round Robin and time quantum",
+      "source": "scheduling",
+      "locator": "Slides 26–27: Round Robin and q=4 example",
+      "lessonId": "round-robin",
+      "status": "core"
+    },
+    {
+      "topic": "Multilevel and feedback queues",
+      "source": "scheduling",
+      "locator": "Slides 28–31: multilevel queue and multilevel feedback queue",
+      "lessonId": "multilevel-queues",
+      "status": "core"
+    },
+    {
+      "topic": "Multiprocessor scheduling and real-time latency",
+      "source": "scheduling",
+      "locator": "Slides 32–40: multicore, AMP/SMP, affinity, balancing and real-time latency",
+      "lessonId": "multicore-realtime",
+      "status": "core"
+    },
+    {
+      "topic": "Race conditions and bounded producer-consumer",
+      "source": "concurrency",
+      "locator": "Slides 11–24: concurrent inconsistency, bounded buffer and counter interleavings",
+      "lessonId": "race-producer-consumer",
+      "status": "core"
+    },
+    {
+      "topic": "Critical sections and correctness requirements",
+      "source": "concurrency",
+      "locator": "Slides 25–30: critical sections, requirements and strict alternation",
+      "lessonId": "critical-section",
+      "status": "core"
+    },
+    {
+      "topic": "Peterson’s two-process solution",
+      "source": "concurrency",
+      "locator": "Slides 31–33: Peterson algorithm and requirement questions",
+      "lessonId": "peterson",
+      "status": "core"
+    },
+    {
+      "topic": "Mutexes, spinlocks and atomic acquisition",
+      "source": "concurrency",
+      "locator": "Slides 34–36: mutex acquire/release, atomicity and spinlock model",
+      "lessonId": "mutex-locks",
+      "status": "core"
+    },
+    {
+      "topic": "Counting/binary semaphores and producer-consumer coordination",
+      "source": "concurrency",
+      "locator": "Slides 37–39: semaphore operations and types; bounded-buffer application is an independently prepared worked extension",
+      "lessonId": "semaphores",
+      "status": "core"
+    },
+    {
+      "topic": "Deadlock and starvation",
+      "source": "concurrency",
+      "locator": "Slides 41–44: deadlock, board/marker example, starvation and comparison task",
+      "lessonId": "deadlock-starvation",
+      "status": "core"
+    },
+    {
+      "topic": "Bootstrap and boot process — Theo extension",
+      "source": "theo2",
+      "locator": "CMOS Memory; Timer",
+      "lessonId": "boot-sequence",
+      "status": "covered"
+    },
+    {
+      "topic": "Device drivers, controllers and I/O — Theo extension",
+      "source": "theo2",
+      "locator": "Buffering, Caching & Spooling; Device Controllers & Drivers",
+      "lessonId": "io-path",
+      "status": "covered"
+    },
+    {
+      "topic": "Multiprocessor scheduling and real-time latency — Theo extension",
+      "source": "theo5",
+      "locator": "Exercises 5-9 to 5-12",
+      "lessonId": "multicore-realtime",
+      "status": "covered"
+    },
+    {
+      "topic": "Multilevel and feedback queues — Theo extension",
+      "source": "theo5",
+      "locator": "Exercises 5-7 and 5-8",
+      "lessonId": "multilevel-queues",
+      "status": "covered"
+    },
+    {
+      "topic": "Thread and process design decisions",
+      "source": "theo4",
+      "locator": "Exercises 4-1 to 4-3",
+      "lessonId": "thread-design-tradeoffs",
+      "status": "covered"
+    },
+    {
+      "topic": "Address-space and thread-switch costs",
+      "source": "theo4",
+      "locator": "Exercise 4-4; Context Switching: Three Cases Compared",
+      "lessonId": "thread-switch-cost",
+      "status": "covered"
+    },
+    {
+      "topic": "Multicore challenges and pipelines",
+      "source": "theo4",
+      "locator": "Exercise 4-5; Five Challenges; Pipeline; Independent vs. Dependent Tasks",
+      "lessonId": "multicore-pipelines",
+      "status": "covered"
+    },
+    {
+      "topic": "User mode and kernel mode — Theo extension",
+      "source": "theo2",
+      "locator": "Exercises 2-2 and 2-3",
+      "lessonId": "dual-mode",
+      "status": "covered"
+    },
+    {
+      "topic": "System-call interface and APIs — Theo extension",
+      "source": "theo2",
+      "locator": "Exercise 2-4",
+      "lessonId": "system-calls",
+      "status": "covered"
+    },
+    {
+      "topic": "Interrupts, traps, exceptions and timers — Theo extension",
+      "source": "theo2",
+      "locator": "Exercises 2-5 and 2-6",
+      "lessonId": "interrupts",
+      "status": "covered"
+    },
+    {
+      "topic": "Base/limit memory protection — Theo extension",
+      "source": "theo2",
+      "locator": "Exercise 2-7",
+      "lessonId": "memory-protection",
+      "status": "covered"
+    },
+    {
+      "topic": "Virtual machines and VMMs — Theo extension",
+      "source": "theo2",
+      "locator": "Exercise 2-8",
+      "lessonId": "virtual-machines",
+      "status": "covered"
+    },
+    {
+      "topic": "Cooperating processes and shared-memory IPC — Theo extension",
+      "source": "theo2",
+      "locator": "Exercise 2-9",
+      "lessonId": "shared-memory",
+      "status": "covered"
+    },
+    {
+      "topic": "Message passing and buffering — Theo extension",
+      "source": "theo2",
+      "locator": "Exercise 2-9",
+      "lessonId": "message-passing",
+      "status": "covered"
+    },
+    {
+      "topic": "Monolithic, layered, microkernel, modular and hybrid designs — Theo extension",
+      "source": "theo2",
+      "locator": "Exercise 2-10",
+      "lessonId": "os-structures",
+      "status": "covered"
+    },
+    {
+      "topic": "Program, process and memory layout — Theo extension",
+      "source": "theo3",
+      "locator": "Exercise 3.1",
+      "lessonId": "program-process",
+      "status": "covered"
+    },
+    {
+      "topic": "Five-state process model — Theo extension",
+      "source": "theo3",
+      "locator": "Exercises 3.2 and 3.3",
+      "lessonId": "process-states",
+      "status": "covered"
+    },
+    {
+      "topic": "Process Control Block and identity — Theo extension",
+      "source": "theo3",
+      "locator": "Exercises 3.4 and 3.6",
+      "lessonId": "pcb",
+      "status": "covered"
+    },
+    {
+      "topic": "Context switching — Theo extension",
+      "source": "theo3",
+      "locator": "Exercises 3.4 and 3.5",
+      "lessonId": "context-switch",
+      "status": "covered"
+    },
+    {
+      "topic": "Process creation and parent/child execution — Theo extension",
+      "source": "theo3",
+      "locator": "Exercises 3.7 and 3.8",
+      "lessonId": "fork-exec-wait",
+      "status": "covered"
+    },
+    {
+      "topic": "Exit, wait, zombies and orphans — Theo extension",
+      "source": "theo3",
+      "locator": "Exercises 3.9 to 3.11",
+      "lessonId": "process-termination",
+      "status": "covered"
+    },
+    {
+      "topic": "Cooperating processes and shared-memory IPC — Theo extension",
+      "source": "theo3",
+      "locator": "Exercise 3.12",
+      "lessonId": "shared-memory",
+      "status": "covered"
+    },
+    {
+      "topic": "Message passing and buffering — Theo extension",
+      "source": "theo3",
+      "locator": "Exercise 3.12",
+      "lessonId": "message-passing",
+      "status": "covered"
+    },
+    {
+      "topic": "Thread state and shared process resources — Theo extension",
+      "source": "theo4",
+      "locator": "Introduction to Threads",
+      "lessonId": "thread-resources",
+      "status": "covered"
+    },
+    {
+      "topic": "User/kernel thread mappings — Theo extension",
+      "source": "theo4",
+      "locator": "Exercise 4-6",
+      "lessonId": "threading-models",
+      "status": "covered"
+    },
+    {
+      "topic": "Turnaround, waiting, response and utilization — Theo extension",
+      "source": "theo5",
+      "locator": "Where the Three Times Come From",
+      "lessonId": "scheduling-metrics",
+      "status": "covered"
+    },
+    {
+      "topic": "FCFS, SJF and burst prediction — Theo extension",
+      "source": "theo5",
+      "locator": "Exercises 5-1 and 5-2; additional examples",
+      "lessonId": "fcfs-sjf",
+      "status": "covered"
+    },
+    {
+      "topic": "Priority scheduling and aging — Theo extension",
+      "source": "theo5",
+      "locator": "Exercises 5-3 and 5-6; additional examples",
+      "lessonId": "priority-scheduling",
+      "status": "covered"
+    },
+    {
+      "topic": "Round Robin and time quantum — Theo extension",
+      "source": "theo5",
+      "locator": "Exercise 5-4; additional examples",
+      "lessonId": "round-robin",
+      "status": "covered"
+    },
+    {
+      "topic": "Shortest remaining time scheduling — Theo extension",
+      "source": "theo5",
+      "locator": "Exercise 5-5; additional examples",
+      "lessonId": "srt",
+      "status": "covered"
+    }
+  ],
+  "excludedTopics": [],
+  "contentPolicy": "Lesson explanations and examples are independently prepared from the listed course sources. PA wording remains in the separate official PA data. Section locators are used where PDF text extraction does not expose a reliable slide number.",
+  "accuracyNotes": [
+    "Kernel residency is not continuous CPU execution.",
+    "A mode switch does not necessarily cause a process switch.",
+    "The base/limit length convention uses an exclusive upper bound; an upper-address convention must be stated separately.",
+    "The single-threaded process model does not prohibit multithreaded parallel execution.",
+    "Cascading termination is an OS-dependent policy; Unix orphan reparenting is not the same as a zombie.",
+    "Threads may need kernel services for creation, blocking and synchronization despite user-space shared-memory communication.",
+    "The course uses trap/exception/software interrupt terminology broadly; architecture-specific terminology varies.",
+    "Scheduling waiting=C−A−B is used only for single-burst/no-I/O examples.",
+    "SJF optimality is stated with known bursts and appropriate availability assumptions.",
+    "Preemptive-priority ties require an explicit policy; the source example does not fully state one.",
+    "Peterson’s textbook proof requires sequentially consistent ordering; ordinary unsynchronized variables are unsafe in modern implementations.",
+    "The lecture mutex pseudocode must be interpreted as atomic acquisition, not a separate plain check and store.",
+    "Semaphores and mutexes can differ in ownership and signaling semantics."
+  ]
+}

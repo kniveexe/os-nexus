@@ -1555,5 +1555,240 @@
     "The Lab 2 exit-status sequencing error is corrected: successful cat replaces the earlier ls status. GNU Bash manual supports this correction.",
     "Technical review checks distinguish mode changes from process switches, root credentials from kernel mode, Ready from Running, and shell Running from Linux R.",
     "Objective question results measure performance on this bank, not a probability of passing the exam. No free-text keyword grading is included."
-  ]
+  ],
+  "theoreticalSlides": [
+    {
+      "id": "theo2",
+      "title": "OS — Lab 2 — OS Services & Protection — Theoretical Slides",
+      "url": "https://drive.google.com/file/d/1_zjQ-FHzlQDrqae5rCFW-3OXrVg2RHAG/view"
+    },
+    {
+      "id": "theo3",
+      "title": "OS — Lab 3 — Processes — Theoretical Slides",
+      "url": "https://drive.google.com/file/d/1wiDGeGKbLDTi_PjgEjO0fUc58oY_vQUD/view"
+    },
+    {
+      "id": "theo4",
+      "title": "OS — Lab 4 — Threads — Theoretical Slides",
+      "url": "https://drive.google.com/file/d/1RReLhudyBIIMSEMNU_iLZschoYsbawRU/view"
+    },
+    {
+      "id": "theo5",
+      "title": "OS — Lab 5 — CPU Scheduling — Theoretical Slides",
+      "url": "https://drive.google.com/file/d/1_l7FjSvXcRS1DbI2UYIfD7yJJ-AvP-Sg/view"
+    }
+  ],
+  "theoreticalCoverage": [
+    {
+      "topic": "Bootstrap and boot process — Theo extension",
+      "source": "theo2",
+      "locator": "CMOS Memory; Timer",
+      "lessonId": "boot-sequence",
+      "status": "covered"
+    },
+    {
+      "topic": "Device drivers, controllers and I/O — Theo extension",
+      "source": "theo2",
+      "locator": "Buffering, Caching & Spooling; Device Controllers & Drivers",
+      "lessonId": "io-path",
+      "status": "covered"
+    },
+    {
+      "topic": "Multiprocessor scheduling and real-time latency — Theo extension",
+      "source": "theo5",
+      "locator": "Exercises 5-9 to 5-12",
+      "lessonId": "multicore-realtime",
+      "status": "covered"
+    },
+    {
+      "topic": "Multilevel and feedback queues — Theo extension",
+      "source": "theo5",
+      "locator": "Exercises 5-7 and 5-8",
+      "lessonId": "multilevel-queues",
+      "status": "covered"
+    },
+    {
+      "topic": "Thread and process design decisions",
+      "source": "theo4",
+      "locator": "Exercises 4-1 to 4-3",
+      "lessonId": "thread-design-tradeoffs",
+      "status": "covered"
+    },
+    {
+      "topic": "Address-space and thread-switch costs",
+      "source": "theo4",
+      "locator": "Exercise 4-4; Context Switching: Three Cases Compared",
+      "lessonId": "thread-switch-cost",
+      "status": "covered"
+    },
+    {
+      "topic": "Multicore challenges and pipelines",
+      "source": "theo4",
+      "locator": "Exercise 4-5; Five Challenges; Pipeline; Independent vs. Dependent Tasks",
+      "lessonId": "multicore-pipelines",
+      "status": "covered"
+    },
+    {
+      "topic": "User mode and kernel mode — Theo extension",
+      "source": "theo2",
+      "locator": "Exercises 2-2 and 2-3",
+      "lessonId": "dual-mode",
+      "status": "covered"
+    },
+    {
+      "topic": "System-call interface and APIs — Theo extension",
+      "source": "theo2",
+      "locator": "Exercise 2-4",
+      "lessonId": "system-calls",
+      "status": "covered"
+    },
+    {
+      "topic": "Interrupts, traps, exceptions and timers — Theo extension",
+      "source": "theo2",
+      "locator": "Exercises 2-5 and 2-6",
+      "lessonId": "interrupts",
+      "status": "covered"
+    },
+    {
+      "topic": "Base/limit memory protection — Theo extension",
+      "source": "theo2",
+      "locator": "Exercise 2-7",
+      "lessonId": "memory-protection",
+      "status": "covered"
+    },
+    {
+      "topic": "Virtual machines and VMMs — Theo extension",
+      "source": "theo2",
+      "locator": "Exercise 2-8",
+      "lessonId": "virtual-machines",
+      "status": "covered"
+    },
+    {
+      "topic": "Cooperating processes and shared-memory IPC — Theo extension",
+      "source": "theo2",
+      "locator": "Exercise 2-9",
+      "lessonId": "shared-memory",
+      "status": "covered"
+    },
+    {
+      "topic": "Message passing and buffering — Theo extension",
+      "source": "theo2",
+      "locator": "Exercise 2-9",
+      "lessonId": "message-passing",
+      "status": "covered"
+    },
+    {
+      "topic": "Monolithic, layered, microkernel, modular and hybrid designs — Theo extension",
+      "source": "theo2",
+      "locator": "Exercise 2-10",
+      "lessonId": "os-structures",
+      "status": "covered"
+    },
+    {
+      "topic": "Program, process and memory layout — Theo extension",
+      "source": "theo3",
+      "locator": "Exercise 3.1",
+      "lessonId": "program-process",
+      "status": "covered"
+    },
+    {
+      "topic": "Five-state process model — Theo extension",
+      "source": "theo3",
+      "locator": "Exercises 3.2 and 3.3",
+      "lessonId": "process-states",
+      "status": "covered"
+    },
+    {
+      "topic": "Process Control Block and identity — Theo extension",
+      "source": "theo3",
+      "locator": "Exercises 3.4 and 3.6",
+      "lessonId": "pcb",
+      "status": "covered"
+    },
+    {
+      "topic": "Context switching — Theo extension",
+      "source": "theo3",
+      "locator": "Exercises 3.4 and 3.5",
+      "lessonId": "context-switch",
+      "status": "covered"
+    },
+    {
+      "topic": "Process creation and parent/child execution — Theo extension",
+      "source": "theo3",
+      "locator": "Exercises 3.7 and 3.8",
+      "lessonId": "fork-exec-wait",
+      "status": "covered"
+    },
+    {
+      "topic": "Exit, wait, zombies and orphans — Theo extension",
+      "source": "theo3",
+      "locator": "Exercises 3.9 to 3.11",
+      "lessonId": "process-termination",
+      "status": "covered"
+    },
+    {
+      "topic": "Cooperating processes and shared-memory IPC — Theo extension",
+      "source": "theo3",
+      "locator": "Exercise 3.12",
+      "lessonId": "shared-memory",
+      "status": "covered"
+    },
+    {
+      "topic": "Message passing and buffering — Theo extension",
+      "source": "theo3",
+      "locator": "Exercise 3.12",
+      "lessonId": "message-passing",
+      "status": "covered"
+    },
+    {
+      "topic": "Thread state and shared process resources — Theo extension",
+      "source": "theo4",
+      "locator": "Introduction to Threads",
+      "lessonId": "thread-resources",
+      "status": "covered"
+    },
+    {
+      "topic": "User/kernel thread mappings — Theo extension",
+      "source": "theo4",
+      "locator": "Exercise 4-6",
+      "lessonId": "threading-models",
+      "status": "covered"
+    },
+    {
+      "topic": "Turnaround, waiting, response and utilization — Theo extension",
+      "source": "theo5",
+      "locator": "Where the Three Times Come From",
+      "lessonId": "scheduling-metrics",
+      "status": "covered"
+    },
+    {
+      "topic": "FCFS, SJF and burst prediction — Theo extension",
+      "source": "theo5",
+      "locator": "Exercises 5-1 and 5-2; additional examples",
+      "lessonId": "fcfs-sjf",
+      "status": "covered"
+    },
+    {
+      "topic": "Priority scheduling and aging — Theo extension",
+      "source": "theo5",
+      "locator": "Exercises 5-3 and 5-6; additional examples",
+      "lessonId": "priority-scheduling",
+      "status": "covered"
+    },
+    {
+      "topic": "Round Robin and time quantum — Theo extension",
+      "source": "theo5",
+      "locator": "Exercise 5-4; additional examples",
+      "lessonId": "round-robin",
+      "status": "covered"
+    },
+    {
+      "topic": "Shortest remaining time scheduling — Theo extension",
+      "source": "theo5",
+      "locator": "Exercise 5-5; additional examples",
+      "lessonId": "srt",
+      "status": "covered"
+    }
+  ],
+  "theoreticalWorkedSchedules": 18
 }

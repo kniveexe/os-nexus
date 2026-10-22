@@ -1,0 +1,637 @@
+{
+  "sources": [
+    {
+      "id": "lab1",
+      "title": "OS - Lab 01 - Computer Architecture - Manual.docx",
+      "url": "https://drive.google.com/file/d/1_I8P0n-3zgYeplYpEYXv5zjR9KkKklJq/view"
+    },
+    {
+      "id": "lab1cheat",
+      "title": "OS - Lab 01 - Linux Commands Cheat Sheet.pdf",
+      "url": "https://drive.google.com/file/d/11KX-wS0b-ffFuBx8iMQEPpsxh9G-iXit/view"
+    },
+    {
+      "id": "lab2",
+      "title": "OS - Lab 02 - OS Services & Protection - Manual.docx",
+      "url": "https://drive.google.com/file/d/1A6Te-8rh4lh1Pk5PVlPrVQKTOYWZT08G/view"
+    },
+    {
+      "id": "lab2slides",
+      "title": "OS - Lab 02 - OS Services & Protection - Theoretical Slides.pdf",
+      "url": "https://drive.google.com/file/d/1_zjQ-FHzlQDrqae5rCFW-3OXrVg2RHAG/view"
+    },
+    {
+      "id": "lab3",
+      "title": "OS - Lab 03 - Processes - Manual.docx",
+      "url": "https://drive.google.com/file/d/17EzxMk293AsKAZT3puI3JbfgSaEEWINk/view"
+    },
+    {
+      "id": "lab3slides",
+      "title": "OS - Lab 03 - Processes - Practical Slides.pptx",
+      "url": "https://drive.google.com/file/d/1vtz8UgItbDqexhQmyj8TXWnqUAGuzf2E/view"
+    },
+    {
+      "id": "bash-status",
+      "title": "GNU Bash Reference Manual — Exit Status",
+      "url": "https://www.gnu.org/s/bash/manual/html_node/Exit-Status.html"
+    },
+    {
+      "id": "lsblk-man",
+      "title": "util-linux lsblk(8) — topology option",
+      "url": "https://www.man7.org/linux/man-pages/man8/lsblk.8.html"
+    },
+    {
+      "id": "capabilities-man",
+      "title": "Linux capabilities(7) — CAP_DAC_OVERRIDE",
+      "url": "https://www.man7.org/linux/man-pages/man7/capabilities.7.html"
+    }
+  ],
+  "labs": [
+    {
+      "id": "lab1",
+      "title": "Lab 1 · Read the machine",
+      "topic": "Computer architecture and Linux inspection",
+      "group": "Foundations",
+      "intro": "A CPU, memory and devices become easier to understand when you can inspect their properties. This lab turns Linux output into evidence: identify what each field measures, calculate topology, and explain why virtual files do not behave like ordinary disk files. All outputs below are illustrative snapshots, not measurements from your computer.",
+      "objectives": [
+        "Navigate the filesystem and find command documentation.",
+        "Explain /proc, /sys and /dev without treating them as ordinary folders of stored documents.",
+        "Interpret logical CPUs, sockets, cores, hardware threads and cache levels.",
+        "Convert page and cache-line sizes between bytes, KiB and powers of two.",
+        "Distinguish available memory from completely unused memory.",
+        "Choose the correct tools for block, PCI and USB devices."
+      ],
+      "sections": [
+        {
+          "title": "1. Prepare a reproducible session",
+          "explanation": "Create a dedicated folder, then record the session so your actual VM results are available for the report. The && operator executes its right-hand command only if the left-hand command succeeds. A tilde expands to your home directory. script creates a terminal recording; exit ends the recording shell. OS NEXUS does not create a real submission log.",
+          "commands": [
+            {
+              "command": "mkdir -p ~/oslabs/lab01 && cd ~/oslabs/lab01",
+              "output": "[no output on success]",
+              "explanation": "mkdir -p creates missing parents; cd enters the folder."
+            },
+            {
+              "command": "script -q ~/oslabs/lab01/session.log",
+              "output": "[recording shell starts]",
+              "explanation": "-q reduces start/end messages. Keep this shell open until the lab is finished."
+            },
+            {
+              "command": "exit",
+              "output": "[recording shell exits]",
+              "explanation": "Run at the end, after completing and recording the observations."
+            }
+          ]
+        },
+        {
+          "title": "2. Navigate and ask Linux for help",
+          "explanation": "pwd prints the current path. ls lists directory entries; -l adds details, -a includes hidden names and -h makes sizes easier to read when combined with a detailed listing. cd changes directory in the current shell. man displays a manual, while apropos searches manual descriptions. In man, Space scrolls, /word searches, n repeats the search and q quits.",
+          "commands": [
+            {
+              "command": "pwd",
+              "output": "/home/student/oslabs/lab01",
+              "explanation": "An absolute path begins at /. It is not the same as the home abbreviation ~."
+            },
+            {
+              "command": "ls -la",
+              "output": "drwxr-xr-x 2 student student 4096 .\ndrwxr-xr-x 3 student student 4096 ..\n-rw-r--r-- 1 student student  120 session.log",
+              "explanation": "This shortened example includes . (current) and .. (parent). File sizes and dates vary."
+            },
+            {
+              "command": "cd ..\npwd",
+              "output": "/home/student/oslabs",
+              "explanation": "cd / goes to root, cd ~ to home and cd - to the previous directory."
+            },
+            {
+              "command": "man hier",
+              "output": "[manual describing the filesystem hierarchy]",
+              "explanation": "Use man ls or ls --help for a specific command; apropos cpu searches documentation."
+            },
+            {
+              "command": "history",
+              "output": "1  pwd\n2  ls -la",
+              "explanation": "In Bash, !! repeats the previous command and !42 refers to history entry 42. Inspect a command before rerunning it."
+            }
+          ]
+        },
+        {
+          "title": "3. Decode the filesystem hierarchy",
+          "explanation": "/bin contains essential executable commands (often reached through a link to /usr/bin on modern systems). /etc holds system configuration. /var holds variable data such as logs. /proc presents kernel and process information through virtual files. /sys exposes kernel objects, devices and their attributes. /dev contains device nodes that provide interfaces to devices. A directory name tells you its role; it does not guarantee that its entries are ordinary files stored on disk.",
+          "commands": [
+            {
+              "command": "ls -l /",
+              "output": "bin  dev  etc  home  proc  sys  var  ...",
+              "explanation": "Illustrative abbreviated root listing. Use man hier to explain the requested directories in your own words."
+            }
+          ]
+        },
+        {
+          "title": "4. Investigate the live /proc interface",
+          "explanation": "The kernel generates many /proc values when they are read. Consequently, a reported size of zero for /proc/cpuinfo does not mean that reading it produces no data. /proc/uptime contains uptime in seconds and accumulated idle time across CPUs; idle time can exceed uptime on a multicore machine. Repeated reads can change even though you did not edit the file.",
+          "commands": [
+            {
+              "command": "ls -l /proc/cpuinfo",
+              "output": "-r--r--r-- 1 root root 0 ... /proc/cpuinfo",
+              "explanation": "The zero is reported file size, not proof of an empty read."
+            },
+            {
+              "command": "du -sh /proc/cpuinfo",
+              "output": "0\t/proc/cpuinfo",
+              "explanation": "The virtual file does not consume ordinary file data blocks."
+            },
+            {
+              "command": "cat /proc/uptime\ncat /proc/uptime",
+              "output": "120.00 420.00\n121.00 423.50",
+              "explanation": "Two illustrative observations. The second number is aggregated idle CPU time, not a date or free-memory value."
+            }
+          ]
+        },
+        {
+          "title": "5. Count sockets, cores and logical CPUs",
+          "explanation": "A socket is a physical CPU package; a core is an execution engine inside a package; a hardware thread is a logical CPU exposed by a core. For the uniform topology in this lab, logical CPUs = sockets × cores per socket × threads per core. A VM reports virtual topology, which need not reveal the host topology. The Architecture field describes the CPU instruction-set architecture. Little endian means the least significant byte of a multibyte value is stored at the lowest addressed byte.",
+          "commands": [
+            {
+              "command": "lscpu",
+              "output": "Architecture:          x86_64\nByte Order:            Little Endian\nCPU(s):                4\nThread(s) per core:    2\nCore(s) per socket:    2\nSocket(s):             1\nL1d cache:             64 KiB (2 instances)\nL1i cache:             64 KiB (2 instances)\nL2 cache:              512 KiB (2 instances)\nL3 cache:              4 MiB (1 instance)",
+              "explanation": "Example: 1 × 2 × 2 = 4 logical CPUs. Cache display conventions can differ by lscpu version; read instance counts instead of assuming a total is per core."
+            },
+            {
+              "command": "grep -c ^processor /proc/cpuinfo",
+              "output": "4",
+              "explanation": "-c counts matching lines and ^ anchors the pattern at the start. In this example the logical CPU count matches lscpu."
+            },
+            {
+              "command": "grep -m1 'model name' /proc/cpuinfo",
+              "output": "model name : Example virtual x86_64 CPU",
+              "explanation": "-m1 stops after the first matching line. Use your real model name in the report."
+            }
+          ]
+        },
+        {
+          "title": "6. Understand cache lines and pages",
+          "explanation": "Small L1 caches provide fast access close to each core; larger L2/L3 caches trade some latency for capacity and reduce slow accesses to RAM. L1d stores data and L1i stores instructions. A cache line is a transfer/coherence granularity for caches. A memory page is a virtual-memory management granularity. They solve different problems. In the lab example, 4096 bytes = 4 KiB = 2^12 bytes and 64 bytes = 0.0625 KiB = 2^6 bytes. One 4096-byte page contains 64 lines of 64 bytes. These values are common examples, not universal hardware constants.",
+          "commands": [
+            {
+              "command": "getconf -a | grep -E 'PAGESIZE|LEVEL1_DCACHE_SIZE|LEVEL1_DCACHE_LINESIZE|LEVEL2_CACHE_SIZE|LEVEL3_CACHE_SIZE'",
+              "output": "PAGESIZE                        4096\nLEVEL1_DCACHE_SIZE               32768\nLEVEL1_DCACHE_LINESIZE           64\nLEVEL2_CACHE_SIZE                262144\nLEVEL3_CACHE_SIZE                4194304",
+              "explanation": "getconf -a prints constants, | passes the output to grep, and -E enables alternatives in the pattern. Values describe this illustrative system."
+            }
+          ]
+        },
+        {
+          "title": "7. Read memory without confusing free and available",
+          "explanation": "free is memory that is currently unused. Linux also uses otherwise idle RAM for buffers and caches, improving file access. available estimates how much memory can be used by new applications without swapping, including reclaimable cache. It may therefore be much larger than free. Fields and accounting formulas vary across versions; do not add every displayed field as though they were disjoint.",
+          "commands": [
+            {
+              "command": "free -h",
+              "output": "               total   used   free   shared   buff/cache   available\nMem:           7.8Gi  2.1Gi  0.8Gi   0.1Gi        4.9Gi       5.3Gi\nSwap:          2.0Gi     0B  2.0Gi",
+              "explanation": "Illustrative memory summary. A small free value alone does not prove memory exhaustion."
+            },
+            {
+              "command": "head -5 /proc/meminfo",
+              "output": "MemTotal:        8178892 kB\nMemFree:          838860 kB\nMemAvailable:    5557452 kB\nBuffers:          102400 kB\nCached:          4900000 kB",
+              "explanation": "The kernel exposes memory counters. head -5 selects only the first five lines."
+            }
+          ]
+        },
+        {
+          "title": "8. Inspect disks, PCI and USB devices",
+          "explanation": "lsblk shows block devices such as disks and their partitions. The tree shows containment, not a process family. A mount point indicates where a filesystem appears in the directory hierarchy. lsblk -t shows block-device topology, including sector and I/O properties. Correction to Lab 1 Part C: its description of lsblk -t as a PCI listing is incorrect; lspci | head -15 is the PCI command. The cheat sheet identifies the same discrepancy.",
+          "commands": [
+            {
+              "command": "lsblk",
+              "output": "NAME   SIZE TYPE MOUNTPOINTS\nsda     32G disk\nsda1   512M part /boot/efi\nsda2  31.5G part /",
+              "explanation": "One virtual disk contains two partitions in this example."
+            },
+            {
+              "command": "lsblk -t",
+              "output": "NAME  ALIGNMENT MIN-IO OPT-IO PHY-SEC LOG-SEC ROTA\nsda           0    512      0     512     512    1",
+              "explanation": "Block-device topology, not PCI devices. Actual columns depend on tool version."
+            },
+            {
+              "command": "lspci | head -15",
+              "output": "00:00.0 Host bridge: Example virtual host bridge\n00:02.0 VGA compatible controller: Example virtual graphics",
+              "explanation": "A corrected supplementary command for the stated PCI-inspection purpose."
+            },
+            {
+              "command": "lsusb",
+              "output": "Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub",
+              "explanation": "A VM may expose only a small set of virtual USB devices."
+            },
+            {
+              "command": "cat /proc/devices | head -20",
+              "output": "Character devices:\n  1 mem\n  4 tty\n  5 /dev/tty\n...",
+              "explanation": "Lists registered device classes and major numbers; it is not the same inventory as lsblk."
+            }
+          ]
+        }
+      ],
+      "misconceptions": [
+        "A zero reported size under /proc does not imply that the file supplies no data.",
+        "Logical CPU count is not necessarily physical core count, especially in a VM.",
+        "A 64-byte cache line is not a 4096-byte page.",
+        "Low free RAM alone does not mean the machine has no usable memory.",
+        "lsblk -t does not list PCI devices."
+      ],
+      "refs": [
+        {
+          "source": "lab1",
+          "locator": "Parts A–C and report tables"
+        },
+        {
+          "source": "lab1cheat",
+          "locator": "Pages 1–2"
+        },
+        {
+          "source": "lsblk-man",
+          "locator": "Options: -t, --topology"
+        }
+      ],
+      "quizIds": [
+        "GEN-31",
+        "GEN-32"
+      ]
+    },
+    {
+      "id": "lab2",
+      "title": "Lab 2 · Follow the kernel boundary",
+      "topic": "System calls, streams and file permissions",
+      "group": "Services",
+      "intro": "A command can perform ordinary calculations in user mode while relying on the kernel for protected operations. This lab makes that boundary visible using system-call traces, output redirection and permission checks. Outputs are illustrative; system-call counts, library paths and file permissions must be observed on your own VM.",
+      "objectives": [
+        "Distinguish a system call from a library dependency.",
+        "Read strace summaries without assuming a fixed call count.",
+        "Route stdout and stderr independently and capture the correct exit status.",
+        "Convert Unix permission bits between symbolic and octal notation.",
+        "Explain why root identity is different from CPU kernel mode.",
+        "Connect protected file operations to dual-mode execution."
+      ],
+      "sections": [
+        {
+          "title": "1. Start and record",
+          "explanation": "Use a separate folder and keep the recording shell running while you make observations. Empty output usually means the command succeeded silently; verify its effect if you are unsure.",
+          "commands": [
+            {
+              "command": "mkdir lab2\ncd lab2\nscript -q session.log",
+              "output": "[folder created; recording starts]",
+              "explanation": "mkdir without -p reports an error if lab2 already exists. cd enters the folder. Finish the recording with exit."
+            }
+          ]
+        },
+        {
+          "title": "2. Count system calls with strace",
+          "explanation": "strace observes the boundary where a traced process asks the kernel to perform operations. With -c, it aggregates calls into a summary rather than displaying every event. Startup and library loading can require calls before the visible command does its main work. A count near 100 in the manual is an example, not a required answer. Compare your measured total instead of trying to force a particular count.",
+          "commands": [
+            {
+              "command": "strace -c ls",
+              "output": "session.log\n% time  seconds  usecs/call  calls  errors  syscall\n  ...       ...         ...     12       0  openat\n  ...       ...         ...      4       0  getdents64\n100.00    0.0004         ...     96       5  total",
+              "explanation": "A shortened illustrative summary. ls writes its ordinary listing to stdout; strace writes tracing diagnostics to stderr. A syscall-level error need not make the whole program fail."
+            },
+            {
+              "command": "strace -c pwd",
+              "output": "/home/student/lab2\n...\n100.00  ...  ...  60  ...  total",
+              "explanation": "The report asks for your observed total for pwd. The illustrative 60 is not a target."
+            }
+          ]
+        },
+        {
+          "title": "3. Inspect dynamic libraries with ldd",
+          "explanation": "A shared library is reusable user-space code loaded by programs. ldd reports dynamic shared-object dependencies; it does not count system calls and a library function is not automatically a system call. A library function may do computation entirely in user mode or eventually invoke a kernel service. Use the trusted lab binaries for this exercise.",
+          "commands": [
+            {
+              "command": "ldd /bin/ls",
+              "output": "linux-vdso.so.1 (...)\nlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (...)\n/lib64/ld-linux-x86-64.so.2 (...)",
+              "explanation": "Shortened example; dependencies and addresses depend on the executable and system."
+            },
+            {
+              "command": "ldd /bin/cat",
+              "output": "libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (...)",
+              "explanation": "The report asks for one actual .so dependency, not the address shown in parentheses."
+            }
+          ]
+        },
+        {
+          "title": "4. Redirect normal results and errors separately",
+          "explanation": "Processes normally inherit descriptor 0 for standard input, 1 for standard output and 2 for standard error. The shell opens the redirection target before starting the command. > redirects stdout and normally truncates an existing target; 2> redirects stderr. Redirecting stdout does not automatically redirect errors.",
+          "commands": [
+            {
+              "command": "ls > out.txt\ncat out.txt",
+              "output": "out.txt\nsession.log",
+              "explanation": "The ls listing goes into out.txt; cat then displays it. out.txt can appear in the listing because redirection created it first."
+            },
+            {
+              "command": "ls /nothing 2> err.txt\ncat err.txt",
+              "output": "ls: cannot access '/nothing': No such file or directory",
+              "explanation": "The failed ls diagnostic was captured in err.txt. The successful cat is a separate command."
+            }
+          ]
+        },
+        {
+          "title": "5. Read the exit status immediately",
+          "explanation": "Bash $? represents the status of the most recently completed command. Zero indicates success; nonzero indicates failure or another command-specific outcome. Correction to manual Step 10: after a successful cat err.txt, echo $? normally prints 0, not the earlier ls status. To inspect the failed ls, run echo $? immediately after ls, or save the status before running cat. The report version correctly places echo $? immediately after ls /abc.",
+          "commands": [
+            {
+              "command": "ls /nothing 2> err.txt\necho $?",
+              "output": "2",
+              "explanation": "Illustrative GNU ls failure status. The key distinction is nonzero, and that no intervening command has replaced it."
+            },
+            {
+              "command": "ls /nothing 2> err.txt\ncat err.txt\necho $?",
+              "output": "ls: cannot access '/nothing': No such file or directory\n0",
+              "explanation": "The final zero belongs to successful cat. It does not retroactively make ls successful."
+            },
+            {
+              "command": "ls /nothing 2> err.txt\nstatus=$?\ncat err.txt\necho \"$status\"",
+              "output": "ls: cannot access '/nothing': No such file or directory\n2",
+              "explanation": "Save a status before another command overwrites the special parameter."
+            }
+          ]
+        },
+        {
+          "title": "6. Use a pipe to connect commands",
+          "explanation": "A pipe connects the standard output of one command to the standard input of the next. It does not normally include stderr. head -5 keeps up to five lines, not necessarily five files if the input contains a header. In this ls example each output line is a name.",
+          "commands": [
+            {
+              "command": "ls /etc | head -5",
+              "output": "adduser.conf\nalternatives\napparmor\napt\nbash.bashrc",
+              "explanation": "Five illustrative names from a sorted listing. The real names depend on the VM."
+            },
+            {
+              "command": "ls /etc | head -3",
+              "output": "adduser.conf\nalternatives\napparmor",
+              "explanation": "The report asks for three names. | is a pipe; && instead makes execution conditional on success."
+            }
+          ]
+        },
+        {
+          "title": "7. Translate permission bits",
+          "explanation": "Read the nine permission positions as owner, group and others. r contributes 4, w contributes 2 and x contributes 1 within each group. Therefore rw-r----- is 640 and rw------- is 600. A leading - in ls -l describes a regular file and is separate from the nine permission bits. For directories, x means search/traversal rather than running the directory.",
+          "commands": [
+            {
+              "command": "ls -l /etc/shadow",
+              "output": "-rw-r----- 1 root shadow ... /etc/shadow",
+              "explanation": "This illustrative 640 file allows owner read/write and group read; others have no permission. Actual permissions can differ."
+            },
+            {
+              "command": "echo hi > note.txt\nchmod 600 note.txt\nls -l note.txt",
+              "output": "-rw------- 1 student student 3 ... note.txt",
+              "explanation": "600 gives the owner read/write and gives group and others no access. It does not grant execute permission."
+            }
+          ]
+        },
+        {
+          "title": "8. Observe denial, then restore access",
+          "explanation": "Assume the ordinary unprivileged lab user owns myfile.txt and no ACL grants extra access. chmod 000 removes all owner/group/other permission bits; a normal read is denied even to that owner. The owner can still change the file permissions back. This is ordinary discretionary access control, not an absolute prohibition against a process with relevant privileges such as CAP_DAC_OVERRIDE.",
+          "commands": [
+            {
+              "command": "echo hello > myfile.txt\nchmod 000 myfile.txt\ncat myfile.txt",
+              "output": "cat: myfile.txt: Permission denied",
+              "explanation": "The kernel checks credentials and permissions when the read is requested."
+            },
+            {
+              "command": "chmod 640 myfile.txt\nls -l myfile.txt\ncat myfile.txt",
+              "output": "-rw-r----- 1 student student 6 ... myfile.txt\nhello",
+              "explanation": "Restoring owner read permission makes the file readable again for its owner."
+            }
+          ]
+        },
+        {
+          "title": "9. Separate root identity from CPU privilege mode",
+          "explanation": "sudo, when policy permits and authentication succeeds, runs a command as another user, commonly root. A root-owned user-space program still executes ordinary instructions in user mode; it enters kernel mode through controlled transitions for kernel services. The kernel evaluates its more privileged credentials. Do not equate the root account with arbitrary execution inside the kernel.",
+          "commands": [
+            {
+              "command": "cat /etc/shadow",
+              "output": "cat: /etc/shadow: Permission denied",
+              "explanation": "Typical ordinary-user result because password-hash data is protected."
+            },
+            {
+              "command": "sudo cat /etc/shadow",
+              "output": "[illustrative: access granted; sensitive contents omitted]",
+              "explanation": "The manual demonstrates credential-based authorization. OS NEXUS never reads or displays real password data."
+            }
+          ]
+        },
+        {
+          "title": "10. Connect the lab to the lecture model",
+          "explanation": "Opening a file reaches the kernel via a system call; arithmetic on an already loaded integer may run entirely in user mode. A system-call number identifies a kernel service through the system-call interface. A later hardware interrupt is a separate asynchronous event, identified through the interrupt mechanism. A mode transition does not necessarily switch to another process. Buffering holds data in transit, caching retains data for reuse and spooling queues work such as print jobs. The accompanying theoretical slides connect these distinctions to booting, base/limit protection, virtual machines and OS structures; use the linked Services lessons and PA2 for those complete explanations.",
+          "commands": [
+            {
+              "command": "exit",
+              "output": "[session recording ends]",
+              "explanation": "End the recording only after completing the report observations."
+            }
+          ]
+        }
+      ],
+      "misconceptions": [
+        "strace counts kernel requests; ldd lists shared-library dependencies. They answer different questions.",
+        "echo $? refers to the immediately previous command, so an intervening successful cat changes the answer.",
+        "> redirects stdout; it does not also redirect stderr.",
+        "root is a user identity, while kernel mode is a CPU privilege level.",
+        "chmod 000 denies ordinary permission-based access but is not a guarantee against all privileged processes.",
+        "A system call can return to the same process; a mode switch is not automatically a process context switch."
+      ],
+      "refs": [
+        {
+          "source": "lab2",
+          "locator": "Steps 1–21; Report Q1–Q7"
+        },
+        {
+          "source": "lab2slides",
+          "locator": "Kernel vs. System Utilities; Dual Mode Operation; Exercises 2-1–2-10"
+        },
+        {
+          "source": "bash-status",
+          "locator": "Exit status of the last command"
+        },
+        {
+          "source": "capabilities-man",
+          "locator": "CAP_DAC_OVERRIDE"
+        }
+      ],
+      "quizIds": [
+        "GEN-33",
+        "GEN-34"
+      ]
+    },
+    {
+      "id": "lab3",
+      "title": "Lab 3 · Control a process",
+      "topic": "Linux process identity, states and signals",
+      "group": "Processes",
+      "intro": "Start one sleep process and follow its identity through waiting, suspension, resumption and termination. Keep the same Bash session so the saved PID remains available. The outputs below use a deterministic example PID of 4821 and parent PID 4700; your real VM values will differ. The practical Lab 3 scope observes S and T, explains R and D, and explains Z without adding the Lab 4 zombie experiment.",
+      "objectives": [
+        "Distinguish a program, a process, a shell job number and a PID.",
+        "Interpret ps identity, resource and CPU-time fields.",
+        "Read selected kernel process information through /proc.",
+        "Explain R, S, D, T and Z without confusing waiting and stopping.",
+        "Send STOP, CONT and TERM and predict the observed state.",
+        "Explain why wait collects child status and why KILL differs from TERM."
+      ],
+      "sections": [
+        {
+          "title": "1. Prepare and inspect snapshots",
+          "explanation": "The lab uses Bash and one long-lived sleep job. Create a folder, start session recording and read the manual sections before experimenting. ps displays a snapshot, not a continuously updating monitor. Plain ps normally selects processes associated with your user and terminal; ps aux provides a broad view.",
+          "commands": [
+            {
+              "command": "mkdir -p ~/oslabs/lab03 && cd ~/oslabs/lab03\nscript -q session.log",
+              "output": "[recording starts]",
+              "explanation": "Keep the same terminal open; finish with exit after cleanup."
+            },
+            {
+              "command": "man ps\nman 7 signal",
+              "output": "[manual pages]",
+              "explanation": "In man ps, search /PROCESS STATE. Read signal names and verify numbers on your VM."
+            },
+            {
+              "command": "ps aux | head -5",
+              "output": "USER   PID %CPU %MEM  VSZ  RSS TTY   STAT START TIME COMMAND\nroot     1  0.0  0.1  ...  ... ?     Ss   09:00 0:01 /sbin/init\nstudent 4700 0.0 0.1  ...  ... pts/0 Ss  09:05 0:00 bash\nstudent 4701 0.0 0.0  ...  ... pts/0 R+  09:06 0:00 ps aux\nstudent 4702 0.0 0.0  ...  ... pts/0 S+  09:06 0:00 head -5",
+              "explanation": "Five lines include the header: at most four process rows here."
+            }
+          ]
+        },
+        {
+          "title": "2. Start a process and preserve its PID",
+          "explanation": "sleep is a program; sleep 3600 & starts a process that waits for a timer. & runs it in the background so the shell can return a prompt. $! expands to the PID of the latest background job; save it immediately before another background command changes it. PID=$! has no spaces around =. A PID is system process identity within the relevant PID namespace, while [1] is a job number local to this shell.",
+          "commands": [
+            {
+              "command": "sleep 3600 &\nPID=$!\necho \"PID is $PID\"",
+              "output": "[1] 4821\nPID is 4821",
+              "explanation": "This is an example process ID, not a value to copy into your VM."
+            },
+            {
+              "command": "ps -p \"$PID\" -o pid,ppid,stat,comm",
+              "output": "  PID  PPID STAT COMMAND\n 4821  4700 S    sleep",
+              "explanation": "PPID identifies the parent, usually the shell. sleep normally waits in S; it is still a live process."
+            }
+          ]
+        },
+        {
+          "title": "3. Interpret CPU time and memory",
+          "explanation": "USER is the process owner, TIME is accumulated CPU execution time and COMMAND shows the command with arguments. TIME is not elapsed time since launch: a one-hour sleep can use almost no CPU time. VSZ is virtual address-space size; RSS is resident memory currently in RAM. Both are shown in KiB in this ps layout. Virtual mappings need not all occupy RAM at once, so VSZ and RSS need not match.",
+          "commands": [
+            {
+              "command": "ps -p \"$PID\" -o user,pid,vsz,rss,time,args",
+              "output": "USER      PID  VSZ  RSS     TIME COMMAND\nstudent  4821 2908 1792 00:00:00 sleep 3600",
+              "explanation": "The illustrative process reserves more virtual memory than its resident memory. Zero rounded CPU time does not mean it has never existed."
+            }
+          ]
+        },
+        {
+          "title": "4. Read kernel process information",
+          "explanation": "/proc/PID/status exposes selected identity, state and memory fields. The entries are kernel-provided views; they are not the complete internal PCB. The fd directory contains symbolic links for open file descriptors. Normally 0 is stdin, 1 stdout and 2 stderr; redirection can make them refer to files or pipes rather than the terminal.",
+          "commands": [
+            {
+              "command": "grep -E '^(Name|State|Pid|PPid|VmSize|VmRSS):' /proc/$PID/status",
+              "output": "Name:\tsleep\nState:\tS (sleeping)\nPid:\t4821\nPPid:\t4700\nVmSize:\t2908 kB\nVmRSS:\t1792 kB",
+              "explanation": "^ anchors the pattern; | means OR inside this regular expression, not a shell pipe because it is quoted."
+            },
+            {
+              "command": "ls -l /proc/$PID/fd",
+              "output": "0 -> /dev/pts/0\n1 -> /dev/pts/0\n2 -> /dev/pts/0",
+              "explanation": "Simplified entries showing inherited standard channels. More descriptors may exist."
+            }
+          ]
+        },
+        {
+          "title": "5. Distinguish Linux states from shell job labels",
+          "explanation": "R means running or runnable; it combines the lecture model’s Running and Ready. S is interruptible sleep awaiting an event; D is an uninterruptible wait, often associated with I/O. T is stopped and can be resumed. Z means the process has exited but status remains to be collected. A shell job described as Running may contain a process in S: the job label means it is not stopped or completed, not that it currently owns the CPU.",
+          "commands": [
+            {
+              "command": "jobs -l",
+              "output": "[1]+ 4821 Running    sleep 3600 &",
+              "explanation": "The shell tracks its own jobs, not every process on the system."
+            },
+            {
+              "command": "ps -p \"$PID\" -o pid,stat,comm",
+              "output": "  PID STAT COMMAND\n 4821 S    sleep",
+              "explanation": "No contradiction: the job is continuing, while the process waits for its timer."
+            }
+          ]
+        },
+        {
+          "title": "6. Move between foreground and background",
+          "explanation": "Foreground/background describe the relationship to the shell’s terminal, not a separate Linux process state. fg %sleep brings the single matching job forward. Ctrl-Z normally sends the terminal stop signal SIGTSTP to the foreground process group; after the job stops, the shell returns a prompt. bg resumes it in the background. Keep one sleep job so %sleep is unambiguous; otherwise use the job number.",
+          "commands": [
+            {
+              "command": "fg %sleep\n[press Ctrl-Z]",
+              "output": "sleep 3600\n[1]+ Stopped    sleep 3600",
+              "explanation": "The process is suspended, not destroyed. Ctrl-Z is a keyboard action, not text to type as a shell command."
+            },
+            {
+              "command": "jobs -l\nbg %sleep\njobs -l",
+              "output": "[1]+ 4821 Stopped    sleep 3600\n[1]+ sleep 3600 &\n[1]+ 4821 Running    sleep 3600 &",
+              "explanation": "Resumption preserves the PID and ordinarily returns sleep to S."
+            }
+          ]
+        },
+        {
+          "title": "7. Send STOP and CONT deliberately",
+          "explanation": "kill sends a signal; its name does not imply that every signal terminates. SIGSTOP suspends execution and cannot be caught or ignored. SIGCONT resumes a stopped process. The resumed process becomes eligible to proceed, but sleep normally returns to its timer wait and is observed as S. CONT does not create a new process or guarantee it remains in R.",
+          "commands": [
+            {
+              "command": "kill -STOP \"$PID\"\nps -p \"$PID\" -o pid,stat,comm",
+              "output": "  PID STAT COMMAND\n 4821 T    sleep",
+              "explanation": "The same PID is now stopped."
+            },
+            {
+              "command": "kill -CONT \"$PID\"\nps -p \"$PID\" -o pid,stat,comm",
+              "output": "  PID STAT COMMAND\n 4821 S    sleep",
+              "explanation": "It resumes and normally waits again. Tiny intermediate states may be missed by a snapshot."
+            }
+          ]
+        },
+        {
+          "title": "8. Request termination, collect status and verify",
+          "explanation": "SIGTERM requests termination and can be handled or ignored by a program; ordinary sleep normally exits. SIGKILL cannot be caught or ignored and prevents user-space cleanup handlers. Neither is a command to erase a program’s executable file. wait waits for a child and collects status; a nonzero status following signal termination is expected. Shells may reap children automatically, so do not rely on observing a persistent Z state here.",
+          "commands": [
+            {
+              "command": "kill -TERM \"$PID\"\nwait \"$PID\" 2>/dev/null\nps -p \"$PID\"",
+              "output": "  PID TTY          TIME CMD",
+              "explanation": "The header with no process row shows that this PID is absent from the snapshot. The saved PID variable still contains the old number."
+            },
+            {
+              "command": "kill -KILL \"$PID\"",
+              "output": "bash: kill: (4821) - No such process",
+              "explanation": "After termination and collection, a further signal to that absent PID fails. In a real system PIDs can later be reused, so always verify the target."
+            }
+          ]
+        },
+        {
+          "title": "9. Explain the lifecycle and troubleshoot",
+          "explanation": "The observed path is S → T → S → termination, not New → Running → Terminated on every command. A zombie has already exited; an orphan has lost its parent while it may still be alive and is normally adopted on Linux. If $PID is empty, restart the planned process and immediately save $!. If /proc/PID is missing, verify the process still exists. If fg leaves no prompt, use the planned Ctrl-Z action. End any remaining test jobs before ending the recording.",
+          "commands": [
+            {
+              "command": "exit",
+              "output": "[session recording ends]",
+              "explanation": "Submit observations from your own VM; illustrative examples are for interpretation and practice."
+            }
+          ]
+        }
+      ],
+      "misconceptions": [
+        "A process in S is alive; sleep is the program name, not a command that suspends an unrelated process.",
+        "jobs Running does not imply Linux state R or current CPU ownership.",
+        "TIME is CPU time, not wall-clock lifetime.",
+        "STOP preserves the process; CONT preserves its PID.",
+        "TERM permits a handler; KILL does not.",
+        "A zombie has already exited, whereas an orphan has lost its original parent.",
+        "/proc exposes selected PCB-related information, not an exact dump of every internal PCB field."
+      ],
+      "refs": [
+        {
+          "source": "lab3",
+          "locator": "Parts A–B; Report Q1–Q5"
+        },
+        {
+          "source": "lab3slides",
+          "locator": "Slides 3–33"
+        }
+      ],
+      "quizIds": [
+        "GEN-35",
+        "GEN-36"
+      ]
+    }
+  ]
+}

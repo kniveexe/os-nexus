@@ -1,0 +1,12 @@
+import fs from 'node:fs';
+import path from 'node:path';
+const html=fs.readFileSync('dist/index.html','utf8');
+const script=html.match(/<script[^>]*src="([^"]+)"[^>]*><\/script>/);
+const stylesheet=html.match(/<link[^>]*href="([^"]+\.css)"[^>]*>/);
+if(!script||!stylesheet)throw Error('Expected one Vite JavaScript and CSS entry');
+const js=fs.readFileSync(path.join('dist',script[1]),'utf8').replace(/<\/script/gi,'<\\/script');
+const css=fs.readFileSync(path.join('dist',stylesheet[1]),'utf8').replace(/@import\s*(?:url\([^)]*\)|"[^"]*"|'[^']*')[^;]*;/g,'');
+const output=html.replace(script[0],()=>`<script type="module">${js}</script>`).replace(stylesheet[0],()=>`<style>${css}</style>`);
+fs.writeFileSync('START_OS_NEXUS.html',output);
+fs.copyFileSync('public/coverage-manifest.json','coverage-manifest.json');
+console.log('Created START_OS_NEXUS.html (embedded app, content and CSS; system fonts; no backend).');

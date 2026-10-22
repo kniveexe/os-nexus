@@ -1,0 +1,1794 @@
+{
+  "generatedAt": "2026-10-22",
+  "scope": "All six unique lecture PDFs, PA1–3, Labs1–3, as clarified by the user. Topic order is pedagogical; no numbered lecture mapping claimed.",
+  "sources": [
+    {
+      "id": "intro",
+      "title": "OS - Course Introduction & Grading.pdf",
+      "url": "https://drive.google.com/file/d/1LeLS4nPyz1WbHO0HAAFIQ_M6Z7kcSOTe/view",
+      "status": "read",
+      "numbering": "Included by the user’s explicit all-lecture-PDF scope clarification; organized by document title because lecture numbering is not established.",
+      "topics": [
+        "Virtualization, abstraction and arbitration",
+        "Computer and OS evolution; Linux",
+        "Computer architecture and instruction cycle"
+      ]
+    },
+    {
+      "id": "services",
+      "title": "OS - Lecture 01 - Definition, Services & Structures.pdf",
+      "url": "https://drive.google.com/file/d/1-TDZLuchHKn7JlLyLcMqTrjUzYasHj1V/view",
+      "status": "read",
+      "numbering": "Included by the user’s explicit all-lecture-PDF scope clarification; organized by document title because lecture numbering is not established.",
+      "topics": [
+        "Operating system purpose",
+        "Memory and storage hierarchy",
+        "Bootstrap and boot process",
+        "User mode and kernel mode",
+        "System-call interface and APIs",
+        "Interrupts, traps, exceptions and timers",
+        "Device drivers, controllers and I/O",
+        "Files, memory and program services",
+        "Base/limit memory protection",
+        "Virtual machines and VMMs",
+        "Monolithic, layered, microkernel, modular and hybrid designs"
+      ]
+    },
+    {
+      "id": "processes",
+      "title": "OS - Lecture - Processes, States & IPC.pdf",
+      "url": "https://drive.google.com/file/d/1aslICnmXMDSHcu0DRBLyyVSlhutAtES9/view",
+      "status": "read",
+      "numbering": "Included by the user’s explicit all-lecture-PDF scope clarification; organized by document title because lecture numbering is not established.",
+      "topics": [
+        "Program, process and memory layout",
+        "Five-state process model",
+        "Process Control Block and identity",
+        "Context switching",
+        "Ready/wait queues and dispatch",
+        "Process creation and parent/child execution",
+        "Exit, wait, zombies and orphans",
+        "Cooperating processes and shared-memory IPC",
+        "Message passing and buffering"
+      ]
+    },
+    {
+      "id": "threads",
+      "title": "OS - Lecture - Threads & Multithreading.pdf",
+      "url": "https://drive.google.com/file/d/1VCFzZfoLROll_otUc0pTRjgDT5d9BQkn/view",
+      "status": "read",
+      "numbering": "Included by the user’s explicit all-lecture-PDF scope clarification; organized by document title because lecture numbering is not established.",
+      "topics": [
+        "Thread state and shared process resources",
+        "Benefits and challenges of multithreading",
+        "Concurrency, parallelism and Amdahl’s law",
+        "User/kernel thread mappings",
+        "Thread libraries and implicit threading",
+        "Windows and Linux thread structures"
+      ]
+    },
+    {
+      "id": "scheduling",
+      "title": "OS - Lecture - CPU Scheduling.pdf",
+      "url": "https://drive.google.com/file/d/1tnYoABI9G8qX6VnoctNssYOqLSF14qVk/view",
+      "status": "read",
+      "numbering": "Included by the user’s explicit all-lecture-PDF scope clarification; organized by document title because lecture numbering is not established.",
+      "topics": [
+        "Scheduler types, preemption and dispatch",
+        "Turnaround, waiting, response and utilization",
+        "FCFS, SJF and burst prediction",
+        "Shortest remaining time scheduling",
+        "Priority scheduling and aging",
+        "Round Robin and time quantum",
+        "Multilevel and feedback queues",
+        "Multiprocessor scheduling and real-time latency"
+      ]
+    },
+    {
+      "id": "concurrency",
+      "title": "OS - Lecture - Concurrency, Synchronization & Semaphores.pdf",
+      "url": "https://drive.google.com/file/d/1kBncHRzz87r1s3qjX8A1YPVlFphAkXhB/view",
+      "status": "read",
+      "numbering": "Included by the user’s explicit all-lecture-PDF scope clarification; organized by document title because lecture numbering is not established.",
+      "topics": [
+        "Race conditions and bounded producer-consumer",
+        "Critical sections and correctness requirements",
+        "Peterson’s two-process solution",
+        "Mutexes, spinlocks and atomic acquisition",
+        "Counting/binary semaphores and producer-consumer coordination",
+        "Deadlock and starvation"
+      ]
+    },
+    {
+      "id": "pa1a",
+      "title": "OS - Practice Assignment 1 Solutions - OS Basics.pdf",
+      "url": "https://drive.google.com/file/d/1DYjErSZngV_oTTBsbRQgkfb_zgJOoidJ/view"
+    },
+    {
+      "id": "pa1q",
+      "title": "OS - Practice Assignment 1 - OS Basics.pdf",
+      "url": "https://drive.google.com/file/d/13UyxcQVujSE4KXWYkoCH4KuQWobD7TqU/view"
+    },
+    {
+      "id": "pa2q",
+      "title": "OS - Practice Assignment 02 - OS Services & Structures - Questions.pdf",
+      "url": "https://drive.google.com/file/d/1US_x6GKnC3lN96Z6KQjBguLInm9oZWQk/view"
+    },
+    {
+      "id": "pa2a",
+      "title": "OS - Practice Assignment 02 - OS Services & Structures - Solutions.pdf",
+      "url": "https://drive.google.com/file/d/1BCwf3-ur33vakpjnFIrb2UdpZxiZchnf/view"
+    },
+    {
+      "id": "pa3q",
+      "title": "OS - Practice Assignment 03 - Processes - Questions.pdf",
+      "url": "https://drive.google.com/file/d/1jbzfg8sQB-_Emd1T3j9crjGY9Vhj-Zbr/view"
+    },
+    {
+      "id": "pa3a",
+      "title": "OS - Practice Assignment 03 - Processes - Solutions.pdf",
+      "url": "https://drive.google.com/file/d/1tQoLoy6FQJ_mSyjMSwTpMGUnId7_I0CN/view"
+    },
+    {
+      "id": "pa_alt",
+      "title": "OS - Practice Assignment 01 - Process Concepts (Alternate Set).pdf",
+      "url": "https://drive.google.com/file/d/1kHB9HMfRMSQkVc8NVt1ZN1nIy3cmnhmc/view"
+    },
+    {
+      "id": "linux-wait",
+      "title": "Linux man-pages: wait(2)",
+      "url": "https://man7.org/linux/man-pages/man2/wait.2.html"
+    },
+    {
+      "id": "linux-fork",
+      "title": "Linux man-pages: fork(2)",
+      "url": "https://man7.org/linux/man-pages/man2/fork.2.html"
+    },
+    {
+      "id": "linux-entry",
+      "title": "Linux kernel documentation: Entry/exit handling",
+      "url": "https://docs.kernel.org/core-api/entry.html"
+    },
+    {
+      "id": "linux-syscall-intro",
+      "title": "Linux man-pages: intro(2)",
+      "url": "https://man7.org/linux/man-pages/man2/intro.2.html"
+    },
+    {
+      "id": "lab1",
+      "title": "OS - Lab 01 - Computer Architecture - Manual.docx",
+      "url": "https://drive.google.com/file/d/1_I8P0n-3zgYeplYpEYXv5zjR9KkKklJq/view"
+    },
+    {
+      "id": "lab1cheat",
+      "title": "OS - Lab 01 - Linux Commands Cheat Sheet.pdf",
+      "url": "https://drive.google.com/file/d/11KX-wS0b-ffFuBx8iMQEPpsxh9G-iXit/view"
+    },
+    {
+      "id": "lab2",
+      "title": "OS - Lab 02 - OS Services & Protection - Manual.docx",
+      "url": "https://drive.google.com/file/d/1A6Te-8rh4lh1Pk5PVlPrVQKTOYWZT08G/view"
+    },
+    {
+      "id": "lab2slides",
+      "title": "OS - Lab 02 - OS Services & Protection - Theoretical Slides.pdf",
+      "url": "https://drive.google.com/file/d/1_zjQ-FHzlQDrqae5rCFW-3OXrVg2RHAG/view"
+    },
+    {
+      "id": "lab3",
+      "title": "OS - Lab 03 - Processes - Manual.docx",
+      "url": "https://drive.google.com/file/d/17EzxMk293AsKAZT3puI3JbfgSaEEWINk/view"
+    },
+    {
+      "id": "lab3slides",
+      "title": "OS - Lab 03 - Processes - Practical Slides.pptx",
+      "url": "https://drive.google.com/file/d/1vtz8UgItbDqexhQmyj8TXWnqUAGuzf2E/view"
+    },
+    {
+      "id": "bash-status",
+      "title": "GNU Bash Reference Manual — Exit Status",
+      "url": "https://www.gnu.org/s/bash/manual/html_node/Exit-Status.html"
+    },
+    {
+      "id": "lsblk-man",
+      "title": "util-linux lsblk(8) — topology option",
+      "url": "https://www.man7.org/linux/man-pages/man8/lsblk.8.html"
+    },
+    {
+      "id": "capabilities-man",
+      "title": "Linux capabilities(7) — CAP_DAC_OVERRIDE",
+      "url": "https://www.man7.org/linux/man-pages/man7/capabilities.7.html"
+    }
+  ],
+  "lectureCoverage": [
+    {
+      "topic": "Operating system purpose",
+      "source": "services",
+      "locator": "Slides 4–8: OS definition, kernel/utilities and user/system views",
+      "lessonId": "os-purpose",
+      "status": "core"
+    },
+    {
+      "topic": "Virtualization, abstraction and arbitration",
+      "source": "intro",
+      "locator": "Slides 15–24: virtualization/concurrency/persistence and abstraction/arbitration",
+      "lessonId": "abstraction-arbitration",
+      "status": "core"
+    },
+    {
+      "topic": "Computer and OS evolution; Linux",
+      "source": "intro",
+      "locator": "Slides 25–35 and slide 41 evolution task; PA1 solutions Exercise 1-6",
+      "lessonId": "evolution-linux",
+      "status": "core"
+    },
+    {
+      "topic": "Computer and OS evolution; Linux",
+      "source": "pa1a",
+      "locator": "Page 3, Exercise 1-6",
+      "lessonId": "evolution-linux",
+      "status": "core"
+    },
+    {
+      "topic": "Computer architecture and instruction cycle",
+      "source": "intro",
+      "locator": "Slides 36–39: instruction cycle, von Neumann architecture and bus questions",
+      "lessonId": "architecture-cycle",
+      "status": "core"
+    },
+    {
+      "topic": "Computer architecture and instruction cycle",
+      "source": "pa1a",
+      "locator": "Pages 2–3, Exercises 1-4 and 1-5",
+      "lessonId": "architecture-cycle",
+      "status": "core"
+    },
+    {
+      "topic": "Memory and storage hierarchy",
+      "source": "services",
+      "locator": "Memory-storage hierarchy and How a Modern Computer Works sections, around slides 29–31",
+      "lessonId": "storage-hierarchy",
+      "status": "core"
+    },
+    {
+      "topic": "Bootstrap and boot process",
+      "source": "services",
+      "locator": "Computer Startup and OS Operations sections",
+      "lessonId": "boot-sequence",
+      "status": "core"
+    },
+    {
+      "topic": "User mode and kernel mode",
+      "source": "services",
+      "locator": "Slides 19–23: hardware support, protection and dual-mode operation",
+      "lessonId": "dual-mode",
+      "status": "core"
+    },
+    {
+      "topic": "System-call interface and APIs",
+      "source": "services",
+      "locator": "System Calls; System Call Implementation; API–System Call–OS Relationship sections",
+      "lessonId": "system-calls",
+      "status": "core"
+    },
+    {
+      "topic": "Interrupts, traps, exceptions and timers",
+      "source": "services",
+      "locator": "Common Functions of Interrupts; Interrupt Handling; Timer section",
+      "lessonId": "interrupts",
+      "status": "core"
+    },
+    {
+      "topic": "Device drivers, controllers and I/O",
+      "source": "services",
+      "locator": "Computer System Organization; Computer System Operation; Interrupt-driven I/O Cycle; I/O Subsystem sections",
+      "lessonId": "io-path",
+      "status": "core"
+    },
+    {
+      "topic": "Files, memory and program services",
+      "source": "services",
+      "locator": "Memory Management & Protection; File System Management; slide 49 services task; slide 50 linkers/loaders task",
+      "lessonId": "os-services",
+      "status": "core"
+    },
+    {
+      "topic": "Base/limit memory protection",
+      "source": "services",
+      "locator": "Memory Management & Protection section: base/limit registers",
+      "lessonId": "memory-protection",
+      "status": "core"
+    },
+    {
+      "topic": "Virtual machines and VMMs",
+      "source": "services",
+      "locator": "Virtualization; Virtualization Examples; Computing Environments—Virtualization sections",
+      "lessonId": "virtual-machines",
+      "status": "core"
+    },
+    {
+      "topic": "Monolithic, layered, microkernel, modular and hybrid designs",
+      "source": "services",
+      "locator": "OS Structure; Traditional UNIX; Linux; Layered Approach; Microkernels; Modules; Hybrid Systems sections",
+      "lessonId": "os-structures",
+      "status": "core"
+    },
+    {
+      "topic": "Program, process and memory layout",
+      "source": "processes",
+      "locator": "Slides 4–9: process concept and memory layout",
+      "lessonId": "program-process",
+      "status": "core"
+    },
+    {
+      "topic": "Five-state process model",
+      "source": "processes",
+      "locator": "Slides 10–12: state definitions and transition diagram",
+      "lessonId": "process-states",
+      "status": "core"
+    },
+    {
+      "topic": "Process Control Block and identity",
+      "source": "processes",
+      "locator": "Slides 13–14: Process Control Block; slides 20–22: PID and creation",
+      "lessonId": "pcb",
+      "status": "core"
+    },
+    {
+      "topic": "Context switching",
+      "source": "processes",
+      "locator": "Slides 16–18: context-switching explanation",
+      "lessonId": "context-switch",
+      "status": "core"
+    },
+    {
+      "topic": "Ready/wait queues and dispatch",
+      "source": "processes",
+      "locator": "Slide 12: admitted, scheduler dispatch, interrupt and event-completion transitions",
+      "lessonId": "scheduling-queues",
+      "status": "core"
+    },
+    {
+      "topic": "Process creation and parent/child execution",
+      "source": "processes",
+      "locator": "Slides 20–27: creation, sharing, address-space/execution options, fork/exec/wait",
+      "lessonId": "fork-exec-wait",
+      "status": "core"
+    },
+    {
+      "topic": "Exit, wait, zombies and orphans",
+      "source": "processes",
+      "locator": "Slides 28–30: termination, wait, zombie/orphan question",
+      "lessonId": "process-termination",
+      "status": "core"
+    },
+    {
+      "topic": "Cooperating processes and shared-memory IPC",
+      "source": "processes",
+      "locator": "Slides 31–34: cooperation and shared memory",
+      "lessonId": "shared-memory",
+      "status": "core"
+    },
+    {
+      "topic": "Message passing and buffering",
+      "source": "processes",
+      "locator": "Slides 35–38: message passing, link properties, direct/indirect and buffering tasks",
+      "lessonId": "message-passing",
+      "status": "core"
+    },
+    {
+      "topic": "Thread state and shared process resources",
+      "source": "threads",
+      "locator": "Slides 4–10: thread concept and resources",
+      "lessonId": "thread-resources",
+      "status": "core"
+    },
+    {
+      "topic": "Benefits and challenges of multithreading",
+      "source": "threads",
+      "locator": "Slides 11–13: benefits and multicore programming challenges",
+      "lessonId": "thread-benefits",
+      "status": "core"
+    },
+    {
+      "topic": "Concurrency, parallelism and Amdahl’s law",
+      "source": "threads",
+      "locator": "Slides 14–17: concurrency/parallelism, types of parallelism and Amdahl’s law",
+      "lessonId": "parallelism-amdahl",
+      "status": "core"
+    },
+    {
+      "topic": "User/kernel thread mappings",
+      "source": "threads",
+      "locator": "Slides 18–25: user/kernel threads and multithreading models",
+      "lessonId": "threading-models",
+      "status": "core"
+    },
+    {
+      "topic": "Thread libraries and implicit threading",
+      "source": "threads",
+      "locator": "Slides 26–30: thread libraries and implicit-threading task",
+      "lessonId": "thread-libraries",
+      "status": "core"
+    },
+    {
+      "topic": "Windows and Linux thread structures",
+      "source": "threads",
+      "locator": "Slides 31–34: Windows and Linux thread examples",
+      "lessonId": "thread-os-examples",
+      "status": "core"
+    },
+    {
+      "topic": "Scheduler types, preemption and dispatch",
+      "source": "scheduling",
+      "locator": "Slides 4–12: scheduler types, preemption, dispatcher, CPU/I/O-bound bursts",
+      "lessonId": "scheduler-dispatcher",
+      "status": "core"
+    },
+    {
+      "topic": "Turnaround, waiting, response and utilization",
+      "source": "scheduling",
+      "locator": "Slides 13–16: performance measures and process-state timing",
+      "lessonId": "scheduling-metrics",
+      "status": "core"
+    },
+    {
+      "topic": "FCFS, SJF and burst prediction",
+      "source": "scheduling",
+      "locator": "Slides 17–22: FCFS, SJF examples and exponential-average estimation task",
+      "lessonId": "fcfs-sjf",
+      "status": "core"
+    },
+    {
+      "topic": "Shortest remaining time scheduling",
+      "source": "scheduling",
+      "locator": "Slide 23: SRT example and preemptive SJF",
+      "lessonId": "srt",
+      "status": "core"
+    },
+    {
+      "topic": "Priority scheduling and aging",
+      "source": "scheduling",
+      "locator": "Slides 24–25: non-preemptive/preemptive priority; slide 31: aging",
+      "lessonId": "priority-scheduling",
+      "status": "core"
+    },
+    {
+      "topic": "Round Robin and time quantum",
+      "source": "scheduling",
+      "locator": "Slides 26–27: Round Robin and q=4 example",
+      "lessonId": "round-robin",
+      "status": "core"
+    },
+    {
+      "topic": "Multilevel and feedback queues",
+      "source": "scheduling",
+      "locator": "Slides 28–31: multilevel queue and multilevel feedback queue",
+      "lessonId": "multilevel-queues",
+      "status": "core"
+    },
+    {
+      "topic": "Multiprocessor scheduling and real-time latency",
+      "source": "scheduling",
+      "locator": "Slides 32–40: multicore, AMP/SMP, affinity, balancing and real-time latency",
+      "lessonId": "multicore-realtime",
+      "status": "core"
+    },
+    {
+      "topic": "Race conditions and bounded producer-consumer",
+      "source": "concurrency",
+      "locator": "Slides 11–24: concurrent inconsistency, bounded buffer and counter interleavings",
+      "lessonId": "race-producer-consumer",
+      "status": "core"
+    },
+    {
+      "topic": "Critical sections and correctness requirements",
+      "source": "concurrency",
+      "locator": "Slides 25–30: critical sections, requirements and strict alternation",
+      "lessonId": "critical-section",
+      "status": "core"
+    },
+    {
+      "topic": "Peterson’s two-process solution",
+      "source": "concurrency",
+      "locator": "Slides 31–33: Peterson algorithm and requirement questions",
+      "lessonId": "peterson",
+      "status": "core"
+    },
+    {
+      "topic": "Mutexes, spinlocks and atomic acquisition",
+      "source": "concurrency",
+      "locator": "Slides 34–36: mutex acquire/release, atomicity and spinlock model",
+      "lessonId": "mutex-locks",
+      "status": "core"
+    },
+    {
+      "topic": "Counting/binary semaphores and producer-consumer coordination",
+      "source": "concurrency",
+      "locator": "Slides 37–39: semaphore operations and types; bounded-buffer application is an independently prepared worked extension",
+      "lessonId": "semaphores",
+      "status": "core"
+    },
+    {
+      "topic": "Deadlock and starvation",
+      "source": "concurrency",
+      "locator": "Slides 41–44: deadlock, board/marker example, starvation and comparison task",
+      "lessonId": "deadlock-starvation",
+      "status": "core"
+    }
+  ],
+  "officialQuestions": [
+    {
+      "id": "PA1-01",
+      "title": "What an operating system does",
+      "refs": [
+        {
+          "source": "pa1q",
+          "locator": "Page 1, Exercise 1-1"
+        },
+        {
+          "source": "pa1a",
+          "locator": "Page 1, Exercise 1-1 solution"
+        }
+      ],
+      "lessonIds": [
+        "os-purpose"
+      ]
+    },
+    {
+      "id": "PA1-02",
+      "title": "Purposes of an OS",
+      "refs": [
+        {
+          "source": "pa1q",
+          "locator": "Page 1, Exercise 1-2"
+        },
+        {
+          "source": "pa1a",
+          "locator": "Page 1, Exercise 1-2 solution"
+        }
+      ],
+      "lessonIds": [
+        "os-purpose",
+        "abstraction-arbitration",
+        "os-services"
+      ]
+    },
+    {
+      "id": "PA1-03",
+      "title": "Three modern OS challenges",
+      "refs": [
+        {
+          "source": "pa1q",
+          "locator": "Page 1, Exercise 1-3"
+        },
+        {
+          "source": "pa1a",
+          "locator": "Page 2, Exercise 1-3 solution"
+        }
+      ],
+      "lessonIds": [
+        "abstraction-arbitration"
+      ]
+    },
+    {
+      "id": "PA1-04",
+      "title": "Computer architecture",
+      "refs": [
+        {
+          "source": "pa1q",
+          "locator": "Page 1, Exercise 1-4"
+        },
+        {
+          "source": "pa1a",
+          "locator": "Page 2, Exercise 1-4 solution"
+        }
+      ],
+      "lessonIds": [
+        "architecture-cycle",
+        "storage-hierarchy"
+      ]
+    },
+    {
+      "id": "PA1-05",
+      "title": "Harvard versus von Neumann",
+      "refs": [
+        {
+          "source": "pa1q",
+          "locator": "Page 1, Exercise 1-5"
+        },
+        {
+          "source": "pa1a",
+          "locator": "Page 3, Exercise 1-5 solution"
+        }
+      ],
+      "lessonIds": [
+        "architecture-cycle"
+      ]
+    },
+    {
+      "id": "PA1-06",
+      "title": "Linux and distributions",
+      "refs": [
+        {
+          "source": "pa1q",
+          "locator": "Page 1, Exercise 1-6"
+        },
+        {
+          "source": "pa1a",
+          "locator": "Page 3, Exercise 1-6 solution"
+        }
+      ],
+      "lessonIds": [
+        "evolution-linux"
+      ]
+    },
+    {
+      "id": "PA2-01",
+      "title": "Boot from power-on to kernel",
+      "refs": [
+        {
+          "source": "pa2q",
+          "locator": "Page 1, Exercise 2-1"
+        },
+        {
+          "source": "pa2a",
+          "locator": "Page 1, Exercise 2-1 solution"
+        }
+      ],
+      "lessonIds": [
+        "boot-sequence",
+        "os-services"
+      ]
+    },
+    {
+      "id": "PA2-02",
+      "title": "Dual-mode operation",
+      "refs": [
+        {
+          "source": "pa2q",
+          "locator": "Page 1, Exercise 2-2"
+        },
+        {
+          "source": "pa2a",
+          "locator": "Page 1, Exercise 2-2 solution"
+        }
+      ],
+      "lessonIds": [
+        "dual-mode"
+      ]
+    },
+    {
+      "id": "PA2-03",
+      "title": "Classify seven mode scenarios",
+      "refs": [
+        {
+          "source": "pa2q",
+          "locator": "Page 1, Exercise 2-3"
+        },
+        {
+          "source": "pa2a",
+          "locator": "Page 2, Exercise 2-3 solution"
+        },
+        {
+          "source": "linux-syscall-intro",
+          "locator": "DESCRIPTION: library wrapper and kernel entry"
+        }
+      ],
+      "lessonIds": [
+        "dual-mode",
+        "system-calls",
+        "os-services"
+      ]
+    },
+    {
+      "id": "PA2-04",
+      "title": "Follow a print request",
+      "refs": [
+        {
+          "source": "pa2q",
+          "locator": "Page 1, Exercise 2-4"
+        },
+        {
+          "source": "pa2a",
+          "locator": "Page 3, Exercise 2-4 solution"
+        },
+        {
+          "source": "linux-entry",
+          "locator": "Interrupts and regular exceptions; separate user-space and kernel-space entry/exit paths"
+        }
+      ],
+      "lessonIds": [
+        "system-calls",
+        "io-path"
+      ]
+    },
+    {
+      "id": "PA2-05",
+      "title": "Exception, trap or interrupt?",
+      "refs": [
+        {
+          "source": "pa2q",
+          "locator": "Page 2, Exercise 2-5"
+        },
+        {
+          "source": "pa2a",
+          "locator": "Page 3, Exercise 2-5 solution"
+        }
+      ],
+      "lessonIds": [
+        "system-calls",
+        "interrupts"
+      ]
+    },
+    {
+      "id": "PA2-06",
+      "title": "Simultaneous interrupts",
+      "refs": [
+        {
+          "source": "pa2q",
+          "locator": "Page 2, Exercise 2-6"
+        },
+        {
+          "source": "pa2a",
+          "locator": "Page 4, Exercise 2-6 solution"
+        }
+      ],
+      "lessonIds": [
+        "interrupts"
+      ]
+    },
+    {
+      "id": "PA2-07",
+      "title": "Base and limit protection",
+      "refs": [
+        {
+          "source": "pa2q",
+          "locator": "Page 2, Exercise 2-7"
+        },
+        {
+          "source": "pa2a",
+          "locator": "Page 4, Exercise 2-7 solution"
+        }
+      ],
+      "lessonIds": [
+        "memory-protection"
+      ]
+    },
+    {
+      "id": "PA2-08",
+      "title": "Virtual machines and allocation",
+      "refs": [
+        {
+          "source": "pa2q",
+          "locator": "Page 2, Exercise 2-8"
+        },
+        {
+          "source": "pa2a",
+          "locator": "Page 5, Exercise 2-8 solution"
+        }
+      ],
+      "lessonIds": [
+        "virtual-machines"
+      ]
+    },
+    {
+      "id": "PA2-09",
+      "title": "Shared memory versus messages",
+      "refs": [
+        {
+          "source": "pa2q",
+          "locator": "Page 2, Exercise 2-9"
+        },
+        {
+          "source": "pa2a",
+          "locator": "Page 5, Exercise 2-9 solution"
+        }
+      ],
+      "lessonIds": [
+        "shared-memory",
+        "message-passing"
+      ]
+    },
+    {
+      "id": "PA2-10",
+      "title": "Choose an OS structure",
+      "refs": [
+        {
+          "source": "pa2q",
+          "locator": "Page 2, Exercise 2-10"
+        },
+        {
+          "source": "pa2a",
+          "locator": "Page 6, Exercise 2-10 solution"
+        }
+      ],
+      "lessonIds": [
+        "os-structures"
+      ]
+    },
+    {
+      "id": "PA3-01",
+      "title": "Program versus process",
+      "refs": [
+        {
+          "source": "pa3q",
+          "locator": "Page 1, Exercise 3-1"
+        },
+        {
+          "source": "pa3a",
+          "locator": "Page 1, Exercise 3-1 solution"
+        }
+      ],
+      "lessonIds": [
+        "storage-hierarchy",
+        "program-process"
+      ]
+    },
+    {
+      "id": "PA3-02",
+      "title": "Explain every process transition",
+      "refs": [
+        {
+          "source": "pa3q",
+          "locator": "Page 1, Exercise 3-2"
+        },
+        {
+          "source": "pa3a",
+          "locator": "Page 1, Exercise 3-2 solution"
+        }
+      ],
+      "lessonIds": [
+        "process-states",
+        "scheduling-queues",
+        "scheduler-dispatcher"
+      ]
+    },
+    {
+      "id": "PA3-03",
+      "title": "Does an interrupt mean Waiting?",
+      "refs": [
+        {
+          "source": "pa3q",
+          "locator": "Page 1, Exercise 3-3"
+        },
+        {
+          "source": "pa3a",
+          "locator": "Page 2, Exercise 3-3 solution"
+        }
+      ],
+      "lessonIds": [
+        "interrupts",
+        "process-states",
+        "scheduling-queues"
+      ]
+    },
+    {
+      "id": "PA3-04",
+      "title": "What context must be preserved?",
+      "refs": [
+        {
+          "source": "pa3q",
+          "locator": "Page 1, Exercise 3-4"
+        },
+        {
+          "source": "pa3a",
+          "locator": "Page 2, Exercise 3-4 solution"
+        }
+      ],
+      "lessonIds": [
+        "pcb",
+        "context-switch"
+      ]
+    },
+    {
+      "id": "PA3-05",
+      "title": "Why switching is overhead",
+      "refs": [
+        {
+          "source": "pa3q",
+          "locator": "Page 1, Exercise 3-5"
+        },
+        {
+          "source": "pa3a",
+          "locator": "Page 2, Exercise 3-5 solution"
+        }
+      ],
+      "lessonIds": [
+        "context-switch",
+        "scheduler-dispatcher"
+      ]
+    },
+    {
+      "id": "PA3-06",
+      "title": "Why PIDs are necessary",
+      "refs": [
+        {
+          "source": "pa3q",
+          "locator": "Page 1, Exercise 3-6"
+        },
+        {
+          "source": "pa3a",
+          "locator": "Page 2, Exercise 3-6 solution"
+        }
+      ],
+      "lessonIds": [
+        "pcb"
+      ]
+    },
+    {
+      "id": "PA3-07",
+      "title": "Parent and child resources",
+      "refs": [
+        {
+          "source": "pa3q",
+          "locator": "Page 1, Exercise 3-7"
+        },
+        {
+          "source": "pa3a",
+          "locator": "Page 3, Exercise 3-7 solution"
+        },
+        {
+          "source": "linux-fork",
+          "locator": "DESCRIPTION: separate memory spaces and inherited file descriptors"
+        }
+      ],
+      "lessonIds": [
+        "fork-exec-wait"
+      ]
+    },
+    {
+      "id": "PA3-08",
+      "title": "Parent and child execution",
+      "refs": [
+        {
+          "source": "pa3q",
+          "locator": "Page 2, Exercise 3-8"
+        },
+        {
+          "source": "pa3a",
+          "locator": "Page 3, Exercise 3-8 solution"
+        }
+      ],
+      "lessonIds": [
+        "fork-exec-wait"
+      ]
+    },
+    {
+      "id": "PA3-09",
+      "title": "Normal process termination",
+      "refs": [
+        {
+          "source": "pa3q",
+          "locator": "Page 2, Exercise 3-9"
+        },
+        {
+          "source": "pa3a",
+          "locator": "Page 3, Exercise 3-9 solution"
+        },
+        {
+          "source": "linux-wait",
+          "locator": "DESCRIPTION and NOTES: termination status and zombie reaping"
+        }
+      ],
+      "lessonIds": [
+        "process-termination"
+      ]
+    },
+    {
+      "id": "PA3-10",
+      "title": "When a parent ends a child",
+      "refs": [
+        {
+          "source": "pa3q",
+          "locator": "Page 2, Exercise 3-10"
+        },
+        {
+          "source": "pa3a",
+          "locator": "Page 3, Exercise 3-10 solution"
+        },
+        {
+          "source": "linux-fork",
+          "locator": "DESCRIPTION: parent-death signal setting is reset"
+        },
+        {
+          "source": "linux-wait",
+          "locator": "NOTES: adoption by init or a subreaper"
+        }
+      ],
+      "lessonIds": [
+        "process-termination"
+      ]
+    },
+    {
+      "id": "PA3-11",
+      "title": "Connect exit() and wait()",
+      "refs": [
+        {
+          "source": "pa3q",
+          "locator": "Page 2, Exercise 3-11"
+        },
+        {
+          "source": "pa3a",
+          "locator": "Page 4, Exercise 3-11 solution"
+        },
+        {
+          "source": "linux-wait",
+          "locator": "DESCRIPTION: wait()/waitpid() and status macros"
+        }
+      ],
+      "lessonIds": [
+        "fork-exec-wait",
+        "process-termination"
+      ]
+    },
+    {
+      "id": "PA3-12",
+      "title": "Why processes cooperate",
+      "refs": [
+        {
+          "source": "pa3q",
+          "locator": "Page 2, Exercise 3-12"
+        },
+        {
+          "source": "pa3a",
+          "locator": "Page 4, Exercise 3-12 solution"
+        }
+      ],
+      "lessonIds": [
+        "shared-memory",
+        "message-passing"
+      ]
+    }
+  ],
+  "labs": [
+    {
+      "id": "lab1",
+      "sections": [
+        "1. Prepare a reproducible session",
+        "2. Navigate and ask Linux for help",
+        "3. Decode the filesystem hierarchy",
+        "4. Investigate the live /proc interface",
+        "5. Count sockets, cores and logical CPUs",
+        "6. Understand cache lines and pages",
+        "7. Read memory without confusing free and available",
+        "8. Inspect disks, PCI and USB devices"
+      ],
+      "refs": [
+        {
+          "source": "lab1",
+          "locator": "Parts A–C and report tables"
+        },
+        {
+          "source": "lab1cheat",
+          "locator": "Pages 1–2"
+        },
+        {
+          "source": "lsblk-man",
+          "locator": "Options: -t, --topology"
+        }
+      ]
+    },
+    {
+      "id": "lab2",
+      "sections": [
+        "1. Start and record",
+        "2. Count system calls with strace",
+        "3. Inspect dynamic libraries with ldd",
+        "4. Redirect normal results and errors separately",
+        "5. Read the exit status immediately",
+        "6. Use a pipe to connect commands",
+        "7. Translate permission bits",
+        "8. Observe denial, then restore access",
+        "9. Separate root identity from CPU privilege mode",
+        "10. Connect the lab to the lecture model"
+      ],
+      "refs": [
+        {
+          "source": "lab2",
+          "locator": "Steps 1–21; Report Q1–Q7"
+        },
+        {
+          "source": "lab2slides",
+          "locator": "Kernel vs. System Utilities; Dual Mode Operation; Exercises 2-1–2-10"
+        },
+        {
+          "source": "bash-status",
+          "locator": "Exit status of the last command"
+        },
+        {
+          "source": "capabilities-man",
+          "locator": "CAP_DAC_OVERRIDE"
+        }
+      ]
+    },
+    {
+      "id": "lab3",
+      "sections": [
+        "1. Prepare and inspect snapshots",
+        "2. Start a process and preserve its PID",
+        "3. Interpret CPU time and memory",
+        "4. Read kernel process information",
+        "5. Distinguish Linux states from shell job labels",
+        "6. Move between foreground and background",
+        "7. Send STOP and CONT deliberately",
+        "8. Request termination, collect status and verify",
+        "9. Explain the lifecycle and troubleshoot"
+      ],
+      "refs": [
+        {
+          "source": "lab3",
+          "locator": "Parts A–B; Report Q1–Q5"
+        },
+        {
+          "source": "lab3slides",
+          "locator": "Slides 3–33"
+        }
+      ]
+    }
+  ],
+  "generatedAssessments": [
+    {
+      "id": "GEN-01",
+      "kind": "mcq",
+      "topic": "OS purpose",
+      "refs": [
+        {
+          "source": "services",
+          "locator": "OS job: User view and System view"
+        }
+      ]
+    },
+    {
+      "id": "GEN-02",
+      "kind": "mcq",
+      "topic": "Computer architecture",
+      "refs": [
+        {
+          "source": "intro",
+          "locator": "Slides 36–39: Instruction cycle and von Neumann architecture"
+        }
+      ]
+    },
+    {
+      "id": "GEN-03",
+      "kind": "mcq",
+      "topic": "Instruction cycle",
+      "refs": [
+        {
+          "source": "intro",
+          "locator": "Slide 36: Fetch, decode, execute"
+        }
+      ]
+    },
+    {
+      "id": "GEN-04",
+      "kind": "mcq",
+      "topic": "User and kernel mode",
+      "refs": [
+        {
+          "source": "lab2slides",
+          "locator": "Exercise 2-3: User Mode or Kernel Mode"
+        }
+      ]
+    },
+    {
+      "id": "GEN-05",
+      "kind": "mcq",
+      "topic": "System calls and interrupts",
+      "refs": [
+        {
+          "source": "lab2slides",
+          "locator": "Exercises 2-4 and 2-5"
+        }
+      ]
+    },
+    {
+      "id": "GEN-06",
+      "kind": "mcq",
+      "topic": "Memory protection",
+      "refs": [
+        {
+          "source": "lab2slides",
+          "locator": "Exercise 2-7: Base & Limit Registers"
+        }
+      ]
+    },
+    {
+      "id": "GEN-07",
+      "kind": "mcq",
+      "topic": "Process state transitions",
+      "refs": [
+        {
+          "source": "processes",
+          "locator": "Slides 11–12: Process states and transitions"
+        }
+      ]
+    },
+    {
+      "id": "GEN-08",
+      "kind": "mcq",
+      "topic": "fork and exec",
+      "refs": [
+        {
+          "source": "processes",
+          "locator": "Slide 27: UNIX examples"
+        }
+      ]
+    },
+    {
+      "id": "GEN-09",
+      "kind": "mcq",
+      "topic": "Interprocess communication",
+      "refs": [
+        {
+          "source": "processes",
+          "locator": "Slides 32–36: IPC models and shared memory"
+        }
+      ]
+    },
+    {
+      "id": "GEN-10",
+      "kind": "mcq",
+      "topic": "Thread resources",
+      "refs": [
+        {
+          "source": "threads",
+          "locator": "Slides 5–10: Thread concept and resources"
+        }
+      ]
+    },
+    {
+      "id": "GEN-11",
+      "kind": "mcq",
+      "topic": "Amdahl’s Law",
+      "refs": [
+        {
+          "source": "threads",
+          "locator": "Slide 17: Amdahl’s Law"
+        }
+      ]
+    },
+    {
+      "id": "GEN-12",
+      "kind": "mcq",
+      "topic": "FCFS waiting time",
+      "refs": [
+        {
+          "source": "scheduling",
+          "locator": "FCFS example; slides 14–16: Waiting time"
+        }
+      ]
+    },
+    {
+      "id": "GEN-13",
+      "kind": "mcq",
+      "topic": "Shortest job first",
+      "refs": [
+        {
+          "source": "scheduling",
+          "locator": "Shortest Job First examples"
+        }
+      ]
+    },
+    {
+      "id": "GEN-14",
+      "kind": "mcq",
+      "topic": "Round Robin response time",
+      "refs": [
+        {
+          "source": "scheduling",
+          "locator": "Slides 14–16 and Round Robin section"
+        }
+      ]
+    },
+    {
+      "id": "GEN-15",
+      "kind": "mcq",
+      "topic": "Race conditions",
+      "refs": [
+        {
+          "source": "concurrency",
+          "locator": "Slides 21–24: Counter race interleavings"
+        }
+      ]
+    },
+    {
+      "id": "GEN-16",
+      "kind": "mcq",
+      "topic": "Counting semaphores",
+      "refs": [
+        {
+          "source": "concurrency",
+          "locator": "Slides 38–39: Semaphore wait, signal and resource counts"
+        }
+      ]
+    },
+    {
+      "id": "GEN-17",
+      "kind": "truefalse",
+      "topic": "Virtual files",
+      "refs": [
+        {
+          "source": "lab1",
+          "locator": "Part A2; Checkpoint 1"
+        }
+      ]
+    },
+    {
+      "id": "GEN-18",
+      "kind": "truefalse",
+      "topic": "CPU privilege mode",
+      "refs": [
+        {
+          "source": "lab2",
+          "locator": "Steps 13–14; conceptual clarification of sudo"
+        }
+      ]
+    },
+    {
+      "id": "GEN-19",
+      "kind": "truefalse",
+      "topic": "Mode and context switches",
+      "refs": [
+        {
+          "source": "services",
+          "locator": "Dual Mode Operation and System Call Implementation"
+        }
+      ]
+    },
+    {
+      "id": "GEN-20",
+      "kind": "truefalse",
+      "topic": "Zombie processes",
+      "refs": [
+        {
+          "source": "lab3slides",
+          "locator": "Slide 24: Linux process states"
+        }
+      ]
+    },
+    {
+      "id": "GEN-21",
+      "kind": "truefalse",
+      "topic": "Threading models",
+      "refs": [
+        {
+          "source": "threads",
+          "locator": "Slide 22: Many-to-One"
+        }
+      ]
+    },
+    {
+      "id": "GEN-22",
+      "kind": "truefalse",
+      "topic": "Round Robin quantum",
+      "refs": [
+        {
+          "source": "scheduling",
+          "locator": "Round Robin: q large implies FIFO/FCFS"
+        }
+      ]
+    },
+    {
+      "id": "GEN-23",
+      "kind": "truefalse",
+      "topic": "Critical section requirements",
+      "refs": [
+        {
+          "source": "concurrency",
+          "locator": "Slide 27: Solution requirements"
+        }
+      ]
+    },
+    {
+      "id": "GEN-24",
+      "kind": "truefalse",
+      "topic": "Deadlock and starvation",
+      "refs": [
+        {
+          "source": "concurrency",
+          "locator": "Slides 41–44: Deadlock and starvation"
+        }
+      ]
+    },
+    {
+      "id": "GEN-25",
+      "kind": "scenario",
+      "topic": "Abstraction and arbitration",
+      "refs": [
+        {
+          "source": "intro",
+          "locator": "Slides 17–24: Abstraction and arbitration examples"
+        }
+      ]
+    },
+    {
+      "id": "GEN-26",
+      "kind": "scenario",
+      "topic": "Printing and interrupts",
+      "refs": [
+        {
+          "source": "lab2slides",
+          "locator": "Exercise 2-4: Printing workflow"
+        }
+      ]
+    },
+    {
+      "id": "GEN-27",
+      "kind": "scenario",
+      "topic": "Waiting and process completion",
+      "refs": [
+        {
+          "source": "processes",
+          "locator": "Slides 27–29: wait and exit"
+        }
+      ]
+    },
+    {
+      "id": "GEN-28",
+      "kind": "scenario",
+      "topic": "Data and task parallelism",
+      "refs": [
+        {
+          "source": "threads",
+          "locator": "Types of parallelism; multicore programming challenges"
+        }
+      ]
+    },
+    {
+      "id": "GEN-29",
+      "kind": "scenario",
+      "topic": "Shortest remaining time",
+      "refs": [
+        {
+          "source": "scheduling",
+          "locator": "Shortest Remaining Time (preemptive SJF)"
+        }
+      ]
+    },
+    {
+      "id": "GEN-30",
+      "kind": "scenario",
+      "topic": "Deadlock",
+      "refs": [
+        {
+          "source": "concurrency",
+          "locator": "Slide 42: Board-and-pen deadlock example"
+        }
+      ]
+    },
+    {
+      "id": "GEN-31",
+      "kind": "lab",
+      "topic": "CPU topology",
+      "refs": [
+        {
+          "source": "lab1",
+          "locator": "Part B2: Topology arithmetic"
+        }
+      ]
+    },
+    {
+      "id": "GEN-32",
+      "kind": "lab",
+      "topic": "Memory interpretation",
+      "refs": [
+        {
+          "source": "lab1",
+          "locator": "Part C: free -h and memory checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "GEN-33",
+      "kind": "lab",
+      "topic": "Unix permissions",
+      "refs": [
+        {
+          "source": "lab2",
+          "locator": "Steps 12 and 18–19: Permission groups"
+        }
+      ]
+    },
+    {
+      "id": "GEN-34",
+      "kind": "lab",
+      "topic": "Exit status",
+      "refs": [
+        {
+          "source": "lab2",
+          "locator": "Steps 8–10; corrected command-order explanation"
+        }
+      ]
+    },
+    {
+      "id": "GEN-35",
+      "kind": "lab",
+      "topic": "Process signals",
+      "refs": [
+        {
+          "source": "lab3slides",
+          "locator": "Slide 25: Stop with a signal"
+        }
+      ]
+    },
+    {
+      "id": "GEN-36",
+      "kind": "lab",
+      "topic": "Jobs and process states",
+      "refs": [
+        {
+          "source": "lab3slides",
+          "locator": "Slides 20–24: Foreground/background, jobs and states"
+        }
+      ]
+    }
+  ],
+  "technicalClarifications": [
+    "Kernel residency is not continuous CPU execution.",
+    "A mode switch does not necessarily cause a process switch.",
+    "The base/limit length convention uses an exclusive upper bound; an upper-address convention must be stated separately.",
+    "The single-threaded process model does not prohibit multithreaded parallel execution.",
+    "Cascading termination is an OS-dependent policy; Unix orphan reparenting is not the same as a zombie.",
+    "Threads may need kernel services for creation, blocking and synchronization despite user-space shared-memory communication.",
+    "The course uses trap/exception/software interrupt terminology broadly; architecture-specific terminology varies.",
+    "Scheduling waiting=C−A−B is used only for single-burst/no-I/O examples.",
+    "SJF optimality is stated with known bursts and appropriate availability assumptions.",
+    "Preemptive-priority ties require an explicit policy; the source example does not fully state one.",
+    "Peterson’s textbook proof requires sequentially consistent ordering; ordinary unsynchronized variables are unsafe in modern implementations.",
+    "The lecture mutex pseudocode must be interpreted as atomic acquisition, not a separate plain check and store.",
+    "Semaphores and mutexes can differ in ownership and signaling semantics.",
+    "Original PA wording is preserved after PDF formatting normalization: wrapped lines are joined, page footers removed, extraction soft-hyphen control characters removed, and the split words “W aiting” and “T erminated” repaired. Subpart labels are preserved.",
+    "The 28 answers are independently written teaching/reference answers checked against the supplied university solution documents. They are not official marking schemes or promises of exam marks. Checklists support student self-assessment; free text is not automatically graded.",
+    "PA2-03 distinguishes the mode of an initiating request/instruction from its kernel handling. PA2-04 corrects the misleading implication that a CPU cannot return to user work while I/O proceeds, and explains that interrupt return is not always a return to user mode.",
+    "PA2-05 qualifies architecture-dependent “trap” terminology and system-call entry paths. PA2-06 uses the course’s conceptual interrupt policies without claiming all real kernels permit nesting.",
+    "PA2-07 uses the source’s size interpretation of limit, yielding [4000,5200), and explicitly separates physical addresses from logical offsets.",
+    "PA2-08 does not invent a numerical allocation policy or equate CPU and GPU cores. PA2-10 preserves the key’s preferred matches while avoiding safety guarantees or treating modular/monolithic designs as mutually exclusive.",
+    "PA3-03 notes that interrupt handling need not switch processes. PA3-07 distinguishes generic creation-policy options from actual Linux fork behavior. PA3-09/10/11 clarify reaping, encoded status and the absence of universal parent-exit cascading termination.",
+    "Question PDF page locations are grounded in the extracted page footers and exercise boundaries. The alternate PA1 set duplicates PA3 and does not expand the official core count.",
+    "All 36 questions are independently authored practice, not official GIU exam items or a claim about official exam format, marks or duration.",
+    "Distribution: 16 multiple choice, 8 true/false, 6 single-choice scenarios and 6 single-choice Linux-output questions. Each has exactly one indexed correct option.",
+    "Scope follows the user clarification to include all six provided lecture PDFs by title, without inventing lecture numbering; Labs 1–3 remain the practical scope.",
+    "Every item includes a source-document topic or section. Examples and numerical values are independently prepared unless explicitly described as the course convention.",
+    "Scheduling questions state arrivals, tie conditions, CPU count, I/O and overhead assumptions to keep grading objective.",
+    "The Lab 2 exit-status sequencing error is corrected: successful cat replaces the earlier ls status. GNU Bash manual supports this correction.",
+    "Technical review checks distinguish mode changes from process switches, root credentials from kernel mode, Ready from Running, and shell Running from Linux R.",
+    "Objective question results measure performance on this bank, not a probability of passing the exam. No free-text keyword grading is included."
+  ],
+  "theoreticalSlides": [
+    {
+      "id": "theo2",
+      "title": "OS — Lab 2 — OS Services & Protection — Theoretical Slides",
+      "url": "https://drive.google.com/file/d/1_zjQ-FHzlQDrqae5rCFW-3OXrVg2RHAG/view"
+    },
+    {
+      "id": "theo3",
+      "title": "OS — Lab 3 — Processes — Theoretical Slides",
+      "url": "https://drive.google.com/file/d/1wiDGeGKbLDTi_PjgEjO0fUc58oY_vQUD/view"
+    },
+    {
+      "id": "theo4",
+      "title": "OS — Lab 4 — Threads — Theoretical Slides",
+      "url": "https://drive.google.com/file/d/1RReLhudyBIIMSEMNU_iLZschoYsbawRU/view"
+    },
+    {
+      "id": "theo5",
+      "title": "OS — Lab 5 — CPU Scheduling — Theoretical Slides",
+      "url": "https://drive.google.com/file/d/1_l7FjSvXcRS1DbI2UYIfD7yJJ-AvP-Sg/view"
+    }
+  ],
+  "theoreticalCoverage": [
+    {
+      "topic": "Bootstrap and boot process — Theo extension",
+      "source": "theo2",
+      "locator": "CMOS Memory; Timer",
+      "lessonId": "boot-sequence",
+      "status": "covered"
+    },
+    {
+      "topic": "Device drivers, controllers and I/O — Theo extension",
+      "source": "theo2",
+      "locator": "Buffering, Caching & Spooling; Device Controllers & Drivers",
+      "lessonId": "io-path",
+      "status": "covered"
+    },
+    {
+      "topic": "Multiprocessor scheduling and real-time latency — Theo extension",
+      "source": "theo5",
+      "locator": "Exercises 5-9 to 5-12",
+      "lessonId": "multicore-realtime",
+      "status": "covered"
+    },
+    {
+      "topic": "Multilevel and feedback queues — Theo extension",
+      "source": "theo5",
+      "locator": "Exercises 5-7 and 5-8",
+      "lessonId": "multilevel-queues",
+      "status": "covered"
+    },
+    {
+      "topic": "Thread and process design decisions",
+      "source": "theo4",
+      "locator": "Exercises 4-1 to 4-3",
+      "lessonId": "thread-design-tradeoffs",
+      "status": "covered"
+    },
+    {
+      "topic": "Address-space and thread-switch costs",
+      "source": "theo4",
+      "locator": "Exercise 4-4; Context Switching: Three Cases Compared",
+      "lessonId": "thread-switch-cost",
+      "status": "covered"
+    },
+    {
+      "topic": "Multicore challenges and pipelines",
+      "source": "theo4",
+      "locator": "Exercise 4-5; Five Challenges; Pipeline; Independent vs. Dependent Tasks",
+      "lessonId": "multicore-pipelines",
+      "status": "covered"
+    },
+    {
+      "topic": "User mode and kernel mode — Theo extension",
+      "source": "theo2",
+      "locator": "Exercises 2-2 and 2-3",
+      "lessonId": "dual-mode",
+      "status": "covered"
+    },
+    {
+      "topic": "System-call interface and APIs — Theo extension",
+      "source": "theo2",
+      "locator": "Exercise 2-4",
+      "lessonId": "system-calls",
+      "status": "covered"
+    },
+    {
+      "topic": "Interrupts, traps, exceptions and timers — Theo extension",
+      "source": "theo2",
+      "locator": "Exercises 2-5 and 2-6",
+      "lessonId": "interrupts",
+      "status": "covered"
+    },
+    {
+      "topic": "Base/limit memory protection — Theo extension",
+      "source": "theo2",
+      "locator": "Exercise 2-7",
+      "lessonId": "memory-protection",
+      "status": "covered"
+    },
+    {
+      "topic": "Virtual machines and VMMs — Theo extension",
+      "source": "theo2",
+      "locator": "Exercise 2-8",
+      "lessonId": "virtual-machines",
+      "status": "covered"
+    },
+    {
+      "topic": "Cooperating processes and shared-memory IPC — Theo extension",
+      "source": "theo2",
+      "locator": "Exercise 2-9",
+      "lessonId": "shared-memory",
+      "status": "covered"
+    },
+    {
+      "topic": "Message passing and buffering — Theo extension",
+      "source": "theo2",
+      "locator": "Exercise 2-9",
+      "lessonId": "message-passing",
+      "status": "covered"
+    },
+    {
+      "topic": "Monolithic, layered, microkernel, modular and hybrid designs — Theo extension",
+      "source": "theo2",
+      "locator": "Exercise 2-10",
+      "lessonId": "os-structures",
+      "status": "covered"
+    },
+    {
+      "topic": "Program, process and memory layout — Theo extension",
+      "source": "theo3",
+      "locator": "Exercise 3.1",
+      "lessonId": "program-process",
+      "status": "covered"
+    },
+    {
+      "topic": "Five-state process model — Theo extension",
+      "source": "theo3",
+      "locator": "Exercises 3.2 and 3.3",
+      "lessonId": "process-states",
+      "status": "covered"
+    },
+    {
+      "topic": "Process Control Block and identity — Theo extension",
+      "source": "theo3",
+      "locator": "Exercises 3.4 and 3.6",
+      "lessonId": "pcb",
+      "status": "covered"
+    },
+    {
+      "topic": "Context switching — Theo extension",
+      "source": "theo3",
+      "locator": "Exercises 3.4 and 3.5",
+      "lessonId": "context-switch",
+      "status": "covered"
+    },
+    {
+      "topic": "Process creation and parent/child execution — Theo extension",
+      "source": "theo3",
+      "locator": "Exercises 3.7 and 3.8",
+      "lessonId": "fork-exec-wait",
+      "status": "covered"
+    },
+    {
+      "topic": "Exit, wait, zombies and orphans — Theo extension",
+      "source": "theo3",
+      "locator": "Exercises 3.9 to 3.11",
+      "lessonId": "process-termination",
+      "status": "covered"
+    },
+    {
+      "topic": "Cooperating processes and shared-memory IPC — Theo extension",
+      "source": "theo3",
+      "locator": "Exercise 3.12",
+      "lessonId": "shared-memory",
+      "status": "covered"
+    },
+    {
+      "topic": "Message passing and buffering — Theo extension",
+      "source": "theo3",
+      "locator": "Exercise 3.12",
+      "lessonId": "message-passing",
+      "status": "covered"
+    },
+    {
+      "topic": "Thread state and shared process resources — Theo extension",
+      "source": "theo4",
+      "locator": "Introduction to Threads",
+      "lessonId": "thread-resources",
+      "status": "covered"
+    },
+    {
+      "topic": "User/kernel thread mappings — Theo extension",
+      "source": "theo4",
+      "locator": "Exercise 4-6",
+      "lessonId": "threading-models",
+      "status": "covered"
+    },
+    {
+      "topic": "Turnaround, waiting, response and utilization — Theo extension",
+      "source": "theo5",
+      "locator": "Where the Three Times Come From",
+      "lessonId": "scheduling-metrics",
+      "status": "covered"
+    },
+    {
+      "topic": "FCFS, SJF and burst prediction — Theo extension",
+      "source": "theo5",
+      "locator": "Exercises 5-1 and 5-2; additional examples",
+      "lessonId": "fcfs-sjf",
+      "status": "covered"
+    },
+    {
+      "topic": "Priority scheduling and aging — Theo extension",
+      "source": "theo5",
+      "locator": "Exercises 5-3 and 5-6; additional examples",
+      "lessonId": "priority-scheduling",
+      "status": "covered"
+    },
+    {
+      "topic": "Round Robin and time quantum — Theo extension",
+      "source": "theo5",
+      "locator": "Exercise 5-4; additional examples",
+      "lessonId": "round-robin",
+      "status": "covered"
+    },
+    {
+      "topic": "Shortest remaining time scheduling — Theo extension",
+      "source": "theo5",
+      "locator": "Exercise 5-5; additional examples",
+      "lessonId": "srt",
+      "status": "covered"
+    }
+  ],
+  "theoreticalWorkedSchedules": 18
+}

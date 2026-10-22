@@ -1,0 +1,100 @@
+{
+  "concepts": [
+    {
+      "id": "4-1",
+      "title": "Shared document, multiple activities",
+      "question": "A word processor handles typing, spell-check and autosave on one document. Why use threads?",
+      "answer": "Threads can share the document directly and keep the UI responsive while other work waits. Protect shared changes; one fatal thread failure can terminate the process.",
+      "source": "theo4",
+      "locator": "Exercise 4-1"
+    },
+    {
+      "id": "4-2",
+      "title": "Isolate an unreliable video worker",
+      "question": "A video editor needs UI, audio and video processing, but the video library sometimes crashes. Propose a design.",
+      "answer": "Use UI/audio threads in the main process and a separate video worker process. Exchange data through IPC. The main process can survive and restart a failed worker, at the cost of IPC and coordination.",
+      "source": "theo4",
+      "locator": "Exercise 4-2"
+    },
+    {
+      "id": "4-3",
+      "title": "One core or three?",
+      "question": "A shopping app has search, cart and pricing threads. Compare responsiveness, performance and per-core utilization on one versus three cores.",
+      "answer": "Both can remain responsive through concurrency. Three cores permit parallel execution of ready work, but short or I/O-bound tasks may gain little. A light workload can leave several cores mostly idle; other processes can use them.",
+      "source": "theo4",
+      "locator": "Exercise 4-3"
+    },
+    {
+      "id": "4-4",
+      "title": "Three context-switch cases",
+      "question": "Compare process A → B, thread A1 → B1, and thread A1 → A2. What happens to the address space and overhead?",
+      "answer": "The first two cross process boundaries and normally change address spaces. The third stays within A and normally avoids that change, so it tends to cost less. All still switch execution state.",
+      "source": "theo4",
+      "locator": "Exercise 4-4"
+    },
+    {
+      "id": "4-5",
+      "title": "Process 1,000 images",
+      "question": "On four cores, each image must be loaded, resized, filtered and saved. Explain data parallelism, a task pipeline, and five implementation challenges.",
+      "answer": "Data split: $1000/4=250$ images per worker, each executing the complete sequence. Pipeline: separate load, resize, filter and save stages overlap across different images. Challenges: dividing activities, balance, data splitting, dependencies, testing/debugging. Independent equal-cost images usually favor a data split.",
+      "source": "theo4",
+      "locator": "Exercise 4-5"
+    },
+    {
+      "id": "4-6",
+      "title": "Recognize thread mappings",
+      "question": "Identify each model: (a) 100 user threads share 1 kernel thread; (b) each user thread owns a kernel thread; (c) 200 user threads share 8 kernel threads; (d) a pool plus a specially bound critical thread.",
+      "answer": "(a) Many-to-one. (b) One-to-one. (c) Many-to-many. (d) Two-level. Cheap user-space switching does not imply multicore parallelism through a single kernel thread. A blocking call on that sole kernel thread can stop all its mapped threads. The same classifications cover the alternate scenarios f–j in the slides.",
+      "source": "theo4",
+      "locator": "Exercise 4-6, scenarios a–j"
+    },
+    {
+      "id": "5-7",
+      "title": "Two ready queues",
+      "question": "Q0 uses Round Robin and Q1 uses FCFS. Q0 has strict priority. Which queue runs first, and why can Q1 starve?",
+      "answer": "Q0 runs whenever it has ready work. Continuous Q0 demand can exclude Q1 indefinitely. Give queues CPU shares or use a suitable aging policy to reduce starvation.",
+      "source": "theo5",
+      "locator": "Exercise 5-7"
+    },
+    {
+      "id": "5-8",
+      "title": "A 30 ms job in MLFQ",
+      "question": "Q0 quantum = 8 ms, Q1 quantum = 16 ms, Q2 = FCFS. New jobs enter Q0 and unfinished jobs are demoted after their full quantum. Where does a 30 ms job finish?",
+      "answer": "Q0 supplies 8 ms: $30-8=22$ remain. Q1 supplies 16 ms: $22-16=6$ remain. It finishes in Q2 after another 6 ms. $$8+16+6=30\\ \\mathrm{ms}$$ These are CPU service times; elapsed completion also depends on competing work.",
+      "source": "theo5",
+      "locator": "Exercise 5-8"
+    },
+    {
+      "id": "5-9",
+      "title": "Who makes scheduling decisions?",
+      "question": "System A has a master scheduling processor and worker processors. In B, every processor schedules. Classify them and give B’s ready-queue options.",
+      "answer": "A: asymmetric multiprocessing. B: symmetric multiprocessing. SMP can use a synchronized common ready queue or per-core queues with load balancing.",
+      "source": "theo5",
+      "locator": "Exercise 5-9"
+    },
+    {
+      "id": "5-10",
+      "title": "A busy core next to an idle core",
+      "question": "Core 0 has five ready processes; Core 1 is idle. Explain affinity, push migration and pull migration.",
+      "answer": "Affinity favors cached data on a previous core. Soft affinity is a preference; hard affinity limits the allowed cores. Push: a balancer moves work away from Core 0. Pull: Core 1 takes eligible work. Migration trades improved balance for possible cache misses.",
+      "source": "theo5",
+      "locator": "Exercise 5-10"
+    },
+    {
+      "id": "5-11",
+      "title": "Deadline or preference?",
+      "question": "A critical controller must meet its deadline; a video player tolerates an occasional late frame. Which needs hard real-time guarantees?",
+      "answer": "The controller is hard real-time: a missed deadline is failure. The player is soft real-time: lateness reduces quality but can be tolerated. High priority by itself does not establish a worst-case deadline guarantee.",
+      "source": "theo5",
+      "locator": "Exercise 5-11"
+    },
+    {
+      "id": "5-12",
+      "title": "Account for every latency interval",
+      "question": "Interrupt at 10 ms; ISR begins at 12 ms; task becomes ready at 15 ms; task starts at 18 ms. Find interrupt latency, the slide’s dispatch interval, and total elapsed time.",
+      "answer": "Interrupt latency: $$12-10=2\\ \\mathrm{ms}$$ ISR execution: $$15-12=3\\ \\mathrm{ms}$$ Ready-to-start interval (called dispatch latency in this exercise): $$18-15=3\\ \\mathrm{ms}$$ Total: $$18-10=2+3+3=8\\ \\mathrm{ms}$$ In general, ready-to-start can include queueing in addition to dispatch overhead.",
+      "source": "theo5",
+      "locator": "Exercise 5-12"
+    }
+  ]
+}
