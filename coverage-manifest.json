@@ -198,6 +198,12 @@
       "id": "capabilities-man",
       "title": "Linux capabilities(7) — CAP_DAC_OVERRIDE",
       "url": "https://www.man7.org/linux/man-pages/man7/capabilities.7.html"
+    },
+    {
+      "id": "MIDTERM-GUIDE",
+      "title": "Operating Systems Midterm – Crash Guide (uploaded, 48 pages)",
+      "url": "#/midterm",
+      "note": "User-supplied study guide; page numbers refer to PDF pages. Adapted practice, not an official question paper. Original PDF is not published."
     }
   ],
   "lectureCoverage": [
@@ -1790,5 +1796,139 @@
       "status": "covered"
     }
   ],
-  "theoreticalWorkedSchedules": 18
+  "theoreticalWorkedSchedules": 18,
+  "midtermPractice": {
+    "formatEvidence": "User-supplied screenshot: student recollection of approximately 30 MCQ/true-false questions, theory with diagrams, and a real-life OS application question. Exact split and marks unconfirmed.",
+    "guideWindow": "Uploaded guide p. 1 states 24 Oct 2026, 11:30–13:30; verify against official course notice.",
+    "practiceDesign": "30 objective questions + 1 theory + 1 diagram + 1 scenario + 1 calculation. Written count is an authored practice choice.",
+    "writtenExercises": [
+      {
+        "id": "MID-01",
+        "format": "Diagram",
+        "topic": "Draw the process lifecycle",
+        "source": "MIDTERM-GUIDE",
+        "pages": "13–18"
+      },
+      {
+        "id": "MID-02",
+        "format": "Diagram",
+        "topic": "Trace a protected system call",
+        "source": "MIDTERM-GUIDE",
+        "pages": "7–8, 12"
+      },
+      {
+        "id": "MID-03",
+        "format": "Diagram",
+        "topic": "Show shared and private thread resources",
+        "source": "MIDTERM-GUIDE",
+        "pages": "20–24"
+      },
+      {
+        "id": "MID-04",
+        "format": "Diagram",
+        "topic": "Compare memory architectures",
+        "source": "MIDTERM-GUIDE",
+        "pages": "2–4"
+      },
+      {
+        "id": "MID-05",
+        "format": "Theory",
+        "topic": "Compare buffering, caching and spooling",
+        "source": "MIDTERM-GUIDE",
+        "pages": "10–12"
+      },
+      {
+        "id": "MID-06",
+        "format": "Theory",
+        "topic": "Explain fork, exec and wait",
+        "source": "MIDTERM-GUIDE",
+        "pages": "15–19"
+      },
+      {
+        "id": "MID-07",
+        "format": "Theory",
+        "topic": "Judge a critical-section solution",
+        "source": "MIDTERM-GUIDE",
+        "pages": "40, 43–45"
+      },
+      {
+        "id": "MID-08",
+        "format": "Theory",
+        "topic": "Explain a scheduling trade-off",
+        "source": "MIDTERM-GUIDE",
+        "pages": "25–35"
+      },
+      {
+        "id": "MID-09",
+        "format": "Scenario",
+        "topic": "One camera API, many applications",
+        "source": "MIDTERM-GUIDE",
+        "pages": "2–4"
+      },
+      {
+        "id": "MID-10",
+        "format": "Scenario",
+        "topic": "The office printer queue",
+        "source": "MIDTERM-GUIDE",
+        "pages": "5–6, 10–12"
+      },
+      {
+        "id": "MID-11",
+        "format": "Scenario",
+        "topic": "Keep the editor alive",
+        "source": "MIDTERM-GUIDE",
+        "pages": "23–24"
+      },
+      {
+        "id": "MID-12",
+        "format": "Scenario",
+        "topic": "Two customers, one remaining ticket",
+        "source": "MIDTERM-GUIDE",
+        "pages": "38–43"
+      },
+      {
+        "id": "MID-13",
+        "format": "Scenario",
+        "topic": "Three shared lab printers",
+        "source": "MIDTERM-GUIDE",
+        "pages": "41–43"
+      },
+      {
+        "id": "MID-14",
+        "format": "Scenario",
+        "topic": "Read a Linux process trace",
+        "source": "MIDTERM-GUIDE",
+        "pages": "46–48"
+      },
+      {
+        "id": "MID-15",
+        "format": "Calculation",
+        "topic": "Apply Amdahl’s law",
+        "source": "MIDTERM-GUIDE",
+        "pages": "21, 23"
+      },
+      {
+        "id": "MID-16",
+        "format": "Calculation",
+        "topic": "Construct an FCFS schedule",
+        "source": "MIDTERM-GUIDE",
+        "pages": "27–28, 31, 36"
+      },
+      {
+        "id": "MID-17",
+        "format": "Calculation",
+        "topic": "Trace Round Robin arrivals",
+        "source": "MIDTERM-GUIDE",
+        "pages": "33, 35–36"
+      },
+      {
+        "id": "MID-18",
+        "format": "Calculation",
+        "topic": "Check a protected memory region",
+        "source": "MIDTERM-GUIDE",
+        "pages": "8, 12"
+      }
+    ],
+    "grading": "Objective answers only in automatic score/mastery. Written responses and sketches use self-review checklists."
+  }
 }

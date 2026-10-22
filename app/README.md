@@ -1,6 +1,6 @@
 # OS NEXUS 2.0
 
-A local-first INCS102 Operating Systems study platform, based on the six unique lecture PDFs selected by the student, PA1–3 and Labs1–3. The sources are organized by title, not invented lecture numbers. The study date is Saturday, 24 October 2026; no examination start time, official duration, marks or format is assumed.
+A local-first INCS102 Operating Systems study platform, based on the six unique lecture PDFs selected by the student, PA1–3 and Labs1–3. The sources are organized by title, not invented lecture numbers. The study date is Saturday, 24 October 2026; the uploaded Crash Guide lists an 11:30–13:30 window, while the screenshot recalls an approximate question format. Both are attributed guidance, not a verified official blueprint.
 
 ## Open immediately
 
@@ -81,3 +81,7 @@ A private GitHub repository does not by itself make its Pages website private. P
 ## Source handling and corrections
 
 Source references preserve file identities and verified slide/page/section locators. Explanations and model answers are independently authored. The original documents remain in Drive under their existing permissions. Clarifications include mode switches versus process switches, interrupt return context, non-universal parent/child cascading termination, wait/exit semantics, the base/limit convention, `lsblk -t`, shell `$?`, privilege versus kernel mode, and semaphore/mutex distinctions. Coverage and references are inspectable in the app.
+
+## Midterm question styles
+
+Open `#/midterm` for 18 guide-referenced exercises: theory, labelled diagrams, real-life OS scenarios and worked calculations. Drafts, freehand sketches and self-checks persist in the existing v2 progress export. The mixed mock has 30 objective questions and four written exercises; its written mix is our practice design. Automatic scores include only the 30 objective questions; written work is self-reviewed after submission. The original uploaded guide and screenshot are not bundled.

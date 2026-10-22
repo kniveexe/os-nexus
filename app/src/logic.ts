@@ -7,9 +7,13 @@ export type Lab = {id:string;title:string;topic:string;group:string;intro:string
 export type Attempt = {id:string;choice:number;correct:boolean;at:number;session:string};
 export type LessonProgress = {completed:boolean;confidence:number;lastOpened:number;notes:string};
 export type PAProgress = {draft:string;submitted:boolean;reviewed:boolean;checks:number[];hints:number;retries:number;lastAttempted:number;bookmark:boolean;mode:'learn'|'challenge'|'exam';revealed:boolean};
-export type Exam = {id:string;ids:string[];choices:Record<string,number>;start:number;end:number|null;submitted:boolean;submittedAt?:number;kind:string};
+export type Stroke = [number,number][];
+export type WrittenResponse = {text:string;strokes:Stroke[];checks:number[];revealed:boolean};
+export const emptyWritten=():WrittenResponse=>({text:'',strokes:[],checks:[],revealed:false});
+export const hasWrittenAnswer=(r?:WrittenResponse)=>!!r&&(!!r.text.trim()||r.strokes.some(s=>s.length>0));
+export type Exam = {id:string;ids:string[];choices:Record<string,number>;start:number;end:number|null;submitted:boolean;submittedAt?:number;kind:string;written?:Record<string,WrittenResponse>};
 export type PlanItem = {id:string;title:string;minutes:number;to:string;reason:string};
-export type Progress = {version:2;lessons:Record<string,LessonProgress>;pa:Record<string,PAProgress>;labs:Record<string,boolean>;attempts:Attempt[];exam:Exam|null;bookmarks:string[];lastScreen:string;plan:PlanItem[];planConfig:{hours:number;session:number;preparation:string};};
+export type Progress = {written?:Record<string,WrittenResponse>;version:2;lessons:Record<string,LessonProgress>;pa:Record<string,PAProgress>;labs:Record<string,boolean>;attempts:Attempt[];exam:Exam|null;bookmarks:string[];lastScreen:string;plan:PlanItem[];planConfig:{hours:number;session:number;preparation:string};};
 export const STORAGE_KEY='os-nexus.progress.v2';
 export const freshProgress=():Progress=>({version:2,lessons:{},pa:{},labs:{},attempts:[],exam:null,bookmarks:[],lastScreen:'/',plan:[],planConfig:{hours:4,session:30,preparation:'some'}});
 export const emptyPA=():PAProgress=>({draft:'',submitted:false,reviewed:false,checks:[],hints:0,retries:0,lastAttempted:0,bookmark:false,mode:'learn',revealed:false});
@@ -24,6 +28,8 @@ export function validateProgress(input:unknown):Progress {
  if(Object.values(p.pa).some(v=>!obj(v)||typeof v.draft!=='string'||typeof v.reviewed!=='boolean'||typeof v.submitted!=='boolean'||typeof v.revealed!=='boolean'||typeof v.bookmark!=='boolean'||!['learn','challenge','exam'].includes(v.mode)||!Array.isArray(v.checks)||!v.checks.every(n=>numeric(n)&&Number.isInteger(n))||!numeric(v.hints)||!numeric(v.retries)||!numeric(v.lastAttempted)))throw Error('Invalid practice progress.');
  if(Object.values(p.labs).some(v=>typeof v!=='boolean')||p.attempts.some(v=>!obj(v)||typeof v.id!=='string'||!Number.isInteger(v.choice)||typeof v.correct!=='boolean'||!numeric(v.at)||typeof v.session!=='string'))throw Error('Invalid assessment history.');
  if(p.exam!==null&&(!obj(p.exam)||!strings(p.exam.ids)||!obj(p.exam.choices)||Object.values(p.exam.choices).some(x=>!Number.isInteger(x)||x<0)||!numeric(p.exam.start)||(p.exam.end!==null&&!numeric(p.exam.end))||typeof p.exam.id!=='string'||typeof p.exam.submitted!=='boolean'||typeof p.exam.kind!=='string'))throw Error('Invalid exam state.');
+ const validWritten=(v:unknown)=>obj(v)&&Object.values(v as Record<string,WrittenResponse>).every(r=>obj(r)&&typeof r.text==='string'&&typeof r.revealed==='boolean'&&Array.isArray(r.checks)&&r.checks.every(n=>numeric(n)&&Number.isInteger(n))&&Array.isArray(r.strokes)&&r.strokes.every(s=>Array.isArray(s)&&s.every(pt=>Array.isArray(pt)&&pt.length===2&&pt.every(n=>typeof n==='number'&&Number.isFinite(n)&&n>=0&&n<=800))));
+ if(p.written!==undefined&&!validWritten(p.written)||p.exam?.written!==undefined&&!validWritten(p.exam.written))throw Error('Invalid written response.');
  if(p.plan.some(v=>!obj(v)||typeof v.id!=='string'||typeof v.title!=='string'||!numeric(v.minutes)||typeof v.to!=='string'||!v.to.startsWith('/')||typeof v.reason!=='string')||!numeric(p.planConfig.hours)||![15,30,60].includes(p.planConfig.session)||typeof p.planConfig.preparation!=='string')throw Error('Invalid study plan.');
  return p;
 }
@@ -35,7 +41,7 @@ export function mastery(attempts:Attempt[],ids:string[]) {
  const level=correct/recent.length<.6?'Needs review':recent.length>=4&&correct/recent.length>=.8&&repeats>=2?'Demonstrated':'Developing';
  return {level,attempts:a.length,correct,unique:recent.length};
 }
-export function gradeExam(exam:Exam,bank:Question[]):Attempt[]{return exam.ids.map(id=>{const q=bank.find(x=>x.id===id);const choice=exam.choices[id]??-1;return {id,choice,correct:!!q&&choice===q.correct,at:exam.submittedAt??Date.now(),session:exam.id}})}
+export function gradeExam(exam:Exam,bank:Question[]):Attempt[]{return exam.ids.filter(id=>bank.some(q=>q.id===id)).map(id=>{const q=bank.find(x=>x.id===id);const choice=exam.choices[id]??-1;return {id,choice,correct:!!q&&choice===q.correct,at:exam.submittedAt??Date.now(),session:exam.id}})}
 export function remainingSeconds(exam:Exam,now:number){return exam.end===null?null:Math.max(0,Math.ceil((exam.end-now)/1000))}
 export const transitions:Record<string,Record<string,string>>={New:{Ready:'Admission places the process in the ready queue.'},Ready:{Running:'The dispatcher gives the process a CPU.'},Running:{Ready:'Preemption returns the process to the ready queue.',Waiting:'The process requests I/O or waits for an event.',Terminated:'The process exits or is terminated.'},Waiting:{Ready:'The awaited event completes. The process must be dispatched before running.'},Terminated:{}};
 export function transition(state:string,next:string){return transitions[state]?.[next]?{state:next,message:transitions[state][next],valid:true}:{state,message:`${state} → ${next} is not a direct transition in this teaching model. ${state==='Waiting'&&next==='Running'?'I/O completion makes the process Ready first.':state==='Ready'&&next==='Waiting'?'A ready process is not executing to request I/O.':'Choose an enabled transition or reset.'}`,valid:false}}

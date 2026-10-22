@@ -1,0 +1,333 @@
+{
+  "source": {
+    "id": "MIDTERM-GUIDE",
+    "title": "Operating Systems Midterm – Crash Guide (uploaded, 48 pages)",
+    "url": "#/midterm",
+    "note": "User-supplied study guide; page numbers refer to PDF pages. Adapted practice, not an official question paper. Original PDF is not published."
+  },
+  "questions": [
+    {
+      "id": "MID-01",
+      "kind": "Diagram",
+      "group": "Processes",
+      "title": "Draw the process lifecycle",
+      "prompt": "Draw the five-state process model. Label admission, dispatch, preemption, I/O request, I/O completion and exit. Explain why I/O completion does not send a process directly to Running.",
+      "pages": "13–18",
+      "answer": "A completed I/O request makes a process eligible for CPU service, so it becomes Ready. It becomes Running only after dispatch. A timer interrupt may lead to preemption; an interrupt does not automatically mean the process must wait for I/O.",
+      "checks": [
+        "Include New, Ready, Running, Waiting and Terminated.",
+        "Label New → Ready (admission) and Ready → Running (dispatch).",
+        "Label Running → Ready (preemption) and Running → Waiting (I/O request).",
+        "Label Waiting → Ready (I/O completion) and Running → Terminated (exit).",
+        "Explain that readiness is different from having the CPU."
+      ],
+      "diagram": "states"
+    },
+    {
+      "id": "MID-02",
+      "kind": "Diagram",
+      "group": "Services",
+      "title": "Trace a protected system call",
+      "prompt": "Draw a user application requesting a file service and returning to user mode. Mark the privilege boundary, system-call entry and kernel handler. Explain why a user program cannot directly grant itself kernel privileges.",
+      "pages": "7–8, 12",
+      "answer": "The application calls an API wrapper, which requests a system call. Controlled hardware entry transfers execution to trusted kernel code. The handler checks the request and permissions, performs the service, and returns to user mode. Changing privilege arbitrarily is not allowed. A mode switch need not change the running process.",
+      "checks": [
+        "Show user application/API and kernel handler on opposite sides of a boundary.",
+        "Label controlled entry into the kernel and return to user mode.",
+        "Explain request validation and privileged handling.",
+        "Distinguish a mode switch from a process context switch."
+      ],
+      "diagram": "syscall"
+    },
+    {
+      "id": "MID-03",
+      "kind": "Diagram",
+      "group": "Threads",
+      "title": "Show shared and private thread resources",
+      "prompt": "Sketch a process with two threads. Label the resources they share and the state each thread owns. Explain one benefit and one risk of sharing.",
+      "pages": "20–24",
+      "answer": "Both threads share the process address space: code, global data, heap and open files. Each thread has its own program counter, registers and stack. Sharing makes communication economical, but updates to shared data require synchronization; a fatal fault can affect the whole process.",
+      "checks": [
+        "One shared region contains code, data, heap and open files.",
+        "Both threads have their own PC, registers and stack.",
+        "State an economy or communication benefit.",
+        "Identify a race or fault-isolation risk."
+      ],
+      "diagram": "threads"
+    },
+    {
+      "id": "MID-04",
+      "kind": "Diagram",
+      "group": "Foundations",
+      "title": "Compare memory architectures",
+      "prompt": "Draw simplified von Neumann and Harvard models. Label the CPU, instruction storage, data storage and access paths. Explain the von Neumann bottleneck in this simplified comparison.",
+      "pages": "2–4",
+      "answer": "In the simplified von Neumann model, instructions and data occupy shared memory and use a shared access path. Harvard uses separate instruction and data memories and paths, allowing overlapping instruction and data access. Real machines may combine features, so this is an architectural teaching model.",
+      "checks": [
+        "Von Neumann diagram uses shared instruction/data memory.",
+        "Harvard diagram separates instruction and data memories/paths.",
+        "Explain contention for the shared path.",
+        "Connect the separate paths to potential simultaneous access."
+      ],
+      "diagram": "architecture"
+    },
+    {
+      "id": "MID-05",
+      "kind": "Theory",
+      "group": "Services",
+      "title": "Compare buffering, caching and spooling",
+      "prompt": "Explain buffering, caching and spooling. Give a distinct use case for each and say what problem it solves.",
+      "pages": "10–12",
+      "answer": "Buffering temporarily holds data during transfer to accommodate rate or unit-size differences, as with incoming video. Caching keeps a copy for faster repeated access, such as recently read disk blocks. Spooling queues jobs for a device that serves them serially, such as a printer.",
+      "checks": [
+        "Buffer: temporary transfer storage and rate mismatch.",
+        "Cache: reuse of a copy to reduce future access time.",
+        "Spool: queued complete jobs for a shared device.",
+        "Use examples that distinguish the three purposes."
+      ]
+    },
+    {
+      "id": "MID-06",
+      "kind": "Theory",
+      "group": "Processes",
+      "title": "Explain fork, exec and wait",
+      "prompt": "Explain how a shell can launch a program using fork, exec and wait. State which creates a process, which replaces a program image, and how a zombie is reaped.",
+      "pages": "15–19",
+      "answer": "The shell calls fork to create a child. In the child, a successful exec replaces the program image while retaining the PID. The parent may call wait to collect child exit status. A terminated child whose status has not been collected is a zombie; wait reaps that retained information.",
+      "checks": [
+        "fork creates a child; distinguish parent and child return values.",
+        "exec replaces the image and does not itself create another process.",
+        "wait collects child status, blocking when appropriate.",
+        "Distinguish a zombie from a still-running orphan."
+      ]
+    },
+    {
+      "id": "MID-07",
+      "kind": "Theory",
+      "group": "Concurrency",
+      "title": "Judge a critical-section solution",
+      "prompt": "Define mutual exclusion, progress and bounded waiting. Explain why a shared turn variable with strict alternation can satisfy mutual exclusion but fail progress.",
+      "pages": "40, 43–45",
+      "answer": "Mutual exclusion prevents simultaneous critical-section access. Progress prevents an interested process being delayed indefinitely by a process that does not want to enter. Bounded waiting limits how often others can enter after a request. With strict alternation, P0 may wait for P1 even when P1 stays in its remainder section and the critical section is empty.",
+      "checks": [
+        "Define all three requirements separately.",
+        "Give an empty-critical-section trace with the turn assigned to an uninterested process.",
+        "Identify the failed property as progress.",
+        "Do not treat mutual exclusion alone as a guarantee of fairness."
+      ]
+    },
+    {
+      "id": "MID-08",
+      "kind": "Theory",
+      "group": "Scheduling",
+      "title": "Explain a scheduling trade-off",
+      "prompt": "Compare FCFS and Round Robin for an interactive workload. Explain the convoy effect and the effect of making the RR quantum very large or very small.",
+      "pages": "25–35",
+      "answer": "FCFS lets a long CPU burst hold up short ready jobs (the convoy effect). RR periodically gives each ready process a turn, usually improving responsiveness. A sufficiently large quantum approaches FCFS for that workload; a very small quantum increases context-switch overhead. Better response does not guarantee the lowest turnaround time.",
+      "checks": [
+        "Explain the convoy effect with a long job followed by short jobs.",
+        "Explain time slices and preemption in RR.",
+        "Large quantum approaches FCFS.",
+        "Small quantum increases overhead; response and turnaround differ."
+      ]
+    },
+    {
+      "id": "MID-09",
+      "kind": "Scenario",
+      "group": "Foundations",
+      "title": "One camera API, many applications",
+      "prompt": "A video-call app works with several camera brands using one API. Meanwhile the OS shares the CPU between that app and a browser. Identify the OS role in each case and explain your mapping.",
+      "pages": "2–4",
+      "answer": "The common camera API illustrates abstraction: hardware-specific details are hidden behind an interface. Dividing CPU time between applications illustrates arbitration: competing demands on a resource are managed. These roles may coexist in one service.",
+      "checks": [
+        "Map the camera interface to abstraction.",
+        "Map CPU sharing to arbitration.",
+        "Explain the hardware detail being hidden and the resource being shared."
+      ]
+    },
+    {
+      "id": "MID-10",
+      "kind": "Scenario",
+      "group": "Services",
+      "title": "The office printer queue",
+      "prompt": "An office has one printer. Several people submit documents, and their applications continue working before printing finishes. Name the OS mechanism that queues the jobs and explain how the OS learns that the device has completed work.",
+      "pages": "5–6, 10–12",
+      "answer": "Spooling stores pending print jobs in a queue so the shared printer can serve them in order. A driver communicates with the controller; in an interrupt-driven design the controller signals completion and an interrupt handler handles the event. Submitting a job need not make the CPU busy-wait until printing finishes.",
+      "checks": [
+        "Identify spooling, not just caching.",
+        "Map queued documents and the printer to jobs and a serially shared device.",
+        "Explain controller interrupt and driver/handler roles.",
+        "Explain how other computation can continue."
+      ]
+    },
+    {
+      "id": "MID-11",
+      "kind": "Scenario",
+      "group": "Threads",
+      "title": "Keep the editor alive",
+      "prompt": "A media editor uses UI, audio and video workers. A third-party video library sometimes crashes. Recommend a thread/process design, justify it and give a cost of your choice.",
+      "pages": "23–24",
+      "answer": "Keep related, trusted UI/audio workers as threads if sharing is useful, but isolate the unreliable video library in a separate process with IPC. A fatal video-process error is then less likely to destroy the main application, which can restart the worker. The trade-off is IPC and additional process/resource overhead.",
+      "checks": [
+        "Identify the shared-process failure risk.",
+        "Move the unreliable component to an isolated process.",
+        "Use IPC for its communication with the application.",
+        "Give a real cost; do not claim isolation is free or perfect."
+      ]
+    },
+    {
+      "id": "MID-12",
+      "kind": "Scenario",
+      "group": "Concurrency",
+      "title": "Two customers, one remaining ticket",
+      "prompt": "Two workers both read remainingTickets = 1, each confirms a purchase and then writes 0. Explain the bug, give an interleaving and propose a fix that protects the whole decision.",
+      "pages": "38–43",
+      "answer": "Both workers read the old value before either completes the check-and-update, so both sell the same last ticket. Use one shared lock around checking availability and decrementing it (or an equivalent atomic transaction). Locking only the final write does not prevent both decisions being made from stale data.",
+      "checks": [
+        "Identify a race condition on shared state.",
+        "Show both reads before either update.",
+        "Protect check plus update together with the same synchronization mechanism.",
+        "Explain that locking only the write is insufficient."
+      ]
+    },
+    {
+      "id": "MID-13",
+      "kind": "Scenario",
+      "group": "Concurrency",
+      "title": "Three shared lab printers",
+      "prompt": "A lab has three identical printers and five processes request one printer each. Choose a semaphore initial value, explain what the fourth requester does, and describe release. Distinguish this from the print-job spooling queue.",
+      "pages": "41–43",
+      "answer": "Use a counting semaphore initialized to 3. Each successful atomic wait reserves one slot, moving the available count from 3 to 2 to 1 to 0. Another requester must wait until a slot is released by signal. A blocking implementation sleeps instead of spinning. The semaphore limits concurrent resource use; spooling queues output jobs.",
+      "checks": [
+        "Initialize the count to 3.",
+        "Use atomic wait before use and signal after release.",
+        "Explain waiting when all three slots are held.",
+        "Distinguish resource admission from the queued print jobs."
+      ]
+    },
+    {
+      "id": "MID-14",
+      "kind": "Scenario",
+      "group": "Processes",
+      "title": "Read a Linux process trace",
+      "prompt": "A shell starts sleep in the background. ps shows S; after SIGSTOP it shows T. SIGCONT is sent while time remains. Explain these states and why a shell job labelled Running is not necessarily executing on a CPU.",
+      "pages": "46–48",
+      "answer": "S means interruptible sleep; T means stopped. SIGCONT permits execution to resume, and a sleep command with time remaining may return to sleeping. The shell job label Running means the job is active rather than stopped or finished; it does not mean it continuously occupies a CPU.",
+      "checks": [
+        "Explain S and T correctly.",
+        "Explain SIGCONT without promising permanent CPU execution.",
+        "Distinguish the shell job label from scheduler state."
+      ]
+    },
+    {
+      "id": "MID-15",
+      "kind": "Calculation",
+      "group": "Threads",
+      "title": "Apply Amdahl’s law",
+      "prompt": "A workload is 25% serial and 75% perfectly parallel. Using four equal cores and zero overhead, calculate ideal speedup. Then find the limiting speedup as the core count grows without bound. Show the formula and substitutions.",
+      "pages": "21, 23",
+      "answer": "$$S(N)=\\frac{1}{s+(1-s)/N}$$With $s=0.25$ and $N=4$: $$S(4)=\\frac{1}{0.25+0.75/4}=\\frac{16}{7}\\approx2.286$$The limiting speedup is $1/0.25=4$. This ideal model excludes communication and scheduling overhead.",
+      "checks": [
+        "Use serial fraction 0.25, not 0.75.",
+        "Substitute N = 4 and get denominator 0.4375.",
+        "Report ideal speedup ≈ 2.286×.",
+        "Report limiting speedup 4× and state the zero-overhead assumption."
+      ]
+    },
+    {
+      "id": "MID-16",
+      "kind": "Calculation",
+      "group": "Scheduling",
+      "title": "Construct an FCFS schedule",
+      "prompt": "Use non-preemptive FCFS, one CPU, no I/O and zero switch overhead. Draw the Gantt chart, calculate completion, turnaround, waiting and response times for each process, then the mean waiting time. All times are in ms.",
+      "pages": "27–28, 31, 36",
+      "answer": "Gantt: P1 [0,5), P2 [5,8), P3 [8,10). Completion: 5, 8, 10. $$T_i=C_i-A_i,\\quad W_i=T_i-B_i,\\quad R_i=F_i-A_i$$Turnaround: 5, 7, 6. Waiting: 0, 4, 4. Response: 0, 4, 4. $$\\overline W=\\frac{0+4+4}{3}=\\frac83\\approx2.667\\text{ ms}$$",
+      "checks": [
+        "Use arrival order P1, P2, P3 and boundaries 0, 5, 8, 10.",
+        "Completion times: 5, 8, 10.",
+        "Turnaround times: 5, 7, 6.",
+        "Waiting and response times: 0, 4, 4.",
+        "Mean waiting time 8/3 ms; distinguish completion from turnaround."
+      ],
+      "table": {
+        "headers": [
+          "Process",
+          "Arrival (ms)",
+          "Burst (ms)"
+        ],
+        "rows": [
+          [
+            "P1",
+            "0",
+            "5"
+          ],
+          [
+            "P2",
+            "1",
+            "3"
+          ],
+          [
+            "P3",
+            "4",
+            "2"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "MID-17",
+      "kind": "Calculation",
+      "group": "Scheduling",
+      "title": "Trace Round Robin arrivals",
+      "prompt": "Use RR with quantum 2 ms, one CPU, no I/O and zero switch overhead. Arrivals exactly at a slice boundary join before the preempted process is requeued. Draw the Gantt chart and compute waiting and response times.",
+      "pages": "33, 35–36",
+      "answer": "Gantt: P1 [0,2), P2 [2,4), P3 [4,5), P1 [5,7), P2 [7,8). Completion: P1 = 7, P2 = 8, P3 = 5. Turnaround: 7, 7, 3. Waiting: 3, 4, 2; response: 0, 1, 2. $$\\overline W=\\frac{3+4+2}{3}=3\\text{ ms},\\quad\\overline R=\\frac{0+1+2}{3}=1\\text{ ms}$$At time 2 the ready queue is P2, P3, P1.",
+      "checks": [
+        "Place P3 before requeued P1 at time 2.",
+        "Use intervals P1 0–2, P2 2–4, P3 4–5, P1 5–7, P2 7–8.",
+        "Calculate waiting times 3, 4, 2.",
+        "Calculate response times 0, 1, 2.",
+        "Means: waiting 3 ms and response 1 ms."
+      ],
+      "table": {
+        "headers": [
+          "Process",
+          "Arrival (ms)",
+          "Burst (ms)"
+        ],
+        "rows": [
+          [
+            "P1",
+            "0",
+            "4"
+          ],
+          [
+            "P2",
+            "1",
+            "3"
+          ],
+          [
+            "P3",
+            "2",
+            "1"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "MID-18",
+      "kind": "Calculation",
+      "group": "Services",
+      "title": "Check a protected memory region",
+      "prompt": "In the physical-address convention, base = 4000 and limit is the region length, 1200 bytes. Give the valid interval. Classify addresses 3999, 4000, 5199 and 5200. Then translate logical offset 1199 under base relocation.",
+      "pages": "8, 12",
+      "answer": "$$4000\\le a<4000+1200=5200$$3999 is invalid; 4000 and 5199 are valid; 5200 is invalid. For relocation, the logical offset must satisfy $0\\le d<1200$. Offset 1199 translates to $4000+1199=5199$. The limit is a length, so the upper boundary is exclusive.",
+      "checks": [
+        "Use [4000, 5200), with 5199 as the last valid byte.",
+        "Classify all four addresses correctly.",
+        "Validate logical offset before adding base.",
+        "Translate offset 1199 to physical address 5199."
+      ]
+    }
+  ]
+}

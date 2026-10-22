@@ -1,3 +1,16 @@
+# Midterm question-style update — 22 October 2026
+
+Adapted the supplied screenshot and 48-page Midterm Crash Guide into an integrated written practice workshop and mixed mock.
+
+- 18 original, page-referenced exercises: 4 diagrams, 4 theory, 6 real-life scenarios, 4 calculations.
+- 30 MCQ/true-false items plus one written exercise of each type per mixed mock. The exact written mix is labelled as practice design.
+- Typed answers, freehand sketches, undo and self-review checklists persist in the existing v2 progress schema through optional fields. Old exports remain valid.
+- Model answers unlock after submission in a mock. Only objective answers enter score/history/mastery; written checks remain separate.
+- Guide timing and screenshot recollection are explicitly distinguished from confirmed official information.
+- Semantic MathML equations, given-value tables, diagram models and PDF page trails.
+
+Validation: 71 tests pass, production build succeeds. Browser verified draft/sketch persistence, mixed mock navigation, hidden solutions, submission/review and score denominator, light-mode equations, and mobile 375px layouts in both themes without document overflow.
+
 # OS NEXUS update — 22 October 2026
 
 - Light/dark mode toggle in the top bar, saved independently of study progress.
