@@ -1,0 +1,1435 @@
+{
+  "sources": [
+    {
+      "id": "pa1q",
+      "title": "OS - Practice Assignment 1 - OS Basics.pdf",
+      "url": "https://drive.google.com/file/d/13UyxcQVujSE4KXWYkoCH4KuQWobD7TqU/view"
+    },
+    {
+      "id": "pa1a",
+      "title": "OS - Practice Assignment 1 Solutions - OS Basics.pdf",
+      "url": "https://drive.google.com/file/d/1DYjErSZngV_oTTBsbRQgkfb_zgJOoidJ/view"
+    },
+    {
+      "id": "pa2q",
+      "title": "OS - Practice Assignment 02 - OS Services & Structures - Questions.pdf",
+      "url": "https://drive.google.com/file/d/1US_x6GKnC3lN96Z6KQjBguLInm9oZWQk/view"
+    },
+    {
+      "id": "pa2a",
+      "title": "OS - Practice Assignment 02 - OS Services & Structures - Solutions.pdf",
+      "url": "https://drive.google.com/file/d/1BCwf3-ur33vakpjnFIrb2UdpZxiZchnf/view"
+    },
+    {
+      "id": "pa3q",
+      "title": "OS - Practice Assignment 03 - Processes - Questions.pdf",
+      "url": "https://drive.google.com/file/d/1jbzfg8sQB-_Emd1T3j9crjGY9Vhj-Zbr/view"
+    },
+    {
+      "id": "pa3a",
+      "title": "OS - Practice Assignment 03 - Processes - Solutions.pdf",
+      "url": "https://drive.google.com/file/d/1tQoLoy6FQJ_mSyjMSwTpMGUnId7_I0CN/view"
+    },
+    {
+      "id": "pa_alt",
+      "title": "OS - Practice Assignment 01 - Process Concepts (Alternate Set).pdf",
+      "url": "https://drive.google.com/file/d/1kHB9HMfRMSQkVc8NVt1ZN1nIy3cmnhmc/view"
+    },
+    {
+      "id": "linux-wait",
+      "title": "Linux man-pages: wait(2)",
+      "url": "https://man7.org/linux/man-pages/man2/wait.2.html"
+    },
+    {
+      "id": "linux-fork",
+      "title": "Linux man-pages: fork(2)",
+      "url": "https://man7.org/linux/man-pages/man2/fork.2.html"
+    },
+    {
+      "id": "linux-entry",
+      "title": "Linux kernel documentation: Entry/exit handling",
+      "url": "https://docs.kernel.org/core-api/entry.html"
+    },
+    {
+      "id": "linux-syscall-intro",
+      "title": "Linux man-pages: intro(2)",
+      "url": "https://man7.org/linux/man-pages/man2/intro.2.html"
+    }
+  ],
+  "questions": [
+    {
+      "id": "PA1-01",
+      "assignment": "PA1",
+      "number": 1,
+      "title": "What an operating system does",
+      "topic": "OS purpose",
+      "group": "Foundations",
+      "difficulty": "Foundation",
+      "question": "What is an Operating System?",
+      "hints": [
+        "Think about the layer between an application and physical hardware.",
+        "Name at least three resources and explain who controls their use."
+      ],
+      "checklist": [
+        "Define the OS as system software.",
+        "Explain its role between applications/users and hardware.",
+        "Identify CPU, memory and I/O/storage management.",
+        "Mention useful services and protection."
+      ],
+      "answer": "An operating system is system software that manages a computer’s resources and provides controlled services through which applications and users use the hardware. It allocates CPU time, manages memory, organizes files and coordinates I/O devices. It also enforces protection so one program cannot freely damage the OS or another program. For example, a text editor asks the OS to save a file instead of directly controlling a disk controller.",
+      "explanation": [
+        "Begin with the definition: software that manages resources and provides an execution environment.",
+        "Make “resources” concrete: CPU execution time, RAM, storage and devices.",
+        "Connect management to an example such as opening a file or running multiple applications.",
+        "Include protection: convenience alone does not explain why applications cannot operate hardware arbitrarily."
+      ],
+      "mistakes": [
+        "Calling the OS only a graphical interface.",
+        "Confusing an application such as Word with the OS.",
+        "Claiming every computer program must always run under an OS; bare-metal programs exist."
+      ],
+      "relatedLessons": [
+        "os-purpose"
+      ],
+      "refs": [
+        {
+          "source": "pa1q",
+          "locator": "Page 1, Exercise 1-1"
+        },
+        {
+          "source": "pa1a",
+          "locator": "Page 1, Exercise 1-1 solution"
+        }
+      ]
+    },
+    {
+      "id": "PA1-02",
+      "assignment": "PA1",
+      "number": 2,
+      "title": "Purposes of an OS",
+      "topic": "OS purpose",
+      "group": "Foundations",
+      "difficulty": "Foundation",
+      "question": "What are the Main Purposes of an Operating System?",
+      "hints": [
+        "Organize your answer around managing resources, making them convenient to use, and controlling access.",
+        "Give one example for each purpose rather than listing OS names."
+      ],
+      "checklist": [
+        "Resource management and efficient allocation.",
+        "Convenient abstractions and services for users/programmers.",
+        "Control, security and protection.",
+        "One appropriate example for each."
+      ],
+      "answer": "The main purposes are resource management, convenience, and control/protection. Resource management allocates CPU time, memory and devices among competing activities; for example, the scheduler lets several applications make progress. Convenience provides abstractions such as files and system calls, so a program can save data without implementing a disk driver. Control and protection restrict access and isolate programs; for example, memory protection prevents an ordinary process from reading another process’s private memory.",
+      "explanation": [
+        "State the three purposes explicitly.",
+        "For each purpose, explain the problem it solves.",
+        "Use an example that demonstrates the purpose: a file API for convenience, CPU scheduling for allocation, address-space isolation for protection.",
+        "Efficiency and fairness can conflict; an OS balances policy goals rather than maximizing every goal simultaneously."
+      ],
+      "mistakes": [
+        "Giving only examples without stating the purposes.",
+        "Equating convenience with a GUI only.",
+        "Claiming fairness always means equal resource shares."
+      ],
+      "relatedLessons": [
+        "os-purpose",
+        "abstraction-arbitration",
+        "os-services"
+      ],
+      "refs": [
+        {
+          "source": "pa1q",
+          "locator": "Page 1, Exercise 1-2"
+        },
+        {
+          "source": "pa1a",
+          "locator": "Page 1, Exercise 1-2 solution"
+        }
+      ]
+    },
+    {
+      "id": "PA1-03",
+      "assignment": "PA1",
+      "number": 3,
+      "title": "Three modern OS challenges",
+      "topic": "OS challenges",
+      "group": "Foundations",
+      "difficulty": "Application",
+      "question": "Discuss three fundamental challenges encountered by modern operating systems, providing a concrete example to illustrate each challenge.",
+      "hints": [
+        "Choose concurrency, resource allocation and protection/security.",
+        "For each, describe a potential conflict before describing an example."
+      ],
+      "checklist": [
+        "Explain concurrency and give a concrete example.",
+        "Explain allocation among competing requests and give an example.",
+        "Explain security/protection and give an example.",
+        "Distinguish the challenge from the mechanism used to solve it."
+      ],
+      "answer": "Concurrency: many activities progress during overlapping periods, so the OS must coordinate execution and shared resources. A browser, audio player and download service must coexist without one unnecessarily blocking the others. Resource allocation: CPU, RAM and devices are finite, so the OS must choose who gets them and when. Several users submitting print jobs need an orderly queue and a policy for sharing the printer. Security/protection: programs and users must not obtain unauthorized access or corrupt each other. An untrusted application should be unable to read another user’s confidential files or overwrite the kernel.",
+      "explanation": [
+        "A challenge is a problem the OS must manage, not merely a feature name.",
+        "Concurrency does not require simultaneous execution on multiple cores; interleaving on one core is also concurrent.",
+        "Resource allocation needs both mechanisms and policies: a queue is a mechanism, and the ordering rule is a policy.",
+        "Protection controls allowed operations; security includes defending against malicious misuse."
+      ],
+      "mistakes": [
+        "Saying single-core systems cannot be concurrent.",
+        "Using the same unexplained “multitasking” example for all three challenges.",
+        "Claiming operating systems eliminate all security risks."
+      ],
+      "relatedLessons": [
+        "abstraction-arbitration"
+      ],
+      "refs": [
+        {
+          "source": "pa1q",
+          "locator": "Page 1, Exercise 1-3"
+        },
+        {
+          "source": "pa1a",
+          "locator": "Page 2, Exercise 1-3 solution"
+        }
+      ]
+    },
+    {
+      "id": "PA1-04",
+      "assignment": "PA1",
+      "number": 4,
+      "title": "Computer architecture",
+      "topic": "Computer architecture",
+      "group": "Foundations",
+      "difficulty": "Foundation",
+      "question": "What is Computer Architecture?",
+      "hints": [
+        "Consider instructions, memory and I/O, not just the shape of the motherboard.",
+        "Explain how the CPU communicates with the other components."
+      ],
+      "checklist": [
+        "Describe the organization/interface of a computer system.",
+        "Mention CPU, memory and I/O relationships.",
+        "Include the instruction set and memory organization.",
+        "Give a meaningful architecture example."
+      ],
+      "answer": "Computer architecture describes the structure and behavior of a computer system: the operations its processor supports and the way processing, memory and I/O fit together. Relevant aspects include the instruction set architecture (ISA), memory organization and mechanisms for communicating with devices. In a classical von Neumann design, instructions and data share memory; in a classical Harvard design, they use separate instruction and data memories and paths.",
+      "explanation": [
+        "Describe the computer as a system rather than an isolated CPU.",
+        "Explain the ISA as the programmer-visible instructions and related behavior.",
+        "Explain memory and I/O organization as the routes by which instructions and data reach processing units.",
+        "Use Harvard versus von Neumann as one example, not an exhaustive list of all possible architectures."
+      ],
+      "mistakes": [
+        "Defining architecture only as processor clock speed.",
+        "Treating hardware implementation and ISA as identical concepts.",
+        "Claiming Harvard and von Neumann are the only ways computers can be classified."
+      ],
+      "relatedLessons": [
+        "architecture-cycle",
+        "storage-hierarchy"
+      ],
+      "refs": [
+        {
+          "source": "pa1q",
+          "locator": "Page 1, Exercise 1-4"
+        },
+        {
+          "source": "pa1a",
+          "locator": "Page 2, Exercise 1-4 solution"
+        }
+      ],
+      "technicalNote": "The course uses “computer architecture” broadly to include organization and implementation. More precise texts distinguish the programmer-visible architecture/ISA from the microarchitecture that implements it."
+    },
+    {
+      "id": "PA1-05",
+      "assignment": "PA1",
+      "number": 5,
+      "title": "Harvard versus von Neumann",
+      "topic": "Computer architecture",
+      "group": "Foundations",
+      "difficulty": "Comparison",
+      "question": "Compare the Harvard and von Neumann architectures with respect to their memory organization, design complexity, performance, and primary applications.",
+      "hints": [
+        "Use the four requested axes: memory, complexity, performance and applications.",
+        "Ask whether instruction fetch and data access share a path."
+      ],
+      "checklist": [
+        "von Neumann has a shared instruction/data memory model.",
+        "Harvard separates instruction/data memories and paths.",
+        "Explain typical design-complexity trade-off.",
+        "Explain the shared-path bottleneck and potential parallel access.",
+        "Give suitable application examples without absolute claims."
+      ],
+      "answer": "Memory: classical von Neumann systems use one memory for instructions and data and a shared access path; classical Harvard systems use separate instruction and data memories and paths. Complexity: the shared organization is conceptually simpler, while separate memories/buses require more hardware and coordination. Performance: sharing a path can make instruction fetch compete with data access—the von Neumann bottleneck. Harvard can fetch an instruction and access data at the same time, although overall speed still depends on the implementation and workload. Applications: the von Neumann model is common in general-purpose computing; Harvard-style designs are common in microcontrollers and DSPs.",
+      "explanation": [
+        "State how memory is organized before discussing performance.",
+        "Derive the bottleneck from contention for the shared path.",
+        "Explain why separate paths permit overlap, rather than claiming they make every workload faster.",
+        "Relate flexibility and complexity to typical uses. Modern general-purpose processors often have separate instruction/data caches while retaining a unified main-memory model."
+      ],
+      "mistakes": [
+        "Saying Harvard always runs faster.",
+        "Saying von Neumann cannot store instructions.",
+        "Assuming every modern desktop has one physical bus and no separate instruction cache."
+      ],
+      "relatedLessons": [
+        "architecture-cycle"
+      ],
+      "refs": [
+        {
+          "source": "pa1q",
+          "locator": "Page 1, Exercise 1-5"
+        },
+        {
+          "source": "pa1a",
+          "locator": "Page 3, Exercise 1-5 solution"
+        }
+      ],
+      "technicalNote": "The comparison concerns the classical models. Modified-Harvard implementations blur the simple classification; separate caches do not necessarily mean separate programmer-visible main memories."
+    },
+    {
+      "id": "PA1-06",
+      "assignment": "PA1",
+      "number": 6,
+      "title": "Linux and distributions",
+      "topic": "Linux",
+      "group": "Foundations",
+      "difficulty": "Foundation",
+      "question": "What is Linux?",
+      "hints": [
+        "Distinguish the kernel from a complete distribution.",
+        "Give an example of software that a distribution packages around its kernel."
+      ],
+      "checklist": [
+        "Identify Linux as an open-source kernel.",
+        "Explain common broader usage for Linux-based operating systems.",
+        "Mention distributions and give examples.",
+        "Give appropriate usage contexts and licensing qualification."
+      ],
+      "answer": "Strictly, Linux is an open-source operating-system kernel, first released by Linus Torvalds in 1991. In common usage, “Linux” also refers to complete operating systems built around that kernel. A distribution packages the kernel with libraries, command-line tools, package management and often a desktop environment; examples include Debian, Ubuntu and Fedora. Linux-based systems are used in servers, personal computers, embedded devices and supercomputers. Source code can be studied and modified, and redistribution is permitted subject to the applicable licenses.",
+      "explanation": [
+        "The kernel handles core mechanisms such as processes, memory and devices.",
+        "A usable distribution includes more than the kernel: a shell, libraries and administration tools.",
+        "Give a distribution example to demonstrate the difference.",
+        "Open source describes licensing and access to source; it does not guarantee that every related product or support service is free of charge."
+      ],
+      "mistakes": [
+        "Calling Ubuntu a different kernel from Linux.",
+        "Saying every Linux installation is automatically secure.",
+        "Saying open-source redistribution has no license conditions."
+      ],
+      "relatedLessons": [
+        "evolution-linux"
+      ],
+      "refs": [
+        {
+          "source": "pa1q",
+          "locator": "Page 1, Exercise 1-6"
+        },
+        {
+          "source": "pa1a",
+          "locator": "Page 3, Exercise 1-6 solution"
+        }
+      ],
+      "technicalNote": "The official answer uses Linux in the broad distribution-family sense. The kernel/distribution distinction makes that answer more precise."
+    },
+    {
+      "id": "PA2-01",
+      "assignment": "PA2",
+      "number": 1,
+      "title": "Boot from power-on to kernel",
+      "topic": "Boot sequence",
+      "group": "Services",
+      "difficulty": "Sequence",
+      "question": "Explain what happens when a computer is powered on, from pressing the power button until the operating system starts running.",
+      "hints": [
+        "Start with firmware, not with the OS already running.",
+        "Separate firmware checks, locating a boot target, loading the kernel and kernel initialization."
+      ],
+      "checklist": [
+        "CPU begins firmware execution after reset.",
+        "Describe POST and hardware initialization.",
+        "Use boot configuration to select a boot target.",
+        "Bootloader loads kernel into RAM and transfers control.",
+        "Kernel initializes services/drivers and starts the initial user-space environment."
+      ],
+      "answer": "After power-on and reset, the CPU starts firmware execution. In the course’s BIOS model, the BIOS performs POST to check essential hardware and initializes the system. It consults saved configuration, including boot order, locates a bootable device and starts a bootloader. The bootloader loads the OS kernel into memory and transfers control to it. The kernel initializes memory management, device support and process management, then starts the initial user-space process and services. A login interface may appear after these services start.",
+      "explanation": [
+        "Firmware exists before the disk-based OS has loaded.",
+        "POST checks and initialization prepare hardware for booting; they are not application execution.",
+        "The bootloader bridges firmware and the kernel by placing the kernel in memory and transferring control.",
+        "The kernel establishes OS mechanisms; a graphical login is a later user-space outcome, not the definition of kernel startup."
+      ],
+      "mistakes": [
+        "Saying the BIOS is loaded from the operating-system partition.",
+        "Skipping the bootloader/kernel hand-off.",
+        "Assuming a graphical login must exist on every OS."
+      ],
+      "relatedLessons": [
+        "boot-sequence",
+        "os-services"
+      ],
+      "refs": [
+        {
+          "source": "pa2q",
+          "locator": "Page 1, Exercise 2-1"
+        },
+        {
+          "source": "pa2a",
+          "locator": "Page 1, Exercise 2-1 solution"
+        }
+      ],
+      "technicalNote": "BIOS is the model used by the assignment. Many current machines use UEFI firmware and an EFI boot manager/loader; the high-level firmware → loader → kernel sequence remains useful."
+    },
+    {
+      "id": "PA2-02",
+      "assignment": "PA2",
+      "number": 2,
+      "title": "Dual-mode operation",
+      "topic": "User and kernel mode",
+      "group": "Services",
+      "difficulty": "Foundation",
+      "question": "Explain the concept of Dual Mode Operation. What is the difference between User Mode and Kernel Mode, and why is Dual Mode essential for system protection?",
+      "hints": [
+        "A user account and the CPU privilege mode are different things.",
+        "Explain what happens when an application needs an operation it cannot perform directly."
+      ],
+      "checklist": [
+        "User mode restricts privileged operations.",
+        "Kernel mode permits protected OS operations.",
+        "Hardware enforces the privilege distinction.",
+        "System calls/interrupts/exceptions enter controlled handlers.",
+        "Explain isolation and validation of application requests."
+      ],
+      "answer": "Dual-mode operation separates ordinary application execution from privileged OS execution. In user mode, a program cannot freely execute privileged instructions or access protected kernel memory/devices. In kernel mode, the OS can perform those privileged operations. Hardware records and enforces the current privilege level. An application requests a service through a controlled entry such as a system call; the kernel validates the request, performs an allowed operation and returns. This prevents a faulty or malicious application from directly taking over hardware or corrupting the whole system.",
+      "explanation": [
+        "First distinguish the CPU modes and their privileges.",
+        "Explain that hardware protection, not a voluntary programming convention, enforces the boundary.",
+        "Explain the controlled gateway used for legitimate requests.",
+        "Link the design to protection: the application receives only the service it is allowed to request, not unrestricted kernel authority."
+      ],
+      "mistakes": [
+        "Equating kernel mode with being logged in as administrator.",
+        "Claiming a system call permanently converts the application into kernel code.",
+        "Assuming kernel mode makes buggy code harmless."
+      ],
+      "relatedLessons": [
+        "dual-mode"
+      ],
+      "refs": [
+        {
+          "source": "pa2q",
+          "locator": "Page 1, Exercise 2-2"
+        },
+        {
+          "source": "pa2a",
+          "locator": "Page 1, Exercise 2-2 solution"
+        }
+      ]
+    },
+    {
+      "id": "PA2-03",
+      "assignment": "PA2",
+      "number": 3,
+      "title": "Classify seven mode scenarios",
+      "topic": "User and kernel mode",
+      "group": "Services",
+      "difficulty": "Application",
+      "question": "For each of the following operations, determine whether it is performed in User Mode or Kernel Mode and justify your answer:\na) A user types and edits text in Microsoft Word.\nb) A program requests to read data from a file.\nc) Installing/loading a new device driver into the operating system.\nd) The operating system executes a device driver to communicate with a printer.\ne) A calculator application performs a mathematical calculation.\nf) The operating system handles a hardware interrupt from the keyboard.\ng) A program attempts to access a memory page that is not currently available in physical memory, causing a page fault.",
+      "hints": [
+        "Separate initiating a request from handling it.",
+        "Normal computation stays in user mode; protected service and exception handlers execute in kernel mode."
+      ],
+      "checklist": [
+        "a: Word editing logic is user mode.",
+        "b: request begins in user mode; kernel services the file read.",
+        "c: privileged driver loading is kernel mode in the course model.",
+        "d: kernel driver hardware operation is kernel mode.",
+        "e: calculator arithmetic is user mode.",
+        "f: keyboard interrupt handling is kernel mode.",
+        "g: user instruction can cause fault; page-fault handler is kernel mode."
+      ],
+      "answer": "a) User mode for Word’s ordinary editing logic. b) The program initiates the request in user mode; a system call transfers control to kernel mode for the protected file-service operation. c) Kernel mode for the privileged act of loading a kernel device driver; the installer interface may run in user mode. d) Kernel mode for the kernel driver’s protected communication with the printer. e) User mode for normal calculator arithmetic. f) Kernel mode for the hardware interrupt handler. g) The attempted memory access may occur in user mode; the resulting page-fault exception is handled in kernel mode.",
+      "explanation": [
+        "Identify the instruction being classified instead of assigning one mode to an entire multi-stage activity.",
+        "For b, a user-space wrapper prepares a request, then the kernel checks and services it.",
+        "For g, the fault is synchronous with an instruction; the handler decides whether to make a valid page available or reject an invalid access.",
+        "For c and d, use the kernel-driver model specified by the assignment while recognizing that some real systems also support user-space drivers."
+      ],
+      "mistakes": [
+        "Classifying the file-read request and its kernel handling as the same execution step.",
+        "Saying every page fault means the program is erroneous.",
+        "Saying calculator arithmetic requires a system call."
+      ],
+      "relatedLessons": [
+        "dual-mode",
+        "system-calls",
+        "os-services"
+      ],
+      "refs": [
+        {
+          "source": "pa2q",
+          "locator": "Page 1, Exercise 2-3"
+        },
+        {
+          "source": "pa2a",
+          "locator": "Page 2, Exercise 2-3 solution"
+        },
+        {
+          "source": "linux-syscall-intro",
+          "locator": "DESCRIPTION: library wrapper and kernel entry"
+        }
+      ],
+      "technicalNote": "The answer key labels b and g “Kernel Mode,” referring to service/fault handling. The complete execution begins with a user-mode request or instruction, followed by kernel handling. Kernel-driver assumptions do not describe every possible driver architecture."
+    },
+    {
+      "id": "PA2-04",
+      "assignment": "PA2",
+      "number": 4,
+      "title": "Follow a print request",
+      "topic": "System calls and interrupts",
+      "group": "Services",
+      "difficulty": "Integration",
+      "question": "A user is working in Microsoft Word and clicks the Print button to print a document. Explain what happens from the moment the user clicks Print until the printer finishes the operation. In your answer, explain the roles of user mode, kernel mode, the system call, system call table, device driver, device controller, hardware interrupt, Interrupt Descriptor Table (IDT), and interrupt service routine (ISR).",
+      "hints": [
+        "Trace the software request first, then the later asynchronous device event.",
+        "Use two different mappings: system-call number → service; interrupt vector → handler.",
+        "Returning to user execution and switching to a different process are separate decisions."
+      ],
+      "checklist": [
+        "Word initiates printing in user mode.",
+        "System call provides a controlled kernel entry.",
+        "System-call number/table dispatches the requested service.",
+        "Software driver controls the hardware controller.",
+        "Controller/device performs I/O while CPU may do other work.",
+        "A hardware interrupt reports an event needing attention.",
+        "IDT/vector identifies interrupt entry; ISR services the event.",
+        "Restore interrupted context or schedule appropriately; do not equate all interrupts with process switches."
+      ],
+      "answer": "Word handles the Print click in user mode and asks the OS printing services to submit the document. A system call enters the kernel through a controlled path. The kernel uses the system-call number and its dispatch mechanism (represented by the system call table) to select and validate the service. In the assignment’s simplified device model, a software device driver issues commands/data to the hardware device controller, which manages the printer operation. The CPU can execute other work while I/O proceeds; a blocked task waits, while ready tasks can run. When the controller requires attention or reports completion, it raises a hardware interrupt. On x86, the interrupt vector selects an IDT entry leading to the ISR. The ISR acknowledges/services the event and may make a waiting task ready. The interrupt-return path restores the appropriate execution context; scheduling may choose another ready task when required.",
+      "explanation": [
+        "Separate application-level printing from direct hardware control: Word does not write arbitrary controller registers.",
+        "Distinguish the system call table from the IDT. One dispatches a requested OS service; the other provides interrupt/exception entry points on x86.",
+        "Distinguish the driver (software) from the controller (hardware).",
+        "Model I/O as asynchronous relative to CPU execution, so the CPU need not spin until a page finishes.",
+        "An ISR can wake a task, but wake-up ordinarily makes it Ready; the scheduler decides when it runs.",
+        "Returning from an interrupt resumes the saved context unless scheduling or other handling changes that path."
+      ],
+      "mistakes": [
+        "Using the IDT as the system call table.",
+        "Saying the device driver is the physical printer controller.",
+        "Saying the CPU must remain idle until printing completes.",
+        "Assuming every hardware interrupt places the interrupted process in Waiting.",
+        "Assuming every interrupt necessarily returns directly to user mode."
+      ],
+      "relatedLessons": [
+        "system-calls",
+        "io-path"
+      ],
+      "refs": [
+        {
+          "source": "pa2q",
+          "locator": "Page 1, Exercise 2-4"
+        },
+        {
+          "source": "pa2a",
+          "locator": "Page 3, Exercise 2-4 solution"
+        },
+        {
+          "source": "linux-entry",
+          "locator": "Interrupts and regular exceptions; separate user-space and kernel-space entry/exit paths"
+        }
+      ],
+      "technicalNote": "The official key’s statement that the CPU “doesn’t wait by returning to user mode” is misleading: it can return to user work while I/O proceeds. An interrupt may arrive during user or kernel execution and return to the appropriate context. Real print stacks include spoolers, transport drivers and possibly network communication; this is the course’s simplified conceptual journey."
+    },
+    {
+      "id": "PA2-05",
+      "assignment": "PA2",
+      "number": 5,
+      "title": "Exception, trap or interrupt?",
+      "topic": "System calls and interrupts",
+      "group": "Services",
+      "difficulty": "Comparison",
+      "question": "Explain the difference between an exception, a trap, and a hardware interrupt. Give an example of each and explain how each event is handled.",
+      "hints": [
+        "Ask whether the event is caused by the currently executing instruction.",
+        "For a trap, use the course’s intentional software-entry terminology and mention its limits."
+      ],
+      "checklist": [
+        "Exception is synchronous with instruction execution.",
+        "Trap is an intentional synchronous software entry in the course model.",
+        "Hardware interrupt is asynchronous relative to the current instruction stream.",
+        "Give a concrete example of each.",
+        "Explain controlled handler entry, service/error handling and appropriate return."
+      ],
+      "answer": "An exception is synchronous with the executing instruction, such as a divide error or page fault; the CPU transfers control to the appropriate OS exception handler. The handler may resolve the condition, report a signal/error or terminate the task. In the course terminology, a trap is an intentional synchronous software event used to enter an OS service, such as a system-call request; the kernel dispatches the service and returns a result. A hardware interrupt is an asynchronous device event, such as an I/O completion or timer event; an interrupt vector identifies the handler, which acknowledges and services the event before returning appropriately.",
+      "explanation": [
+        "Synchronous means caused by an instruction being executed, not merely that an event happens quickly.",
+        "A divide error illustrates an exceptional condition; a requested system service illustrates deliberate entry.",
+        "A device completion can occur regardless of what unrelated application instruction the CPU is executing.",
+        "IDT is an x86-specific structure; the broader idea is an architecture-defined handler entry mechanism."
+      ],
+      "mistakes": [
+        "Calling a hardware interrupt a program’s normal function call.",
+        "Saying all exceptions terminate a process.",
+        "Claiming every system call on every CPU uses an IDT interrupt gate."
+      ],
+      "relatedLessons": [
+        "system-calls",
+        "interrupts"
+      ],
+      "refs": [
+        {
+          "source": "pa2q",
+          "locator": "Page 2, Exercise 2-5"
+        },
+        {
+          "source": "pa2a",
+          "locator": "Page 3, Exercise 2-5 solution"
+        }
+      ],
+      "technicalNote": "“Trap” is used differently across textbooks and CPU manuals. On x86, traps are also a class of exceptions reported after an instruction; modern syscall instructions can use dedicated entry paths. Use the assignment’s distinction for the answer, with this qualification."
+    },
+    {
+      "id": "PA2-06",
+      "assignment": "PA2",
+      "number": 6,
+      "title": "Simultaneous interrupts",
+      "topic": "Interrupt handling",
+      "group": "Services",
+      "difficulty": "Application",
+      "question": "What happens when multiple interrupts occur at the same time? Explain two approaches for handling multiple interrupts.",
+      "hints": [
+        "Compare deferred handling with nested priority handling.",
+        "Explain the latency trade-off, not just the order."
+      ],
+      "checklist": [
+        "Identify that interrupt hardware/OS arbitrates pending events.",
+        "Describe masking/deferred sequential handling.",
+        "Describe priorities and permitted nesting.",
+        "Explain simplicity versus responsiveness/complexity.",
+        "Avoid implying disabled interrupts are necessarily discarded."
+      ],
+      "answer": "Two common conceptual approaches are sequential handling by masking and priority-based handling. With masking, the CPU/controller temporarily prevents selected interrupt requests from being serviced while a handler runs; pending requests are serviced afterward. This simplifies handler execution but can delay urgent work. With priorities, the interrupt controller and OS rank requests; a higher-priority permitted interrupt can be handled before a lower-priority one and, on systems that support it, can preempt a lower-priority handler. This reduces latency for urgent events but increases nesting and state-management complexity.",
+      "explanation": [
+        "Simultaneous arrival does not mean the CPU executes all handlers at one instant on the same core.",
+        "For masking, distinguish “not serviced yet” from “not recorded.”",
+        "For priorities, distinguish choosing among pending interrupts from allowing nested handlers.",
+        "Specify that exact masking, nesting and pending behavior depends on the architecture and interrupt controller."
+      ],
+      "mistakes": [
+        "Saying all interrupts are lost whenever interrupts are disabled.",
+        "Saying every operating system allows arbitrary interrupt nesting.",
+        "Saying priority handling has no overhead or complexity."
+      ],
+      "relatedLessons": [
+        "interrupts"
+      ],
+      "refs": [
+        {
+          "source": "pa2q",
+          "locator": "Page 2, Exercise 2-6"
+        },
+        {
+          "source": "pa2a",
+          "locator": "Page 4, Exercise 2-6 solution"
+        }
+      ],
+      "technicalNote": "The key presents two general OS-design approaches. Non-maskable events and architecture-specific rules limit what “disabling interrupts” can mean; ordinary masking does not disable every possible CPU event."
+    },
+    {
+      "id": "PA2-07",
+      "assignment": "PA2",
+      "number": 7,
+      "title": "Base and limit protection",
+      "topic": "Memory protection",
+      "group": "Services",
+      "difficulty": "Calculation",
+      "question": "A process is loaded into memory with a Base Register = 4000 and a Limit Register = 1200.\na) What is the valid memory address range that the process can access?\nb) Determine whether each of the following memory addresses is valid or invalid: 4200, 5100, and 5500.\nc) What happens if the process attempts to access an invalid memory address?",
+      "hints": [
+        "Here the limit is the length of the permitted region, not its last address.",
+        "Use base ≤ address < base + limit."
+      ],
+      "checklist": [
+        "Compute 4000 + 1200 = 5200 as the exclusive upper boundary.",
+        "State inclusive range 4000–5199.",
+        "4200 valid; 5100 valid; 5500 invalid.",
+        "Explain a hardware protection exception and OS handling.",
+        "Keep physical-address and logical-offset conventions distinct."
+      ],
+      "answer": "a) With limit interpreted as the region size, valid physical addresses satisfy 4000 ≤ address < 5200, so the inclusive range is 4000 through 5199. b) 4200 is valid because its offset is 200; 5100 is valid because its offset is 1100; 5500 is invalid because its offset is 1500, which is not less than 1200. c) Hardware detects an out-of-range access and raises a protection exception, transferring control to the OS. The OS rejects/handles the illegal access, commonly by reporting a fault or terminating the offending process rather than allowing it to corrupt another region.",
+      "explanation": [
+        "Interpret the limit before calculating: the source explicitly uses it as a size.",
+        "Add base and length to find the first forbidden address, 5200.",
+        "Test each address using the inequality or subtract the base and test 0 ≤ offset < 1200.",
+        "Explain that user code cannot simply rewrite the protection registers to escape the restriction."
+      ],
+      "mistakes": [
+        "Including 5200 as valid.",
+        "Using 1200 as the final physical address.",
+        "Calling 5100 invalid because it is larger than 1200.",
+        "Saying invalid access is silently accepted or automatically allocated memory."
+      ],
+      "relatedLessons": [
+        "memory-protection"
+      ],
+      "refs": [
+        {
+          "source": "pa2q",
+          "locator": "Page 2, Exercise 2-7"
+        },
+        {
+          "source": "pa2a",
+          "locator": "Page 4, Exercise 2-7 solution"
+        }
+      ],
+      "technicalNote": "These numbers are treated as physical addresses by the assignment. In a relocation model, a program may instead generate logical offsets 0–1199, which hardware checks and adds to the base; do not mix the two conventions."
+    },
+    {
+      "id": "PA2-08",
+      "assignment": "PA2",
+      "number": 8,
+      "title": "Virtual machines and allocation",
+      "topic": "Virtualization",
+      "group": "Services",
+      "difficulty": "Application",
+      "question": "What is a Virtual Machine (VM), and what is the role of the Virtual Machine Manager (VMM)? Explain how virtualization allows multiple users to share physical hardware instead of reserving the entire machine for a single user. For example, a cloud server may contain a CPU and GPU, each with a different number of cores. Explain how CPU and GPU resources can be divided or shared among different VMs according to the cloud provider’s resource-allocation policy.",
+      "hints": [
+        "A VM receives a virtual hardware view; its assigned resources need not be an entire physical server.",
+        "Treat CPU and GPU allocation as separate policies and mechanisms."
+      ],
+      "checklist": [
+        "Define a VM with isolated guest OS and virtual resources.",
+        "Describe VMM/hypervisor allocation and isolation.",
+        "Explain time sharing and/or dedicated CPU allocation.",
+        "Explain memory/storage allocation.",
+        "Qualify GPU sharing: passthrough, partitioning or time sharing depend on hardware/software support.",
+        "Do not equate vCPUs and GPU cores or assume a fixed allocation ratio."
+      ],
+      "answer": "A virtual machine is an isolated execution environment that presents virtual hardware on which a guest OS can run. The VMM, or hypervisor, manages that hardware view, schedules access to physical resources and enforces isolation among guests. A provider can assign each VM memory, virtual disks and a chosen number of virtual CPUs. vCPUs can share physical CPU execution time or be backed by dedicated capacity, depending on policy. GPU access may use whole-device passthrough, supported hardware partitions, or supported time sharing/virtual GPU mechanisms. CPU and GPU allocations are chosen independently according to workload, hardware support and provider policy, so several customers can share one physical server without each owning all its resources.",
+      "explanation": [
+        "Start with a VM’s abstraction and isolation, then name the hypervisor’s management role.",
+        "Give a policy example: VM A receives two vCPUs and VM B receives four, with scheduling across the available physical CPU capacity.",
+        "Do not infer GPU allocation from those vCPU counts; GPU hardware and virtualization support impose separate constraints.",
+        "A provider may reserve resources or overcommit some resources. Neither is required by the definition of virtualization."
+      ],
+      "mistakes": [
+        "Saying a VM must occupy a whole server.",
+        "Equating virtual CPU count with guaranteed permanently dedicated physical cores.",
+        "Treating a GPU core as interchangeable with a CPU core.",
+        "Claiming every GPU supports arbitrary per-core partitioning."
+      ],
+      "relatedLessons": [
+        "virtual-machines"
+      ],
+      "refs": [
+        {
+          "source": "pa2q",
+          "locator": "Page 2, Exercise 2-8"
+        },
+        {
+          "source": "pa2a",
+          "locator": "Page 5, Exercise 2-8 solution"
+        }
+      ],
+      "technicalNote": "The question intentionally leaves the provider policy unspecified. There is no single numerical CPU/GPU split to calculate; explain valid mechanisms and policy dependence."
+    },
+    {
+      "id": "PA2-09",
+      "assignment": "PA2",
+      "number": 9,
+      "title": "Shared memory versus messages",
+      "topic": "IPC",
+      "group": "Processes",
+      "difficulty": "Comparison",
+      "question": "What is Interprocess Communication (IPC)? Compare Shared Memory and Message Passing in terms of how they work, speed, and synchronization. Give an example of each.",
+      "hints": [
+        "Ask where the bytes are stored and who transfers them.",
+        "Synchronization is required in both designs, although the mechanisms differ."
+      ],
+      "checklist": [
+        "Define IPC as communication/coordination among processes.",
+        "Describe mapped shared memory with direct accesses after setup.",
+        "Explain explicit synchronization for shared mutable data.",
+        "Describe send/receive communication through a channel.",
+        "Compare typical overhead without an absolute speed claim.",
+        "Give one concrete example of each."
+      ],
+      "answer": "IPC comprises mechanisms through which processes exchange information and coordinate their work. With shared memory, the OS establishes a region mapped into multiple processes; they then exchange data through reads and writes to that region. It can avoid repeated copying and system calls for each data item, but processes must synchronize access, for example with a mutex or semaphore. A producer and consumer using a shared buffer is an example. With message passing, processes send and receive data through channels such as pipes, sockets or message queues. The channel preserves separation and may provide blocking behavior and ordering guarantees, but message transfer can add copying and kernel/network overhead. A client sending requests to a server through a socket is an example.",
+      "explanation": [
+        "Compare mechanisms first: shared locations versus explicit message exchange.",
+        "Explain speed in terms of copying, kernel entry and workload, not slogans.",
+        "Explain the shared-buffer race that requires synchronization.",
+        "Message primitives can help synchronization, but the protocol still needs rules for ordering, coordination and errors."
+      ],
+      "mistakes": [
+        "Saying shared memory requires no OS involvement at setup.",
+        "Saying message passing eliminates every synchronization problem.",
+        "Saying shared memory is always faster for every message size and implementation.",
+        "Using “database” without explaining the communication mechanism."
+      ],
+      "relatedLessons": [
+        "shared-memory",
+        "message-passing"
+      ],
+      "refs": [
+        {
+          "source": "pa2q",
+          "locator": "Page 2, Exercise 2-9"
+        },
+        {
+          "source": "pa2a",
+          "locator": "Page 5, Exercise 2-9 solution"
+        }
+      ]
+    },
+    {
+      "id": "PA2-10",
+      "assignment": "PA2",
+      "number": 10,
+      "title": "Choose an OS structure",
+      "topic": "OS structures",
+      "group": "Services",
+      "difficulty": "Evaluation",
+      "question": "For each of the following scenarios, identify which operating system structure (monolithic, layered, microkernel, modular, or hybrid) would be most suitable, and justify your choice.\na) A safety-critical medical device (e.g., a pacemaker controller) where system reliability and fault isolation are the top priority, even at the cost of performance.\nb) A general-purpose desktop OS that needs high performance for everyday tasks (file access, networking, process management) and wants to add new features over time without redesigning the whole system.\nc) An educational OS built for teaching students how operating systems work, where each layer’s functionality should be clearly separated and easy to understand.\nd) A modern commercial OS (e.g., Windows or macOS) that needs the performance of tightly integrated core services but also the flexibility to load or unload drivers and extensions without rebooting.",
+      "hints": [
+        "Match each scenario’s dominant requirement to a structure’s trade-off.",
+        "For the desktop case, consider loadable modules; for fault isolation, consider separated services."
+      ],
+      "checklist": [
+        "a: microkernel with user-space service isolation and communication cost.",
+        "b: modular kernel for performance plus extensibility.",
+        "c: layered structure for clear responsibilities.",
+        "d: hybrid for a combination of integrated core services and flexibility.",
+        "Explain reasons; architectural labels are not safety or performance guarantees."
+      ],
+      "answer": "a) Microkernel: keep the privileged core small and place other services in separate user-space processes, improving fault isolation at the cost of communication overhead. A real medical product also needs real-time guarantees, validation and applicable safety engineering. b) Modular: retain closely integrated kernel services for performance while adding supported drivers/filesystems through loadable modules. c) Layered: separate responsibilities into well-defined levels that use lower-level services, making the design easier to teach and reason about. d) Hybrid: combine tightly integrated performance-critical services with selected modular and microkernel-inspired organization, matching the practical mixture commonly associated with Windows NT and macOS XNU.",
+      "explanation": [
+        "Identify the priority in each scenario before naming a design.",
+        "Microkernel separation limits the reach of some service failures, but cannot prove system safety by itself.",
+        "A modular kernel is often monolithic in privilege organization; modularity and monolithic design are not mutually exclusive.",
+        "Layering favors conceptual separation; excessive crossing of layers can cost performance.",
+        "Hybrid is a broad design label, so justify it using the actual required mixture instead of treating it as an automatically superior architecture."
+      ],
+      "mistakes": [
+        "Claiming a microkernel guarantees a pacemaker is safe.",
+        "Treating modular and monolithic as always mutually exclusive.",
+        "Choosing structures without explaining the scenario’s requirements.",
+        "Assuming every driver can always be unloaded safely without rebooting."
+      ],
+      "relatedLessons": [
+        "os-structures"
+      ],
+      "refs": [
+        {
+          "source": "pa2q",
+          "locator": "Page 2, Exercise 2-10"
+        },
+        {
+          "source": "pa2a",
+          "locator": "Page 6, Exercise 2-10 solution"
+        }
+      ],
+      "technicalNote": "The source answer’s expected matches are microkernel, modular, layered and hybrid. Dynamic loading/unloading depends on the actual component and OS; architecture labels alone do not guarantee it."
+    },
+    {
+      "id": "PA3-01",
+      "assignment": "PA3",
+      "number": 1,
+      "title": "Program versus process",
+      "topic": "Process basics",
+      "group": "Processes",
+      "difficulty": "Foundation",
+      "question": "What is the difference between a program and a process? Why is a program described as passive while a process is active?",
+      "hints": [
+        "Compare an executable file with one running instance of it.",
+        "Name state that can differ between two instances of the same executable."
+      ],
+      "checklist": [
+        "Program is stored instructions, a passive entity.",
+        "Process is an execution instance with state/resources.",
+        "Mention PC, registers, memory and/or stack.",
+        "Explain multiple processes may execute the same program."
+      ],
+      "answer": "A program is a stored set of instructions, typically an executable file. It is passive because storing it does not itself carry out computation. A process is an instance of a program in execution, with an execution state and resources such as an address space, stack, register values, program counter and open files. It is active because the OS manages its ongoing execution, even when it is temporarily Ready or Waiting rather than currently on the CPU. Two processes can run the same executable while having different input, memory contents and progress.",
+      "explanation": [
+        "Contrast code as a stored description with one execution of that code.",
+        "Use two editor windows/processes as an example of independent instances.",
+        "Identify the process state that lets the OS pause and resume each instance.",
+        "“Active entity” describes an execution lifetime; it does not mean constantly Running."
+      ],
+      "mistakes": [
+        "Saying every process must be on the CPU at all times.",
+        "Assuming one executable can have only one process.",
+        "Treating the program counter as part of the executable file’s changing contents."
+      ],
+      "relatedLessons": [
+        "storage-hierarchy",
+        "program-process"
+      ],
+      "refs": [
+        {
+          "source": "pa3q",
+          "locator": "Page 1, Exercise 3-1"
+        },
+        {
+          "source": "pa3a",
+          "locator": "Page 1, Exercise 3-1 solution"
+        }
+      ]
+    },
+    {
+      "id": "PA3-02",
+      "assignment": "PA3",
+      "number": 2,
+      "title": "Explain every process transition",
+      "topic": "Process states",
+      "group": "Processes",
+      "difficulty": "Sequence",
+      "question": "Consider the following sequence:\nNew → Ready → Running → Waiting → Ready → Running → Terminated\nExplain what could have caused each transition.",
+      "hints": [
+        "Ready means able to run; Waiting means unable to proceed until an event.",
+        "Map each arrow to one event: admission, dispatch, blocking, completion, dispatch, exit."
+      ],
+      "checklist": [
+        "New→Ready: admission after creation.",
+        "Ready→Running: dispatch onto CPU.",
+        "Running→Waiting: blocking for I/O/event.",
+        "Waiting→Ready: event completion.",
+        "Ready→Running: later dispatch.",
+        "Running→Terminated: exit/completion."
+      ],
+      "answer": "New → Ready: the OS finishes creating/admitting the process so it can compete for CPU time. Ready → Running: the scheduler chooses it and the dispatcher gives it the CPU. Running → Waiting: it requests blocking I/O or must wait for another event. Waiting → Ready: that I/O/event completes, making it eligible to run. Ready → Running: it is selected and dispatched again. Running → Terminated: it finishes or otherwise exits, ending its execution.",
+      "explanation": [
+        "Read each arrow independently and name the event that changes eligibility or CPU ownership.",
+        "A process waiting only for CPU belongs to Ready, not Waiting.",
+        "I/O completion normally moves a blocked process to Ready; it does not guarantee immediate CPU ownership.",
+        "Termination ends execution; retained exit-status bookkeeping is a separate implementation detail."
+      ],
+      "mistakes": [
+        "Saying Waiting→Ready means the scheduler selected the process.",
+        "Skipping Ready and claiming every completed I/O immediately runs the process.",
+        "Treating New as an ordinary running program."
+      ],
+      "relatedLessons": [
+        "process-states",
+        "scheduling-queues",
+        "scheduler-dispatcher"
+      ],
+      "refs": [
+        {
+          "source": "pa3q",
+          "locator": "Page 1, Exercise 3-2"
+        },
+        {
+          "source": "pa3a",
+          "locator": "Page 1, Exercise 3-2 solution"
+        }
+      ],
+      "technicalNote": "Formatting adjustment: the extracted PDF splits “Waiting” and “Terminated” with internal spaces. Those words are normalized here; the question and state sequence are otherwise preserved."
+    },
+    {
+      "id": "PA3-03",
+      "assignment": "PA3",
+      "number": 3,
+      "title": "Does an interrupt mean Waiting?",
+      "topic": "Process states",
+      "group": "Processes",
+      "difficulty": "Application",
+      "question": "A running process is interrupted before it finishes. Does this necessarily mean that it enters the Waiting state?",
+      "hints": [
+        "Did the task lose the CPU, or become unable to proceed?",
+        "A timer expiry and a blocking read have different consequences."
+      ],
+      "checklist": [
+        "Answer no.",
+        "Preemption can move Running→Ready.",
+        "Waiting requires an event dependency such as pending I/O.",
+        "An interrupt can be handled and the same process resumed."
+      ],
+      "answer": "No. If a timer interrupt leads the scheduler to preempt the process, it becomes Ready because it can continue as soon as it receives CPU time again. Waiting means it cannot proceed until a particular event occurs, such as its requested I/O completing. A hardware interrupt can also be handled and return to the same process without a scheduling-state transition. The fact that execution was interrupted is therefore insufficient to conclude that the process is Waiting.",
+      "explanation": [
+        "Ask whether the process remains eligible to execute.",
+        "If yes but another task receives the CPU, choose Ready.",
+        "If it depends on an unfinished I/O/event, choose Waiting.",
+        "Distinguish handler execution from a process context switch: not every interrupt causes the latter."
+      ],
+      "mistakes": [
+        "Calling any delay a Waiting state.",
+        "Assuming all interrupts block the interrupted process.",
+        "Assuming every interrupt must select a different process."
+      ],
+      "relatedLessons": [
+        "interrupts",
+        "process-states",
+        "scheduling-queues"
+      ],
+      "refs": [
+        {
+          "source": "pa3q",
+          "locator": "Page 1, Exercise 3-3"
+        },
+        {
+          "source": "pa3a",
+          "locator": "Page 2, Exercise 3-3 solution"
+        }
+      ]
+    },
+    {
+      "id": "PA3-04",
+      "assignment": "PA3",
+      "number": 4,
+      "title": "What context must be preserved?",
+      "topic": "Context switching",
+      "group": "Processes",
+      "difficulty": "Application",
+      "question": "What information would be lost if the OS switched processes without saving the current process’s context?",
+      "hints": [
+        "Think of the information needed to resume the next instruction correctly.",
+        "Distinguish CPU registers from memory that remains stored while another process runs."
+      ],
+      "checklist": [
+        "Program counter / resume location.",
+        "CPU general registers and temporary results.",
+        "Stack pointer and status/flags as relevant.",
+        "Association with PCB/saved execution context.",
+        "Explain incorrect resumption if state is overwritten."
+      ],
+      "answer": "The OS could lose the process’s resume location (program counter) and live CPU register values, including temporary results, the stack pointer and relevant status flags. The next process would overwrite the shared CPU’s registers, so restoring the old process without its saved context could continue at the wrong instruction or use incorrect values. The OS associates saved execution state with the process, conventionally through its PCB and related kernel data, so it can later restore the context and resume correctly. The process’s entire memory is not normally copied on every context switch.",
+      "explanation": [
+        "The CPU has one active register context per execution unit, while many processes may need to resume later.",
+        "Before overwriting that context, record enough state to reconstruct it.",
+        "When returning to a process, restore its own context rather than leaving another process’s values active.",
+        "PCB is the conceptual bookkeeping structure; exact storage arrangements vary."
+      ],
+      "mistakes": [
+        "Mentioning only the program’s filename.",
+        "Claiming the OS must copy all RAM for every context switch.",
+        "Saying a process always restarts from the beginning after preemption."
+      ],
+      "relatedLessons": [
+        "pcb",
+        "context-switch"
+      ],
+      "refs": [
+        {
+          "source": "pa3q",
+          "locator": "Page 1, Exercise 3-4"
+        },
+        {
+          "source": "pa3a",
+          "locator": "Page 2, Exercise 3-4 solution"
+        }
+      ]
+    },
+    {
+      "id": "PA3-05",
+      "assignment": "PA3",
+      "number": 5,
+      "title": "Why switching is overhead",
+      "topic": "Context switching",
+      "group": "Processes",
+      "difficulty": "Reasoning",
+      "question": "Why is context-switching time considered overhead?",
+      "hints": [
+        "Compare instructions that perform application work with instructions that manage which application runs.",
+        "Necessary work can still be overhead relative to the application’s useful work."
+      ],
+      "checklist": [
+        "Saving/restoring context consumes CPU time.",
+        "That time does not directly advance either application’s computation.",
+        "Other costs such as scheduler/cache effects may occur.",
+        "Switching remains necessary for multitasking and responsiveness."
+      ],
+      "answer": "During a context switch, the CPU saves one task’s state, performs scheduling/bookkeeping and restores another task’s state. This consumes time without directly advancing either task’s requested computation, so it is overhead relative to useful application execution. Cache or translation-state effects can add further costs. The overhead is not pointless: switching enables responsiveness and sharing, but excessively frequent switches can reduce the CPU time available for application work.",
+      "explanation": [
+        "Define the unit of useful work: the application’s computation or I/O-service task.",
+        "Identify save/restore operations as management work required to alternate tasks.",
+        "Explain the trade-off rather than suggesting switching should never happen.",
+        "A shorter time slice can improve responsiveness while increasing the fraction spent switching."
+      ],
+      "mistakes": [
+        "Claiming the CPU performs no instructions during a switch.",
+        "Calling overhead an error or a completely useless operation.",
+        "Assuming context switching always doubles execution time."
+      ],
+      "relatedLessons": [
+        "context-switch",
+        "scheduler-dispatcher"
+      ],
+      "refs": [
+        {
+          "source": "pa3q",
+          "locator": "Page 1, Exercise 3-5"
+        },
+        {
+          "source": "pa3a",
+          "locator": "Page 2, Exercise 3-5 solution"
+        }
+      ]
+    },
+    {
+      "id": "PA3-06",
+      "assignment": "PA3",
+      "number": 6,
+      "title": "Why PIDs are necessary",
+      "topic": "Process identity",
+      "group": "Processes",
+      "difficulty": "Reasoning",
+      "question": "Why does the operating system need a PID if it already knows the program being executed?",
+      "hints": [
+        "Imagine running the same executable three times.",
+        "How would a signal target only one of those instances?"
+      ],
+      "checklist": [
+        "One program can have multiple simultaneous instances.",
+        "Each instance has its own state/resources.",
+        "PID identifies the instance for OS operations.",
+        "Give a management example such as signals or waiting."
+      ],
+      "answer": "The program name identifies code, but it does not uniquely identify an execution instance. Several processes can run the same executable with different memory, input and progress. A PID lets the OS and tools refer to one process for operations such as inspecting its state, sending a signal, recording its parent or collecting its exit status. For example, two sleep processes have the same program name but different PIDs, so one can be stopped without selecting the other.",
+      "explanation": [
+        "Separate executable identity from process-instance identity.",
+        "Use a concrete case with repeated execution of one program.",
+        "Explain how OS bookkeeping and commands require a per-instance identifier.",
+        "PIDs may be reused after a process lifecycle ends; they are not permanent identities for all time."
+      ],
+      "mistakes": [
+        "Claiming all processes from one program share a PID.",
+        "Treating PID as a filename.",
+        "Claiming a PID can never be reused."
+      ],
+      "relatedLessons": [
+        "pcb"
+      ],
+      "refs": [
+        {
+          "source": "pa3q",
+          "locator": "Page 1, Exercise 3-6"
+        },
+        {
+          "source": "pa3a",
+          "locator": "Page 2, Exercise 3-6 solution"
+        }
+      ]
+    },
+    {
+      "id": "PA3-07",
+      "assignment": "PA3",
+      "number": 7,
+      "title": "Parent and child resources",
+      "topic": "Process creation",
+      "group": "Processes",
+      "difficulty": "Application",
+      "question": "During process creation, must the parent and child always share all their resources?",
+      "hints": [
+        "The parent-child relationship describes creation, not a requirement to share everything.",
+        "Separate duplicated private memory from shared kernel-backed objects."
+      ],
+      "checklist": [
+        "Answer no.",
+        "Resource-sharing policy may be all, some or none in the general model.",
+        "Separate address-space behavior from other resource behavior.",
+        "Give a concrete fork example without saying private writes always remain shared."
+      ],
+      "answer": "No. In the general process-creation model, parent and child may share all, some or no resources according to the OS and creation mechanism. Address-space contents and other resources must be considered separately. For ordinary Linux fork(), the child gets a separate virtual address space initially containing the same private data, commonly implemented using copy-on-write. It also inherits file descriptors that refer to the same underlying open-file descriptions. A later exec() replaces the child’s program image. Thus, neither “everything shared” nor “nothing related” describes every parent-child pair.",
+      "explanation": [
+        "Start with the general policy alternatives requested by the course.",
+        "Do not confuse an initial copy with permanent sharing of private writable memory.",
+        "Use inherited open files to illustrate selective sharing.",
+        "Explain that exec changes the executing program while preserving the process identity rather than creating another child."
+      ],
+      "mistakes": [
+        "Saying child writes always modify the parent’s private variables.",
+        "Assuming inherited file descriptors imply a shared complete address space.",
+        "Treating fork and exec as the same operation."
+      ],
+      "relatedLessons": [
+        "fork-exec-wait"
+      ],
+      "refs": [
+        {
+          "source": "pa3q",
+          "locator": "Page 1, Exercise 3-7"
+        },
+        {
+          "source": "pa3a",
+          "locator": "Page 3, Exercise 3-7 solution"
+        },
+        {
+          "source": "linux-fork",
+          "locator": "DESCRIPTION: separate memory spaces and inherited file descriptors"
+        }
+      ],
+      "technicalNote": "The official answer presents broad OS-design alternatives. Linux fork has specific semantics: distinct memory spaces, with selected shared underlying objects such as open-file descriptions."
+    },
+    {
+      "id": "PA3-08",
+      "assignment": "PA3",
+      "number": 8,
+      "title": "Parent and child execution",
+      "topic": "Process creation",
+      "group": "Processes",
+      "difficulty": "Reasoning",
+      "question": "Must a parent process stop executing whenever it creates a child process?",
+      "hints": [
+        "Creation alone is not a wait operation.",
+        "Concurrency means overlapping progress; it does not require two cores."
+      ],
+      "checklist": [
+        "Answer no.",
+        "Parent and child can execute concurrently.",
+        "Parent may explicitly wait for a child.",
+        "Distinguish concurrency from simultaneous multicore execution."
+      ],
+      "answer": "No. Creating a child does not automatically require the parent to stop until the child completes. Parent and child can both be eligible to run and make progress concurrently. On a single core their execution is interleaved; on multiple cores they may also run in parallel. If the program needs the child’s result before continuing, the parent can use a wait operation and block until the relevant event. The behavior depends on the program and process-creation mechanism, not simply on the existence of a parent-child relationship.",
+      "explanation": [
+        "Identify two separate operations: create a process, then optionally wait for it.",
+        "After ordinary fork, both execution paths can proceed, with different return values distinguishing them.",
+        "A blocking wait changes the parent’s eligibility until a child event occurs.",
+        "Do not infer a fixed order in which parent and child run after creation."
+      ],
+      "mistakes": [
+        "Saying the child must always run first.",
+        "Saying the parent is automatically suspended until every child ends.",
+        "Saying concurrent execution is impossible on one core."
+      ],
+      "relatedLessons": [
+        "fork-exec-wait"
+      ],
+      "refs": [
+        {
+          "source": "pa3q",
+          "locator": "Page 2, Exercise 3-8"
+        },
+        {
+          "source": "pa3a",
+          "locator": "Page 3, Exercise 3-8 solution"
+        }
+      ]
+    },
+    {
+      "id": "PA3-09",
+      "assignment": "PA3",
+      "number": 9,
+      "title": "Normal process termination",
+      "topic": "Process termination",
+      "group": "Processes",
+      "difficulty": "Sequence",
+      "question": "A process executes its final instruction. What happens next?",
+      "hints": [
+        "Think about an exit status and reclaiming resources, not just the CPU stopping.",
+        "Some bookkeeping can survive after execution has ended."
+      ],
+      "checklist": [
+        "Normal completion invokes termination through exit/runtime.",
+        "OS stops scheduling the process.",
+        "Most resources are released.",
+        "Exit status can be made available to the parent.",
+        "Retained status/zombie bookkeeping may remain until reaped."
+      ],
+      "answer": "On normal completion, the program/runtime requests process termination, commonly through exit(); returning from main normally leads to this path. The OS stops scheduling the process, releases most resources and records termination information that a parent can collect. In the usual Unix wait model, a small record containing the PID and exit status remains until a parent or reaper collects it; this is a zombie, not a still-running process. Completion therefore includes cleanup and reporting, not merely reaching the end of a sequence of instructions.",
+      "explanation": [
+        "Treat “final instruction” as the question’s normal-completion shorthand.",
+        "Identify the controlled OS termination path.",
+        "Separate releasing memory/open resources from retaining minimal termination metadata.",
+        "Explain that wait/reaping finishes the parent’s collection of that metadata."
+      ],
+      "mistakes": [
+        "Saying the CPU executes whatever memory happens to follow the executable.",
+        "Claiming a zombie still executes instructions.",
+        "Claiming all information about the child disappears immediately in every case."
+      ],
+      "relatedLessons": [
+        "process-termination"
+      ],
+      "refs": [
+        {
+          "source": "pa3q",
+          "locator": "Page 2, Exercise 3-9"
+        },
+        {
+          "source": "pa3a",
+          "locator": "Page 3, Exercise 3-9 solution"
+        },
+        {
+          "source": "linux-wait",
+          "locator": "DESCRIPTION and NOTES: termination status and zombie reaping"
+        }
+      ],
+      "technicalNote": "The key simplifies cleanup. On Unix-like systems, exit status may remain until wait/reaping. Reaching an arbitrary final machine instruction is not itself a universal hardware rule for normal termination."
+    },
+    {
+      "id": "PA3-10",
+      "assignment": "PA3",
+      "number": 10,
+      "title": "When a parent ends a child",
+      "topic": "Process termination",
+      "group": "Processes",
+      "difficulty": "Application",
+      "question": "Under what circumstances might a parent terminate one of its child processes?",
+      "hints": [
+        "Think about resource limits, canceled work and an application’s cleanup policy.",
+        "Be careful about claiming that a child always dies when its parent exits."
+      ],
+      "checklist": [
+        "Child exceeds allocated resources or allowed execution time.",
+        "Task is canceled, obsolete or no longer needed.",
+        "Parent/application may request cleanup during shutdown.",
+        "Termination is subject to OS permissions/mechanisms.",
+        "Parent exit does not universally imply automatic child termination."
+      ],
+      "answer": "A parent may request a child’s termination if it exceeds an allowed resource budget, hangs or exceeds a time limit, or performs a task that is no longer needed. An application may also explicitly stop its worker children during shutdown. The OS supplies mechanisms such as signals and enforces applicable permissions; a graceful termination request may allow cleanup, while stronger termination may be needed if the child does not respond. Some systems or policies arrange cascading termination, but a parent exiting does not universally kill every child.",
+      "explanation": [
+        "Give the two core course reasons: excess resources and an obsolete task.",
+        "Add an explicit shutdown policy rather than assuming parenthood enforces automatic cleanup.",
+        "Distinguish requesting termination from directly manipulating the child’s execution.",
+        "On ordinary Unix systems, children can survive parent exit and be reparented, unless a separate mechanism or policy terminates them."
+      ],
+      "mistakes": [
+        "Saying children always terminate automatically when the parent exits.",
+        "Treating any termination signal as guaranteed immediate graceful cleanup.",
+        "Assuming a parent can bypass all OS access controls."
+      ],
+      "relatedLessons": [
+        "process-termination"
+      ],
+      "refs": [
+        {
+          "source": "pa3q",
+          "locator": "Page 2, Exercise 3-10"
+        },
+        {
+          "source": "pa3a",
+          "locator": "Page 3, Exercise 3-10 solution"
+        },
+        {
+          "source": "linux-fork",
+          "locator": "DESCRIPTION: parent-death signal setting is reset"
+        },
+        {
+          "source": "linux-wait",
+          "locator": "NOTES: adoption by init or a subreaper"
+        }
+      ],
+      "technicalNote": "The key says termination can relate to parent exit but does not establish a universal rule. Linux generally reparents surviving children; parent-death signals or application policies are separate mechanisms."
+    },
+    {
+      "id": "PA3-11",
+      "assignment": "PA3",
+      "number": 11,
+      "title": "Connect exit() and wait()",
+      "topic": "Process termination",
+      "group": "Processes",
+      "difficulty": "Integration",
+      "question": "What is the relationship between exit() and wait()?",
+      "hints": [
+        "They are called by different participants in the usual parent-child example.",
+        "If the child has already terminated, waiting can collect its status without first waiting in real time."
+      ],
+      "checklist": [
+        "Child/process calls exit to end execution with status.",
+        "Parent calls wait to collect a child’s termination information.",
+        "wait returns child PID and writes encoded status through its argument.",
+        "wait can block if no waitable child has terminated.",
+        "Reaping removes retained termination bookkeeping."
+      ],
+      "answer": "exit(status) is used by a process to end its execution and report termination status. In the usual parent-child pattern, the child exits and the parent calls wait(&status) to collect the result. A successful wait returns the PID of the collected child and stores encoded status information through the argument. If no relevant child has yet terminated, wait normally blocks; if a terminated child is already waitable, it can return immediately. Collecting a terminated child’s status reaps its remaining bookkeeping. wait does not itself tell the child to terminate.",
+      "explanation": [
+        "Assign roles explicitly: the terminating child exits, and the observing parent waits.",
+        "Separate the function return value (PID) from the output status argument.",
+        "Use status-inspection macros to distinguish normal exit from signal termination before interpreting an exit code.",
+        "Consider both orderings: parent waits first, or child exits first; the relationship still works."
+      ],
+      "mistakes": [
+        "Saying wait terminates the child.",
+        "Saying exit is called only by the parent.",
+        "Treating the wait return value as the child’s exit code.",
+        "Saying wait always delays even if the child has already finished."
+      ],
+      "relatedLessons": [
+        "fork-exec-wait",
+        "process-termination"
+      ],
+      "refs": [
+        {
+          "source": "pa3q",
+          "locator": "Page 2, Exercise 3-11"
+        },
+        {
+          "source": "pa3a",
+          "locator": "Page 4, Exercise 3-11 solution"
+        },
+        {
+          "source": "linux-wait",
+          "locator": "DESCRIPTION: wait()/waitpid() and status macros"
+        }
+      ],
+      "technicalNote": "The status written by wait is encoded information, not simply the raw exit code. In C, test WIFEXITED(status) before using WEXITSTATUS(status)."
+    },
+    {
+      "id": "PA3-12",
+      "assignment": "PA3",
+      "number": 12,
+      "title": "Why processes cooperate",
+      "topic": "IPC",
+      "group": "Processes",
+      "difficulty": "Reasoning",
+      "question": "Why would processes cooperate instead of operating completely independently?",
+      "hints": [
+        "Use information sharing, speedup, modularity and convenience.",
+        "Give one example and identify why communication is needed."
+      ],
+      "checklist": [
+        "Information sharing.",
+        "Possible computation speedup through divided work.",
+        "Modularity through separate components.",
+        "Convenience through related activities.",
+        "IPC and coordination are needed; speedup is not guaranteed."
+      ],
+      "answer": "Processes cooperate to share information, divide work, improve modularity and support convenient workflows. For example, a browser interface, a download service and a renderer may perform different parts of one user task and exchange requests or results. Splitting computation among processes can improve speed when work can run in parallel and coordination costs do not dominate. Separate processes can also isolate responsibilities and failures. Cooperation requires IPC, such as shared memory or messages, and appropriate synchronization so shared results remain consistent.",
+      "explanation": [
+        "Explain each motivation rather than memorizing four words.",
+        "Information sharing concerns exchanged data; modularity concerns the organization of responsibilities.",
+        "Computation speedup depends on parallelizable work, available hardware and communication overhead.",
+        "Connect cooperation to a concrete IPC mechanism and the need to coordinate ordering."
+      ],
+      "mistakes": [
+        "Saying more cooperating processes always make a computation faster.",
+        "Assuming separate address spaces prevent all communication.",
+        "Ignoring synchronization when multiple processes modify shared data."
+      ],
+      "relatedLessons": [
+        "shared-memory",
+        "message-passing"
+      ],
+      "refs": [
+        {
+          "source": "pa3q",
+          "locator": "Page 2, Exercise 3-12"
+        },
+        {
+          "source": "pa3a",
+          "locator": "Page 4, Exercise 3-12 solution"
+        }
+      ]
+    }
+  ],
+  "alternative": {
+    "title": "OS - Practice Assignment 01 - Process Concepts (Alternate Set).pdf",
+    "note": "This separately labelled PA1 process set contains the same 12 process questions as PA3. It is retained as a source reference, excluded from the 28 unique core questions, and not counted twice.",
+    "source": "pa_alt",
+    "url": "https://drive.google.com/file/d/1kHB9HMfRMSQkVc8NVt1ZN1nIy3cmnhmc/view"
+  },
+  "auditNotes": [
+    "Original PA wording is preserved after PDF formatting normalization: wrapped lines are joined, page footers removed, extraction soft-hyphen control characters removed, and the split words “W aiting” and “T erminated” repaired. Subpart labels are preserved.",
+    "The 28 answers are independently written teaching/reference answers checked against the supplied university solution documents. They are not official marking schemes or promises of exam marks. Checklists support student self-assessment; free text is not automatically graded.",
+    "PA2-03 distinguishes the mode of an initiating request/instruction from its kernel handling. PA2-04 corrects the misleading implication that a CPU cannot return to user work while I/O proceeds, and explains that interrupt return is not always a return to user mode.",
+    "PA2-05 qualifies architecture-dependent “trap” terminology and system-call entry paths. PA2-06 uses the course’s conceptual interrupt policies without claiming all real kernels permit nesting.",
+    "PA2-07 uses the source’s size interpretation of limit, yielding [4000,5200), and explicitly separates physical addresses from logical offsets.",
+    "PA2-08 does not invent a numerical allocation policy or equate CPU and GPU cores. PA2-10 preserves the key’s preferred matches while avoiding safety guarantees or treating modular/monolithic designs as mutually exclusive.",
+    "PA3-03 notes that interrupt handling need not switch processes. PA3-07 distinguishes generic creation-policy options from actual Linux fork behavior. PA3-09/10/11 clarify reaping, encoded status and the absence of universal parent-exit cascading termination.",
+    "Question PDF page locations are grounded in the extracted page footers and exercise boundaries. The alternate PA1 set duplicates PA3 and does not expand the official core count."
+  ]
+}
